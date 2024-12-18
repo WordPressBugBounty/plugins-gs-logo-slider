@@ -3,13 +3,13 @@ Contributors: gsplugins, itszaman, samdani, itsariful, devshakhawat
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, client logo
 Requires at least: 4.3
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.7.1
+Stable tag: 3.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Logo Slider is The Best Responsive Plugin for Logo Showcase, Logo Carousel and display clients logos. Shortcode Generator with preview. No coding required!
+Logo Slider: The best responsive plugin for Logo Showcase, Logo Carousel, and displaying clients' logos. Includes shortcode generator with preview!
 
 == Description ==
 
@@ -327,6 +327,9 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.7.2 [18th Dec 2024] =
+* [Updated]: Namespace to Import Data Perfectly.
+
 = Version 3.7.1 [2nd Sep 2024] =
 * [Fixed]: Nonce Validity on Save Preference.
 
@@ -656,6 +659,9 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade notice ==
+= Version 3.7.2 [18th Dec 2024] =
+* [Updated]: Namespace to Import Data Perfectly.
+
 = Version 3.7.1 [2nd Sep 2024] =
 * [Fixed]: Nonce Validity on Save Preference.
 

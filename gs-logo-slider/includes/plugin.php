@@ -29,6 +29,7 @@ class Plugin {
 
     public function __construct() {
 
+        
         $this->column          = new Column;
         $this->cpt             = new Cpt;
         $this->hooks           = new Hooks;
@@ -39,10 +40,10 @@ class Plugin {
         $this->builder         = new Builder;
         $this->integrations    = new Integrations;
         $this->template_loader = new Template_Loader;
-
+        
         require_once GSL_PLUGIN_DIR . 'includes/asset-generator/gs-load-assets-generator.php';
-        require_once GSL_PLUGIN_DIR . 'includes/demo-data/dummy-data.php';
         require_once GSL_PLUGIN_DIR . 'includes/gs-common-pages/gs-logo-common-pages.php';
+        require_once GSL_PLUGIN_DIR . 'includes/demo-data/dummy-data.php';
 
     }
 
