@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.7.2
+Stable tag: 3.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -327,6 +327,9 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.7.3 [16th Jan 2025] =
+* [Fixed]: Layout conflict with Oxygen Builder.
+
 = Version 3.7.2 [18th Dec 2024] =
 * [Updated]: Namespace to Import Data Perfectly.
 
@@ -659,6 +662,9 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade notice ==
+= Version 3.7.3 [16th Jan 2025] =
+* [Fixed]: Layout conflict with Oxygen Builder.
+
 = Version 3.7.2 [18th Dec 2024] =
 * [Updated]: Namespace to Import Data Perfectly.
 

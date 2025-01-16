@@ -1,4 +1,4 @@
-# Copyright (C) 2024 GS_Logo_Slider
+# Copyright (C) 2025 GS_Logo_Slider
 # This file is distributed under the same license as the GS_Logo_Slider package.
 msgid ""
 msgstr ""
