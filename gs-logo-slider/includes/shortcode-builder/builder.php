@@ -62,7 +62,7 @@ final class Builder {
             $post->post_date = current_time( 'mysql' );
             $post->post_date_gmt = current_time( 'mysql', 1 );
             $post->post_title = __('Shortcode Preview', 'gslogo');
-            $post->post_content = '[gslogo preview="yes" id="'. esc_attr( sanitize_text_field( $_REQUEST['gslogo_shortcode_preview'] ) ) .'"]';
+            $post->post_content = '[gslogo preview="yes" id="'. esc_attr( sanitize_key( $_REQUEST['gslogo_shortcode_preview'] ) ) .'"]';
             $post->post_status = 'publish';
             $post->comment_status = 'closed';
             $post->ping_status = 'closed';

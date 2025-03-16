@@ -1,11 +1,11 @@
 === Logo Slider - Logo Showcase, Logo Carousel, Logo Gallery and Client Logo Presentation ===
-Contributors: gsplugins, itszaman, samdani, itsariful, devshakhawat
+Contributors: gsplugins, itszaman, samdani, itsariful
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, client logo
 Requires at least: 4.3
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.7.3
+Stable tag: 3.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -327,6 +327,9 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.7.4 [16th Mar 2025] =
+* [Fixed]: Unauthenticated Arbitrary Shortcode Execution.
+
 = Version 3.7.3 [16th Jan 2025] =
 * [Fixed]: Layout conflict with Oxygen Builder.
 
@@ -662,6 +665,9 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade notice ==
+= Version 3.7.4 [16th Mar 2025] =
+* [Fixed]: Unauthenticated Arbitrary Shortcode Execution.
+
 = Version 3.7.3 [16th Jan 2025] =
 * [Fixed]: Layout conflict with Oxygen Builder.
 
