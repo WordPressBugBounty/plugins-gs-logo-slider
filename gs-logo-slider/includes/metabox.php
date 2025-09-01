@@ -7,8 +7,23 @@ if (!defined('ABSPATH')) exit;
 class Metabox {
 
 	public function __construct() {
+		add_action('admin_enqueue_scripts', [$this, 'gs_logo_slider_enqueue_scripts']);
 		add_action('add_meta_boxes', [$this, 'gs_logo_slider_add_meta_box']);
 		add_action('save_post', [$this, 'gs_logo_slider_save_meta_box_data']);
+	}
+
+	/**
+	 * Enqueue scripts and styles for the metabox.
+	 */
+
+	public function gs_logo_slider_enqueue_scripts($hook) {
+		if ( $hook !== 'post.php' && $hook !== 'post-new.php' ) return;
+
+		if( is_pro_active() ){
+			wp_enqueue_style('gs-flatpickr', GSL_PRO_PLUGIN_URI . '/assets/libs/flatpickr/flatpickr.min.css');
+			wp_enqueue_script('gs-flatpickr', GSL_PRO_PLUGIN_URI . '/assets/libs/flatpickr/flatpickr.min.js', ['jquery'], null, true);
+		}
+
 	}
 
 	/**
@@ -18,7 +33,7 @@ class Metabox {
 
 		add_meta_box(
 			'gs_logo_slider_sectionid',
-			__("Client's URL", 'gslogo'),
+			__("Logo Additional Info", 'gslogo'),
 			[$this, 'gs_logo_slider_meta_box_callback'],
 			'gs-logo-slider',
 			'normal',
@@ -49,12 +64,41 @@ class Metabox {
 		* Use get_post_meta() to retrieve an existing value
 		* from the database and use the value for the form.
 		*/
-		$value = get_post_meta($post->ID, 'client_url', true);
+		$client_url = get_post_meta($post->ID, 'client_url', true);
+		$expire_at = get_post_meta($post->ID, 'gs_logo_expire_at', true);
 
-		echo '<label for="gs_logo_slider_url_field">';
-		_e('Enter Site URL', 'gslogo');
-		echo '</label> ';
-		echo '<input type="text" id="gs_logo_slider_url_field" name="gs_logo_slider_url_field" value="' . esc_attr($value) . '" size="25" />';
+		?>
+
+			<div class="gs-logo-slider-additional-info">
+
+				<div class="field-group">
+					<label for="gs_logo_slider_url_field"><?php _e('Client Site URL', 'gslogo'); ?></label>
+					<input type="text" id="gs_logo_slider_url_field" class="form-control" name="gs_logo_slider_url_field" value="<?php echo isset($client_url) ? esc_attr($client_url) : '' ; ?>" placeholder="<?php _e( 'Client Site URL', 'gslogo' ); ?>" />
+				</div>
+
+				<div class="<?php echo ! ( is_pro_active() && is_gs_logo_pro_valid() ) ? 'gs-logo-pro-field gs-logo-fields-disable' : '';  ?>">
+					
+					<div class="field-group">
+						<label for="gs_logo_expire_at_field"><?php _e('Logo Expire At', 'gslogo'); ?></label>
+						<input type="text" id="gs_logo_expire_at" class="form-control" name="gs_logo_expire_at" value="<?php echo isset($expire_at) ? esc_attr($expire_at) : ''; ?>" placeholder="<?php _e( 'Logo Expire At', 'gslogo' ); ?>" />
+					</div>
+
+
+
+					<?php if( ! is_pro_active() || ! is_gs_logo_pro_valid() ) : ?>
+						<div class="gs-logo-pro-field--inner">
+							<div class="gs-logo-pro-field--content">
+								<a href="https://www.gsplugins.com/product/gs-logo-slider/#pricing">Upgrade to PRO</a>
+							</div>
+						</div>
+					<?php endif; ?>
+
+				</div>
+
+			</div>
+
+		<?php
+
 	}
 
 	public function gs_logo_media_upload($post) {
@@ -175,10 +219,12 @@ class Metabox {
 		}
 
 		// Sanitize user input.
-		$gs_logo = sanitize_url($_POST['gs_logo_slider_url_field']);
+		$gsl_client_url = isset($_POST['gs_logo_slider_url_field']) ? sanitize_url($_POST['gs_logo_slider_url_field']) : '';
+		$gsl_expire_at  = isset($_POST['gs_logo_expire_at']) ? sanitize_text_field($_POST['gs_logo_expire_at']) : '';
 
 		// Update the meta field in the database.
-		update_post_meta($post_id, 'client_url', $gs_logo);
+		if( '' !== $gsl_client_url ) update_post_meta($post_id, 'client_url', $gsl_client_url);
+		if( '' !== $gsl_expire_at ) update_post_meta($post_id, 'gs_logo_expire_at', $gsl_expire_at);
 
 		// Update Secondary image
 		if( is_pro_active() && isset( $_POST['_listing_cover_image'] ) ) {

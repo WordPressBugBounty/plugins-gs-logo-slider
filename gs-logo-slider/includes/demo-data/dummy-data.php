@@ -26,10 +26,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
 
             if ( ! is_admin() ) return;
 
-            add_action( 'admin_notices', array($this, 'gslogo_dummy_data_admin_notice') );
-
-            add_action( 'wp_ajax_gslogo_dismiss_demo_data_notice', array($this, 'gslogo_dismiss_demo_data_notice') );
-
             add_action( 'wp_ajax_gslogo_import_logo_data', array($this, 'import_logo_data') );
 
             add_action( 'wp_ajax_gslogo_remove_logo_data', array($this, 'remove_logo_data') );
@@ -41,6 +37,8 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             add_action( 'wp_ajax_gslogo_import_all_data', array($this, 'import_all_data') );
 
             add_action( 'wp_ajax_gslogo_remove_all_data', array($this, 'remove_all_data') );
+
+            add_action( 'admin_init', array($this, 'maybe_auto_import_all_data') );
 
             // Remove dummy indicator
             add_action( 'edit_post_gs_logo_slider', array($this, 'remove_dummy_indicator'), 10 );
@@ -101,6 +99,27 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             
         }
 
+        public function maybe_auto_import_all_data() {
+
+            if ( get_option('gs_logo_autoimport_done', false) == true ) return;
+
+            $logos = get_posts([
+                'numberposts' => -1,
+                'post_type' => 'gs-logo-slider',
+                'fields' => 'ids'
+            ]);
+
+            $shortcodes = plugin()->builder->get_shortcodes();
+
+            if ( empty($logos) && empty($shortcodes) ) {
+
+                $this->_import_logo_data( false );
+                $this->_import_shortcode_data( false );
+            }
+            
+            update_option( 'gs_logo_autoimport_done', true );
+        }
+
         public function get_taxonomy_list() {
 
             return ['logo-category'];
@@ -143,9 +162,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             // Validate nonce && check permission
             if ( !check_admin_referer('_gslogo_simport_gslogo_demo_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
 
-            // Hide the notice
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
-
             $response = [
                 'logo' => $this->_import_logo_data( false ),
                 'shortcode' => $this->_import_shortcode_data( false )
@@ -161,9 +177,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
 
             // Validate nonce && check permission
             if ( !check_admin_referer('_gslogo_simport_gslogo_demo_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
-
-            // Hide the notice
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
 
             $response = [
                 'logo' => $this->_remove_logo_data( false ),
@@ -181,9 +194,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             // Validate nonce && check permission
             if ( !check_admin_referer('_gslogo_simport_gslogo_demo_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
 
-            // Hide the notice
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
-
             // Start importing
             $this->_import_logo_data();
 
@@ -193,9 +203,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
 
             // Validate nonce && check permission
             if ( !check_admin_referer('_gslogo_simport_gslogo_demo_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
-
-            // Hide the notice
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
 
             // Remove logo data
             $this->_remove_logo_data();
@@ -207,9 +214,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             // Validate nonce && check permission
             if ( !check_admin_referer('_gslogo_simport_gslogo_demo_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
 
-            // Hide the notice
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
-
             // Start importing
             $this->_import_shortcode_data();
 
@@ -219,9 +223,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
 
             // Validate nonce && check permission
             if ( !check_admin_referer('_gslogo_simport_gslogo_demo_gs_') || !current_user_can('manage_options') ) wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
-
-            // Hide the notice
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
 
             // Remove logo data
             $this->_remove_shortcode_data();
@@ -835,53 +836,6 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
         public function delete_dummy_shortcodes() {
             
             plugin()->builder->delete_dummy_shortcodes();
-
-        }
-
-        // Notice
-        function gslogo_dummy_data_admin_notice() {
-
-            // delete_option('gslogo_dismiss_demo_data_notice');
-
-            if ( get_option('gslogo_dismiss_demo_data_notice') ) return;
-
-            if ( get_current_screen()->id == 'gs-logo-slider_page_gs-logo-shortcode' ) return;
-
-            ?>
-
-            <div id="gslogo-dummy-data-install--notice" class="notice notice-success is-dismissible">
-
-                <h3>GS Logo Slider - Install Demo Data!</h3>
-
-                <p><b>GS Logo Slider</b> plugin offers to install <b>demo data</b> with just one click.</p>
-                <p>You can remove the data anytime if you want by another click.</p>
-
-                <p style="margin-top: 16px; margin-bottom: 18px;">
-
-                    <a href="<?php echo admin_url( 'edit.php?post_type=gs-logo-slider&page=gs-logo-shortcode#/demo-data' ); ?>" class="button button-primary" style="margin-right: 10px;">Install Demo Data</a>
-
-                    <a href="javascript:void(0)" onclick="jQuery('#gslogo-dummy-data-install--notice').slideUp(); jQuery.post(ajaxurl, {action: 'gslogo_dismiss_demo_data_notice', nonce: '<?php echo wp_create_nonce('_gslogo_dismiss_demo_data_notice_gs_'); ?>' });">
-                        <?php _e( "Don't show this message again", 'gslogo'); ?>
-                    </a>
-
-                </p>
-
-            </div>
-            <?php
-
-        }
-
-        function gslogo_dismiss_demo_data_notice() {
-
-            $nonce = isset($_REQUEST['nonce']) ? $_REQUEST['nonce'] : null;
-
-            if ( ! wp_verify_nonce( $nonce, '_gslogo_dismiss_demo_data_notice_gs_') ) {
-
-                wp_send_json_error( __('Unauthorised Request', 'gslogo'), 401 );
-
-            }
-
-            update_option( 'gslogo_dismiss_demo_data_notice', 1 );
 
         }
 

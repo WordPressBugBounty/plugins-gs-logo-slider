@@ -69,11 +69,13 @@ function gs_validate_boolean( $var ) {
 
 function get_gs_logo_query( $atts ) {
 
-    $args = shortcode_atts([
-        'order'                => 'DESC',
-        'orderby'            => 'date',
+    $args = array_merge([
+        'order'             => 'DESC',
+        'orderby'           => 'date',
         'posts_per_page'    => -1,
-        'tax_query' => [],
+        'meta_query'        => [],
+        'tax_query'         => [],
+        'paged'             => 1
     ], $atts);
 
     $args['post_type'] = 'gs-logo-slider';
@@ -174,8 +176,13 @@ function gs_get_featured_image( $post_ID ) {
 }
 
 function gs_update_plugin_version() {
-    if ( GSL_VERSION !==  get_option('gs_logo_slider_version') ) {
-        update_option( 'gs_logo_slider_version', GSL_VERSION );
+    $option_key = 'gs_logo_slider_version';
+    $old_version = get_option($option_key);
+
+    if ( GSL_VERSION !==  $old_version ) {
+        update_option( $option_key, GSL_VERSION );
+
+        plugin()->builder->maybe_upgrade_data($old_version);
         return true;
     }
     return false;
@@ -293,4 +300,81 @@ function add_pro_link( $links ) {
  */
 function gs_load_textdomain() {
     load_plugin_textdomain( 'gslogo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+
+function is_gs_logo_pro_valid() {
+    if ( ! function_exists( 'gs_logo_pro_is_valid' ) ) {
+        return false;
+    }
+    return gs_logo_pro_is_valid();
+}
+
+function gs_logo_trim_content( $content = '', $limit = 100, $type = 'chars', $read_more_text = 'Read More' ) {
+
+    $content = wp_strip_all_tags( $content ); // Remove HTML
+
+    $client_url = get_post_meta( get_the_ID(), 'client_url', true );
+
+    if ( $type === 'words' ) {
+        $words = explode( ' ', $content );
+        if ( count( $words ) > $limit ) {
+            $content = implode( ' ', array_slice( $words, 0, $limit ) ) . '<a href="'. $client_url .'"> '. $read_more_text .'</a>';
+        }
+    } else { // Default to chars
+        if ( mb_strlen( $content ) > $limit ) {
+            $content = mb_substr( $content, 0, $limit ) . '<a href="'. $client_url .'"> '. $read_more_text .'</a>';
+        }
+    }
+
+    return $content;
+}
+
+function get_current_full_url() {
+    $protocol = is_ssl() ? 'https://' : 'http://';
+    $host     = $_SERVER['HTTP_HOST'];
+    $request  = $_SERVER['REQUEST_URI'];
+    return $protocol . $host . $request;
+}
+
+function get_ajax_pagination( $shortcode_id, $items_per_page = 6, $paged = 1 ) {
+
+    // Generate page parameter name
+    $param_name = 'paged' . $shortcode_id;
+    
+    // Current Page Number
+    $current = max( 1, $paged ?? 1 );
+
+    // Calculate total pages
+    $total_pages = ceil( $GLOBALS['gs_logo_loop']->found_posts / $items_per_page );
+
+    // Generate the current URL with the page placeholder
+    $current_url = get_current_full_url();
+    $current_url = remove_query_arg( $param_name, $current_url );
+    $current_url = add_query_arg( $param_name, '%#%', $current_url );
+
+    $prev_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>';
+    $next_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>';
+    
+    
+    // Print the pagination links
+    $pagination = "<div class='gs-logo-pagination gs-logo-ajax-pagination-link'>";
+    $pagination .= paginate_links( array(
+        'base' => $current_url,
+        'current' => $current,
+        'total' => $total_pages,
+        'prev_next' => true,
+        'next_text' => $next_icon,
+        'prev_text' => $prev_icon
+    ));
+    $pagination .= "</div>";
+
+    return $pagination;
+}
+
+function is_grid_theme( $theme ){
+    return in_array( $theme, array( 'grid1', 'grid2', 'grid3', 'rounded-border' ) );
+}
+
+function is_list_theme( $theme ){
+    return in_array( $theme, array( 'list1', 'list2', 'list3', 'list4' ) );
 }

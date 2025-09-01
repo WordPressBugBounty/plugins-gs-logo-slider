@@ -15,6 +15,44 @@ class Hooks {
         add_action( 'in_admin_header', [ $this, 'disable_admin_notices' ], PHP_INT_MAX );
         add_filter( 'jetpack_content_options_featured_image_exclude_cpt', [$this, 'jetpack__featured_image_exclude_cpt']);
         add_filter( 'use_block_editor_for_post_type', [$this, 'disable_gutenberg'], 10, 2 );
+        add_filter( 'get_terms_orderby', array( $this, 'gs_logo_order_terms' ), 10, 3 );
+    }
+
+
+    /**
+     * Alter the taxonomy query on backend to order terms as desired.
+     */
+    public function gs_logo_order_terms( $orderby, $args, $taxonomies ) {
+
+        // Only affect your taxonomy
+        if ( ! in_array( 'logo-category', (array) $taxonomies, true ) ) {
+            return $orderby;
+        }
+
+        $choice = $args['orderby'] ?? '';
+
+        switch ( $choice ) {
+            case 'term_order':
+                // Your custom column that you added earlier
+                return 't.term_order'; // no ASC or DESC here
+
+            case 'term_id':
+                return 't.term_id';
+
+            case 'name':
+                return 't.name';
+
+            case 'count':
+                // count lives on term_taxonomy
+                return 'tt.count';
+
+            case 'rand':
+                return 'RAND()';
+
+            // Let WordPress handle built-ins you did not remap
+            default:
+                return $orderby;
+        }
     }
 
     function disable_gutenberg( $current_status, $post_type ) {
@@ -69,8 +107,8 @@ class Hooks {
     }
 
     public function plugin_loaded() {
-        gs_update_plugin_version();
         plugin()->builder->maybe_create_shortcodes_table();
+        gs_update_plugin_version();
     }
 
     public function disable_admin_notices() {

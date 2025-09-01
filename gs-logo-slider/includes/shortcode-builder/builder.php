@@ -138,6 +138,8 @@ final class Builder {
             'edit.php?post_type=gs-logo-slider', 'Install Demo', 'Install Demo', 'manage_options', 'gs-logo-shortcode#/demo-data', array( $this, 'view' )
         );
 
+        do_action( 'gs_logo_register_sub_menu' );
+
     }
 
     public function view() {
@@ -177,8 +179,10 @@ final class Builder {
 
         wp_localize_script( 'gs-logo-shortcode', '_gslogo_data', $this->get_localized_data() );
 
-        wp_enqueue_style( 'gs-logo-shortcode' );
-        wp_enqueue_script( 'gs-logo-shortcode' );
+        if( $hook === 'gs-logo-slider_page_gs-logo-shortcode' ){
+            wp_enqueue_style( 'gs-logo-shortcode' );
+            wp_enqueue_script( 'gs-logo-shortcode' );
+        }
         
     }
 
@@ -193,6 +197,7 @@ final class Builder {
                 "temp_save_shortcode_settings" 	=> wp_create_nonce( "_gslogo_temp_save_shortcode_settings_gs_" ),
                 "save_shortcode_pref" 	        => wp_create_nonce( "_gslogo_save_shortcode_pref_gs_" ),
                 "import_gslogo_demo" 	        => wp_create_nonce( "_gslogo_simport_gslogo_demo_gs_" ),
+                "import_export"      	        => wp_create_nonce( "_gslogo_import_export_nonce_gs_" )
             ),
             "ajaxurl" => admin_url( "admin-ajax.php" ),
             "adminurl" => admin_url(),
@@ -209,6 +214,8 @@ final class Builder {
             'logo_data'      => wp_validate_boolean( get_option('gslogo_dummy_logo_data_created') ),
             'shortcode_data' => wp_validate_boolean( get_option('gslogo_dummy_shortcode_data_created') )
         ];
+
+        $data['is_pro_active'] = wp_validate_boolean( is_pro_active() );
 
         return $data;
     }
@@ -554,7 +561,55 @@ final class Builder {
             'gs-l-theme' => __('Style & Theming', 'gslogo'),
             'gs-l-theme--placeholder' => __('Select Theme', 'gslogo'),
             'gs-l-theme--help' => __('Select preferred Style & Theme', 'gslogo'),
+
+            'filter_enabled' => __('Enable Filter', 'gslogo'),
+            'filter_enabled__details' => __('Enable filter for this theme, it may not available for certain theme', 'gslogo'),
+
+            'filter_type' => __('Filter Type', 'gslogo'),
+            'filter_type__details' => __('Select filter type', 'gslogo'),
+
+            'gs_logo_pagination' => __('Enable Pagination', 'gslogo'),
+            'gs_logo_pagination__details' => __('Enable paginations like number pagination, load more button, On scroll load etc.', 'gslogo'),
+
+            'pagination_type' => __('Pagination Type', 'gslogo'),
+            'pagination_type__details' => __('Select pagination type.', 'gslogo'),
+
+            'initial_items'     => __('Initial Items', 'gslogo'),
+            'initial_items__details'    => __('Set initial number of items that shows on page load (before users interaction)', 'gslogo'),
+
+            'load_per_click' => __('Per Click', 'gslogo'),
+            'load_per_click__details' => __('Load logos per button click', 'gslogo'),
+
+            'logo_per_page' => __('Per Page', 'gslogo'),
+            'logo_per_page__details' => __('Display logos per page', 'gslogo'),
+
+            'per_load' => __('Per Load', 'gslogo'),
+            'per_load__details' => __('Display logos per load', 'gslogo'),
+
+            'load_button_text' => __('Button Text', 'gslogo'),
+            'load_button_text__details' => __('Load more button text', 'gslogo'),
             
+            'gs-l-s2-border-thickness' => __('Border Thickness', 'gslogo'),
+            'gs-l-s2-border-thickness--help' => __('Select border thickness (in px).', 'gslogo'),
+            
+            'gs-l-s2-gradient-start' => __('Gradient Start Color', 'gslogo'),
+            'gs-l-s2-gradient-start--help' => __('Select gradient start color (Make gradient start & end same if you want one color border).', 'gslogo'),
+            
+            'gs-l-s2-gradient-end' => __('Gradient End Color', 'gslogo'),
+            'gs-l-s2-gradient-end--help' => __('Select gradient end color (Make gradient start & end same if you want one color border).', 'gslogo'),
+            
+            'gs-l-rb-border' => __('Border', 'gslogo'),
+            'gs-l-rb-border--help' => __('Set border properties.', 'gslogo'),
+            
+            'gs-l-rb-border-radius' => __('Border Radius', 'gslogo'),
+            'gs-l-rb-border-radius--help' => __('Select border radius (in px).', 'gslogo'),
+            
+            'gs-l-rb-hover-shadow-color' => __('Hover Shadow Color', 'gslogo'),
+            'gs-l-rb-hover-shadow-color--help' => __('Select hover shadow color', 'gslogo'),
+            
+            'gs-l-rb-hover-shadow-control' => __('Shadow Control', 'gslogo'),
+            'gs-l-rb-hover-shadow-control--help' => __('Set hover shadow properties', 'gslogo'),
+
             'enable_single_page' => __('Enable Single Pages', 'gslogo'),
             'enable_single_page-details' => __('Enable Single Pages for logos', 'gslogo'),
             
@@ -580,7 +635,7 @@ final class Builder {
             'gs-l-slide-speed--help' => __('Set the speed in millisecond. Default 500 ms. To disable autoplay just set the speed 0', 'gslogo'),
             
             'gs-l-is-autop' => __('Autoplay', 'gslogo'),
-            'gs-l-play-pause--help' => __('Enable/Disable Auto play to change the slides automatically after certain time. Default On', 'gslogo'),
+            'gs-l-is-autop--help' => __('Enable/Disable Auto play to change the slides automatically after certain time. Default On', 'gslogo'),
 
             'gs-l-autop-pause' => __('Autoplay Delay', 'gslogo'),
             'gs-l-autop-pause--help' => __('You can adjust the time (in ms) between each slide. Default 4000 ms', 'gslogo'),
@@ -616,17 +671,49 @@ final class Builder {
             'gs-l-title' => __('Logo Title', 'gslogo'),
             'gs-l-title--help' => __('Display Logo including / excluding Title. Default Off', 'gslogo'),
 
+            'title-tag' => __('Title Tag', 'gslogo'),
+            'title-tag--help' => __('Select logo title tag. Default H3.', 'gslogo'),
+
             'show-cat' => __('Logo Category', 'gslogo'),
             'show-cat--help' => __('Display Logo including / excluding Category. Default Off', 'gslogo'),
+
+            'gs-l-show-content' => __('Logo Content', 'gslogo'),
+            'gs-l-show-content--help' => __('Display Logo content in any number of words/characters. Default Off', 'gslogo'),
+
+            'gs-l-content-limit' => __('Content Limit', 'gslogo'),
+            'gs-l-content-limit--help' => __('Set content limit. Default 80 characters', 'gslogo'),
+
+            'gs-l-show-excerpt' => __('Logo Excerpt', 'gslogo'),
+            'gs-l-show-excerpt--help' => __('Display Logo excerpt in any number of words/characters. Default Off', 'gslogo'),
+
+            'gs-l-excerpt-limit' => __('Excerpt Limit', 'gslogo'),
+            'gs-l-excerpt-limit--help' => __('Set excerpt limit. Default 20 words', 'gslogo'),
+
+            'gs-l-read-more-text' => __('Read More Text', 'gslogo'),
 
             'gs-l-tooltip' => __('Tooltip', 'gslogo'),
             'gs-l-tooltip--help' => __('Enable / disable Tooltip option.', 'gslogo'),
 
+            'gs-l-tooltip-placement' => __('Tooltip Position', 'gslogo'),
+            'gs-l-tooltip-placement--help' => __('Select tooltip position. Default top', 'gslogo'),
+
+            'gs-l-tooltip-bgcolor' => __('Tooltip Background', 'gslogo'),
+            'gs-l-tooltip-bgcolor--help' => __('Set tooltip background color. Default #ff5f6d, #ffc371', 'gslogo'),
+
+            'gs-l-tooltip-textcolor' => __('Tooltip Text Color', 'gslogo'),
+            'gs-l-tooltip-textcolor--help' => __('Set tooltip text color. Default #fff', 'gslogo'),
+
+            'gs-l-all-filter' => __('All Filter', 'gslogo'),
+            'gs-l-all-filter--help' => __('Show/hide All button for filter.', 'gslogo'),
+
             'gs-secondary-img'       => __( 'Secondary Image', 'gslogo' ),
             'gs-secondary-img--help' => __( 'Applicable for Slider 1 flip Image Style', 'gslogo' ),
 
-            'gs-l-gray' => __('Logo style', 'gslogo'),
-            'gs-l-gray--help' => __('Logo grayscale feature works only in modern browsers.. like Chrome, Firefox and Safari', 'gslogo'),
+            'image_filter'       => __( 'Image Filter', 'gslogo' ),
+            'image_filter__help'       => __( 'Select default image filter', 'gslogo' ),
+
+            'hover_image_filter' => __( 'Image Filter on Hover', 'gslogo' ),
+            'hover_image_filter__help' => __( 'Select image filter for hover', 'gslogo' ),
 
             'gs-l-align' => __( 'Alignment', 'gslogo' ),
             'gs-l-align--help' => __( 'Horizonal Alignment of Grid Items', 'gslogo' ),
@@ -676,6 +763,9 @@ final class Builder {
             'order-by' => __('Order By', 'gslogo'),
             'order-by--placeholder' => __('Order By', 'gslogo'),
 
+            'filter-order' => __('Filter Order', 'gslogo'),
+            'filter-order-by' => __('Filter Order By', 'gslogo'),
+
             'logo-cat' => __('Categories', 'gslogo'),
             'logo-cat--placeholder' => __('Categories', 'gslogo'),
             'logo-cat--help' => __('Select specific logo category to show that specific category logos', 'gslogo'),
@@ -685,6 +775,16 @@ final class Builder {
 
             'preference' => __('Preference', 'gslogo'),
             'save-preference' => __('Save Preference', 'gslogo'),
+
+            'export-data' => __('Export Data', 'gslogo'),
+            'export-data--description' => __('Export GS Logo Slider data to use in other sites', 'gslogo'),
+
+            'import-data' => __('Import Data', 'gslogo'),
+            'import-data--description' => __('Import GS Logo Slider data from other sites', 'gslogo'),
+
+            'export-logo-data' => __('Export Logo Data', 'gslogo'),
+            'export-shortcodes-data' => __('Export Shortcodes Data', 'gslogo'),
+            'export-settings-data' => __('Export Settings Data', 'gslogo'),
             
             'custom-css' => __('Custom CSS', 'gslogo'),
 
@@ -707,9 +807,9 @@ final class Builder {
             'style-settings' => __('Style Settings', 'gslogo'),
             'query-settings' => __('Query Settings', 'gslogo'),
             'shortcode-name' => __('Shortcode Name', 'gslogo'),
-            'name-of-the-shortcode' => __('Name of the Shortcode', 'gslogo'),
+            'name-of-the-shortcode' => __('Shortcode Name', 'gslogo'),
             'save-shortcode' => __('Save Shortcode', 'gslogo'),
-            'preview-shortcode' => __('Preview Shortcode', 'gslogo')
+            'preview-shortcode' => __('Preview', 'gslogo')
 
         ];
         
@@ -829,6 +929,26 @@ final class Builder {
                 'label' => __( '2 Rows Slider', 'gslogo' ),
                 'value' => 'slider-2rows'
             ],
+            [
+                'label' => __( 'Rounded Border', 'gslogo' ),
+                'value' => 'rounded-border'
+            ],
+            [
+                'label' => __( 'Horizontal Scroll', 'gslogo' ),
+                'value' => 'horizontal-scroll'
+            ],
+            [
+                'label' => __( '3D Circular Slider', 'gslogo' ),
+                'value' => '3d-circular-slider'
+            ],
+            [
+                'label' => __( 'Shape - 1', 'gslogo' ),
+                'value' => 'shape-1'
+            ],
+            [
+                'label' => __( 'Shape - 2', 'gslogo' ),
+                'value' => 'shape-2'
+            ]
         ];
 
         if ( ! is_pro_active() || ! is_plugin_loaded() || ! gs_logo_pro_is_valid() ) {
@@ -839,6 +959,41 @@ final class Builder {
         }
 
         return array_merge( $free_themes, $pro_themes );
+
+    }
+
+    public function get_pagination_types() {
+
+        $free_pagination = [
+            [
+                'label' => __( 'Normal Pagination', 'gslogo' ),
+                'value' => 'normal-pagination'
+            ]
+        ];
+
+        $pro_pagination = [
+            [
+                'label' => __( 'AJAX Pagination', 'gslogo' ),
+                'value' => 'ajax-pagination'
+            ],
+            [
+                'label' => __( 'Load More Button', 'gslogo' ),
+                'value' => 'load-more-button'
+            ],
+            [
+                'label' => __( 'Load More On Scroll', 'gslogo' ),
+                'value' => 'load-more-scroll'
+            ]
+        ];
+
+        if ( ! is_pro_active() || ! is_plugin_loaded() || ! gs_logo_pro_is_valid() ) {
+            $pro_pagination = array_map( function( $item ) {
+                $item['pro'] = true;
+                return $item;
+            }, $pro_pagination);
+        }
+
+        return array_merge( $free_pagination, $pro_pagination );
 
     }
 
@@ -862,6 +1017,65 @@ final class Builder {
         ];
 
         return $_sizes;
+
+    }
+
+    public function get_image_filter_effects() {
+
+        $free_effects = [
+            [
+                'label' => __( 'None', 'gslogo' ),
+                'value' => 'none'
+            ]
+        ];
+
+        $pro_effects = [
+            [
+                'label' => __( 'Blur', 'gslogo' ),
+                'value' => 'blur'
+            ],
+            [
+                'label' => __( 'Brightness', 'gslogo' ),
+                'value' => 'brightness'
+            ],
+            [
+                'label' => __( 'Contrast', 'gslogo' ),
+                'value' => 'contrast'
+            ],
+            [
+                'label' => __( 'Grayscale', 'gslogo' ),
+                'value' => 'grayscale'
+            ],
+            [
+                'label' => __( 'Hue Rotate', 'gslogo' ),
+                'value' => 'hue_rotate'
+            ],
+            [
+                'label' => __( 'Invert', 'gslogo' ),
+                'value' => 'invert'
+            ],
+            [
+                'label' => __( 'Opacity', 'gslogo' ),
+                'value' => 'opacity'
+            ],
+            [
+                'label' => __( 'Saturate', 'gslogo' ),
+                'value' => 'saturate'
+            ],
+            [
+                'label' => __( 'Sepia', 'gslogo' ),
+                'value' => 'sepia'
+            ]
+        ];
+
+        if ( ! is_pro_active() || ! is_plugin_loaded() || ! gs_logo_pro_is_valid() ) {
+            $pro_effects = array_map( function( $item ) {
+                $item['pro'] = true;
+                return $item;
+            }, $pro_effects);
+        }
+
+        return array_merge( $free_effects, $pro_effects );
 
     }
 
@@ -906,28 +1120,120 @@ final class Builder {
                 ],
             ],
 
+            'title_tag' => [
+                [
+                    'label' => __( 'H1', 'gslogo' ),
+                    'value' => 'h1'
+                ],
+                [
+                    'label' => __( 'H2', 'gslogo' ),
+                    'value' => 'h2'
+                ],
+                [
+                    'label' => __( 'H3', 'gslogo' ),
+                    'value' => 'h3'
+                ],
+                [
+                    'label' => __( 'H4', 'gslogo' ),
+                    'value' => 'h4'
+                ],
+                [
+                    'label' => __( 'H5', 'gslogo' ),
+                    'value' => 'h5'
+                ],
+                [
+                    'label' => __( 'H6', 'gslogo' ),
+                    'value' => 'h6'
+                ],
+                [
+                    'label' => __( 'Span', 'gslogo' ),
+                    'value' => 'span'
+                ],
+                [
+                    'label' => __( 'Div', 'gslogo' ),
+                    'value' => 'div'
+                ],
+                [
+                    'label' => __( 'P', 'gslogo' ),
+                    'value' => 'p'
+                ],
+
+            ],
+
             'gs_l_theme' => $this->get_shortcode_options_themes(),
+
+            'gs_logo_filter_type' => [
+                [
+                    'label' => __( 'Normal Filter', 'gsteam' ),
+                    'value' => 'normal-filter'
+                ],
+                [
+                    'label' => __( 'Ajax Filter', 'gsteam' ),
+                    'value' => 'ajax-filter'
+                ]
+            ],
+
+            'pagination_type' => $this->get_pagination_types(),
+
+            'gs_l_rb_border_type' => [
+                [
+                    'label' => __( 'Solid', 'gslogo' ),
+                    'value' => 'solid'
+                ],
+                [
+                    'label' => __( 'Dotted', 'gslogo' ),
+                    'value' => 'dotted'
+                ],
+                [
+                    'label' => __( 'Dashed', 'gslogo' ),
+                    'value' => 'dashed'
+                ],
+                [
+                    'label' => __( 'Double', 'gslogo' ),
+                    'value' => 'double'
+                ],
+                [
+                    'label' => __( 'Groove', 'gslogo' ),
+                    'value' => 'groove'
+                ],
+                [
+                    'label' => __( 'Ridge', 'gslogo' ),
+                    'value' => 'ridge'
+                ],
+                [
+                    'label' => __( 'Inset', 'gslogo' ),
+                    'value' => 'inset'
+                ],
+                [
+                    'label' => __( 'Outset', 'gslogo' ),
+                    'value' => 'outset'
+                ]
+            ],
+
+            'gs_l_tooltip_placement' => [
+                [
+                    'label' => __( 'Top', 'gslogo' ),
+                    'value' => 'top'
+                ],
+                [
+                    'label' => __( 'Bottom', 'gslogo' ),
+                    'value' => 'bottom'
+                ],
+                [
+                    'label' => __( 'Left', 'gslogo' ),
+                    'value' => 'left'
+                ],
+                [
+                    'label' => __( 'Right', 'gslogo' ),
+                    'value' => 'right'
+                ],
+            ],
 
             'image_size' => $this->get_shortcode_options_image_sizes(),
 
-            'gs_l_gray' => [
-                [
-                    'label' => __( 'Default', 'gslogo' ),
-                    'value' => 'default',
-                ],
-                [
-                    'label' => __( 'Grayscale', 'gslogo' ),
-                    'value' => 'gray',
-                ],
-                [
-                    'label' => __( 'Gray to Default', 'gslogo' ),
-                    'value' => 'gray_to_def',
-                ],
-                [
-                    'label' => __( 'Default to Gray', 'gslogo' ),
-                    'value' => 'def_to_gray',
-                ]
-            ],
+            'image_filter' => $this->get_image_filter_effects(),
+
+            'hover_image_filter' => $this->get_image_filter_effects(),
 
             'gs_l_align' => [
                 [
@@ -960,6 +1266,28 @@ final class Builder {
             ],
 
             'logo_cat' => $this->get_logo_categories(),
+
+            'gs_l_content_limit_type' => [
+                [
+                    'label' => __( 'Characters', 'gslogo' ),
+                    'value' => 'chars'
+                ],
+                [
+                    'label' => __( 'Words', 'gslogo' ),
+                    'value' => 'words'
+                ],
+            ],
+
+            'gs_l_excerpt_limit_type' => [
+                [
+                    'label' => __( 'Characters', 'gslogo' ),
+                    'value' => 'chars'
+                ],
+                [
+                    'label' => __( 'Words', 'gslogo' ),
+                    'value' => 'words'
+                ],
+            ],
 
             'orderby' => [
                 [
@@ -994,6 +1322,29 @@ final class Builder {
                     'value' => 'ASC'
                 ],
             ],
+
+            'filter_orderby' => [
+                [
+                    'label' => __( 'Custom Order', 'gslogo' ),
+                    'value' => 'term_order'
+                ],
+                [
+                    'label' => __( 'Term ID', 'gslogo' ),
+                    'value' => 'term_id'
+                ],
+                [
+                    'label' => __( 'Term Name', 'gslogo' ),
+                    'value' => 'name'
+                ],
+                [
+                    'label' => __( 'Count', 'gslogo' ),
+                    'value' => 'count'
+                ],
+                [
+                    'label' => __( 'Random', 'gslogo' ),
+                    'value' => 'rand'
+                ]
+            ]
 
         ];
         
@@ -1049,7 +1400,10 @@ final class Builder {
             'posts' 	               => -1,
             'order'		               => 'DESC',
             'orderby'                  => 'date',
+            'filter_order'             => 'ASC',
+            'filter_orderby'           => 'name',
             'gs_l_title'               => 'on',
+            'title_tag'                => 'h3',
             'logo_cat'	               => '',
             'gs_l_ctrl'                => 'on',
             'gs_l_ctrl_pos'            => 'bottom',
@@ -1059,10 +1413,31 @@ final class Builder {
             'gs_l_inf_loop'	           => 'on',
             'gs_l_slider_stop'         => 'on',
             'gs_l_tooltip' 	           => 'off',
+            'gs_l_tooltip_placement'   => 'top',
+            'gs_l_tooltip_bgcolor_one' => '#ff5f6d',
+            'gs_l_tooltip_bgcolor_two' => '#ffc371',
+            'gs_l_tooltip_textcolor'   => '#fff',
+            'gs_l_all_filter'          => 'on',
             'gs_secondary_img'         => 'off',
             'gs_l_slide_speed'		   => 500,
             'gs_l_autop_pause'         => 2000,
             'gs_l_theme'		       => 'slider1',
+            'filter_enabled'           => 'off',
+            'gs_logo_filter_type'      => 'normal-filter',
+            'gs_logo_pagination'       => 'off',
+            'pagination_type'          => 'normal-pagination',
+            'initial_items'            => 6,
+            'logo_per_page'            => 6,
+            'load_per_click'           => 3,
+            'per_load'                 => 3,
+            'load_button_text'         => __('Load More', 'gslogo'),
+            'gs_l_s2_border_thickness' => '50',
+            'gs_l_s2_gradient_start'   => '#003729',
+            'gs_l_s2_gradient_end'     => '#1f9e74',
+            'gs_l_rb_border'           => '1px,solid,#000000',
+            'gs_l_rb_border_radius'    => '10,10,10,10',
+            'gs_l_rb_hover_shadow_color' => '#1d202f',
+            'gs_l_rb_hover_shadow_control' => '6,6,15,0',
             'image_size'               => 'medium',
             'custom_image_size_width'  => '',
             'custom_image_size_height' => '',
@@ -1070,7 +1445,8 @@ final class Builder {
             'gs_l_clkable'             => '_blank',
             'gs_l_is_autop'            => 'on',
             'gs_reverse_direction'     => 'off',
-            'gs_l_gray'                => 'default',
+            'image_filter'             => 'none',
+            'hover_image_filter'       => 'none',
             'gs_l_align'               => 'center',
             'gs_l_margin'              => 10,
             'gs_l_min_logo'            => 5,
@@ -1080,6 +1456,13 @@ final class Builder {
             'gs_logo_filter_name'      => 'All',
             'gs_logo_filter_align'     => 'center',
             'show_cat'                 => 'off',
+            'gs_l_show_content'        => 'off',
+            'gs_l_content_limit_count' => 80,
+            'gs_l_content_limit_type'  => 'chars',
+            'gs_l_show_excerpt'        => 'off',
+            'gs_l_excerpt_limit_count' => 20,
+            'gs_l_excerpt_limit_type'  => 'words',
+            'gs_l_read_more_text'      => __('Read More', 'gslogo'),
             'row_heading_image'        => 'Image',
             'row_heading_name'         => 'Name',
             'row_heading_desc'         => 'Description',
@@ -1225,4 +1608,52 @@ final class Builder {
         wp_cache_delete( 'gs_logo_shortcodes', 'gs_logo_slider' );
 
     }
+
+    public function maybe_upgrade_data( $old_version ){
+        if ( version_compare( $old_version, '3.7.5' ) < 0 ) $this->upgrade_to_3_7_5();
+    }
+
+    public function upgrade_to_3_7_5() {
+        $shortcodes = $this->_get_shortcodes( null, false );
+
+        if ( ! $shortcodes || ! is_array( $shortcodes ) || ! count( $shortcodes ) ) return;
+
+        foreach ( $shortcodes as $shortcode ) {
+
+            $shortcode_id       = $shortcode['id'];
+            $shortcode_settings = json_decode( $shortcode["shortcode_settings"], true );
+            $gs_l_gray          = isset($shortcode_settings['gs_l_gray']) ? $shortcode_settings['gs_l_gray'] : '';
+
+            if( 'default' === $gs_l_gray || '' === $gs_l_gray ){
+                $shortcode_settings['image_filter'] = 'none';
+                $shortcode_settings['hover_image_filter'] = 'none';
+            } else if ( 'gray' === $gs_l_gray ){
+                $shortcode_settings['image_filter'] = 'grayscale';
+                $shortcode_settings['hover_image_filter'] = 'grayscale';
+            } else if ( 'gray_to_def' === $gs_l_gray ){
+                $shortcode_settings['image_filter'] = 'grayscale';
+                $shortcode_settings['hover_image_filter'] = 'none';
+            } else if ( 'def_to_gray' === $gs_l_gray ){
+                $shortcode_settings['image_filter'] = 'none';
+                $shortcode_settings['hover_image_filter'] = 'grayscale';
+            } else {
+                $shortcode_settings['image_filter'] = 'none';
+                $shortcode_settings['hover_image_filter'] = 'none';
+            }
+
+            $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+    
+            $wpdb = $this->get_wpdb();
+        
+            $data = array(
+                "shortcode_name" 	    => $shortcode['shortcode_name'],
+                "shortcode_settings" 	=> json_encode($shortcode_settings),
+                "updated_at" 		    => current_time( 'mysql')
+            );
+        
+            $num_row_updated = $wpdb->update( "{$wpdb->prefix}gs_logo_slider" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_shortcode_db_columns() );
+        }
+
+    }
+
 }

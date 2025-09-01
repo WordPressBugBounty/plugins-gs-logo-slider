@@ -16,6 +16,10 @@ $routes = [
 	[
 		'slug'  => '/demo-data',
 		'title' => __( 'Demo Data', 'gslogo' )
+	],
+	[
+		'slug'  => '/import-export',
+		'title' => __( 'Import Export', 'gslogo' )
 	]
 ];
 

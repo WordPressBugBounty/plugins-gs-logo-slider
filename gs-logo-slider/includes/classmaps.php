@@ -12,5 +12,6 @@ return array(
     'Shortcode'       => 'includes/shortcode.php',
     'Template_Loader' => 'includes/template-loader.php',
     'Integrations'    => 'includes/integrations/integrations.php',
-    'Builder'         => 'includes/shortcode-builder/builder.php'
+    'Builder'         => 'includes/shortcode-builder/builder.php',
+    'Import_Export'   => 'includes/import-export.php'
 );

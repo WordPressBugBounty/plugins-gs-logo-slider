@@ -38,7 +38,13 @@ global $gs_logo_loop;
 
 				<!-- Logo Details -->
 				<div class="gs-logos-table-cell gsc-desc">
-					<?php include Template_Loader::locate_template( 'partials/gs-logo-layout-details.php' ); ?>
+					<?php
+						if( is_pro_active() && is_gs_logo_pro_valid() ) {
+							include Template_Loader::locate_template( 'partials/gs-logo-layout-details-2.php' );
+						} else {
+							include Template_Loader::locate_template( 'partials/gs-logo-layout-details.php' );
+						}
+					?>
 				</div>
 
 			</div>

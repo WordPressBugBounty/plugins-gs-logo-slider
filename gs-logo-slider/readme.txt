@@ -3,9 +3,9 @@ Contributors: gsplugins, itszaman, samdani, itsariful
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, client logo
 Requires at least: 4.3
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 3.7.4
+Stable tag: 3.7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -327,6 +327,29 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.7.5 [1st Sep 2025] =
+* [Added]: Sort Order Menu at the Free Plan.
+* [Added]: Image filter & Image Filter Hover Control.
+* [Added]: New Meta Field - 'Logo Expire At'.
+* [Added]: Logo Title Tag Selector. (H1-H5, Span, Div, or P).
+* [Added]: New Theme - Rounded Border, Horizontal Scroll, 3D Circular, Shape 1 & 2.
+* [Added]: Restrict users from publishing logos without a title.
+* [Added]: Logo content, excerpt control with control (Grid 1, List 1 & Table 1 theme)
+* [Added]: Tooltip controls (position, bg gradient color, and text color)
+* [Added]: Logos Export Import Feature.
+* [Added]: Filter Pagination.
+* [Added]: Import demo automatically on activation.
+* [Added]: Input-Quad Component.
+* [Added]: Border radius & Shadow control with all of the properties.
+* [Added]: Input Border component and implemented in the Rounded border theme.
+* [Added]: Control to show/hide the "All" filter button and set the first category as active.
+* [Added]: Category filter order & order by selector.
+* [Fixed]: Flatpickr Script loading Issue.
+* [Updated]: Shortcode settings page layout improvement.
+* [Removed]: Logo Style from Settings.
+* [Removed]: Unnecessary functions for the free version.
+* [Removed]: Demo Import Notice.
+
 = Version 3.7.4 [16th Mar 2025] =
 * [Fixed]: Unauthenticated Arbitrary Shortcode Execution.
 
@@ -665,6 +688,29 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade notice ==
+= Version 3.7.5 [1st Sep 2025] =
+* [Added]: Sort Order Menu at the Free Plan.
+* [Added]: Image filter & Image Filter Hover Control.
+* [Added]: New Meta Field - 'Logo Expire At'.
+* [Added]: Logo Title Tag Selector. (H1-H5, Span, Div, or P).
+* [Added]: New Theme - Rounded Border, Horizontal Scroll, 3D Circular, Shape 1 & 2.
+* [Added]: Restrict users from publishing logos without a title.
+* [Added]: Logo content, excerpt control with control (Grid 1, List 1 & Table 1 theme)
+* [Added]: Tooltip controls (position, bg gradient color, and text color)
+* [Added]: Logos Export Import Feature.
+* [Added]: Filter Pagination.
+* [Added]: Import demo automatically on activation.
+* [Added]: Input-Quad Component.
+* [Added]: Border radius & Shadow control with all of the properties.
+* [Added]: Input Border component and implemented in the Rounded border theme.
+* [Added]: Control to show/hide the "All" filter button and set the first category as active.
+* [Added]: Category filter order & order by selector.
+* [Fixed]: Flatpickr Script loading Issue.
+* [Updated]: Shortcode settings page layout improvement.
+* [Removed]: Logo Style from Settings.
+* [Removed]: Unnecessary functions for the free version.
+* [Removed]: Demo Import Notice.
+
 = Version 3.7.4 [16th Mar 2025] =
 * [Fixed]: Unauthenticated Arbitrary Shortcode Execution.
 

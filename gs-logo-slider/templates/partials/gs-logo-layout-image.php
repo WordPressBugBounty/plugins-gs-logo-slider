@@ -26,7 +26,14 @@ $disable_lazy_load = gs_get_option( 'disable_lazy_load', 'off' );
 $lazy_load_class = gs_get_option( 'lazy_load_class', 'skip-lazy' );
 
 $tooltip_class = $tooltip == 'on' ? 'gs_logo--tooltip' : '';
-$logo_img_classes = [$logo_color, $tooltip_class, 'gs-logo--img'];
+
+$gs_tooltip_bgcolor_one = urlencode( $gs_l_tooltip_bgcolor_one );
+$gs_tooltip_bgcolor_two = urlencode( $gs_l_tooltip_bgcolor_two );
+$gs_tooltip_textcolor = urlencode( $gs_l_tooltip_textcolor );
+
+$tooltip_styles = "tt-placement-$gs_l_tooltip_placement tt-bgcolor-one-$gs_tooltip_bgcolor_one tt-bgcolor-two-$gs_tooltip_bgcolor_two tt-textcolor-$gs_tooltip_textcolor";
+
+$logo_img_classes = [$tooltip_class, $tooltip_styles, 'gs-logo--img'];
 
 if ( $disable_lazy_load == 'on' && !empty($lazy_load_class) ) {
     $logo_img_classes[] = $lazy_load_class;

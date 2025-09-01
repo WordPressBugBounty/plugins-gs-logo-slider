@@ -27,6 +27,8 @@ class Plugin {
     public $integrations;
     public $template_loader;
 
+    public $import_export;
+
     public function __construct() {
 
         
@@ -40,6 +42,7 @@ class Plugin {
         $this->builder         = new Builder;
         $this->integrations    = new Integrations;
         $this->template_loader = new Template_Loader;
+        $this->import_export   = new Import_Export;
         
         require_once GSL_PLUGIN_DIR . 'includes/asset-generator/gs-load-assets-generator.php';
         require_once GSL_PLUGIN_DIR . 'includes/gs-common-pages/gs-logo-common-pages.php';

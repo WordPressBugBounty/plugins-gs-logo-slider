@@ -26,6 +26,14 @@ add_action('plugins_loaded', function() {
          * Load Main Plugin
          */
         require_once GSL_PLUGIN_DIR . 'includes/plugin.php';
+
+        /**
+         * Load Sortable Class
+         * This class is used to make the logos sortable
+         */
+        if ( is_admin() ) {
+            require_once GSL_PLUGIN_DIR . 'includes/sortable.php';
+        }
     }
     
     /**

@@ -13,7 +13,7 @@ namespace GSLOGO;
 
 if ( $title == "on" ) {
     $allowed_tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
-    $logo_title_tag = (string) apply_filters( 'gs_logo_title_tag', 'h3' );
+    $logo_title_tag = (string) apply_filters( 'gs_logo_title_tag', $title_tag );
     
     if ( ! in_array( $logo_title_tag, $allowed_tags ) ) {
         $logo_title_tag = 'h3';

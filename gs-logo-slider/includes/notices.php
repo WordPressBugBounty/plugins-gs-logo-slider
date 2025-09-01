@@ -19,6 +19,13 @@ class Notices {
         $maybe_later        = get_site_option('gslogo_maybe_later');
 
         if ('yes' == $review_dismissal) {
+
+            // Set 'gslogo_review_dismiss' to 'no' after 6 months of review dismissal
+            $timestamp_plus_6_months = $activation_time + (6 * 30 * 24 * 60 * 60); // 6 months in seconds
+            if (time() > $timestamp_plus_6_months) {
+                update_site_option('gslogo_review_dismiss', 'no');
+            }
+
             return;
         }
 
@@ -26,14 +33,16 @@ class Notices {
             add_site_option('gslogo_active_time', time());
         }
 
-        $daysinseconds = 259200; // 3 Days in seconds.
+        $daysinseconds = 604800; // 7 Days in seconds.
 
         if ('yes' == $maybe_later) {
-            $daysinseconds = 604800; // 7 Days in seconds.
+            $daysinseconds = 1296000; // 15 Days in seconds.
         }
 
         if (time() - $activation_time > $daysinseconds) {
-            add_action('admin_notices', [$this, 'gslogo_review_notice_message']);
+            if ($activation_time !== false && $activation_time !== null) {
+                add_action('admin_notices', [$this, 'gslogo_review_notice_message']);
+            }
             // delete_user_meta($userId, 'terms_and_conditions');
         }
     }
@@ -210,6 +219,13 @@ class Notices {
     }
 
     public function gslogo_admin_notice() {
+
+        $activation_time = get_site_option('gslogo_active_time');
+
+        if (!$activation_time || (time() - $activation_time) < 2 * DAY_IN_SECONDS) {
+            return;
+        }
+
         if (current_user_can('install_plugins')) {
             global $current_user;
             $user_id = $current_user->ID;
@@ -217,7 +233,7 @@ class Notices {
             if (!get_user_meta($user_id, 'gslogo_ignore_notice279')) {
                 echo '<div class="gslogo-admin-notice updated" style="display: flex; align-items: center; padding-left: 0; border-left-color: #EF4B53"><p style="width: 32px; padding-left: 8px; padding-right: 6px;">';
                 echo '<img style="width: 100%; display: block;"  src="' . GSL_PLUGIN_URI . 'assets/img/gsl.png' . '" ></p><p> ';
-                printf(__('<strong>GS Logo Slider</strong> now powering <strong>20,000+</strong> websites. Use the coupon code <strong>CELEBRATE20K</strong> to redeem a <strong>25&#37; </strong> discount on Pro. <a href="https://www.gsplugins.com/product/gs-logo-slider" target="_blank" style="text-decoration: none;"><span class="dashicons dashicons-smiley" style="margin-left: 10px;"></span> Apply Coupon</a>
+                printf(__('<strong>GS Logo Slider</strong> now powering <strong>30,000+</strong> websites. Use the coupon code <strong>CELEBRATE30K</strong> to redeem a <strong>25&#37; </strong> discount on Pro. <a href="https://www.gsplugins.com/product/gs-logo-slider" target="_blank" style="text-decoration: none;"><span class="dashicons dashicons-smiley" style="margin-left: 10px;"></span> Apply Coupon</a>
                     <a href="%1$s" style="text-decoration: none; margin-left: 10px;"><span class="dashicons dashicons-dismiss"></span> I\'m good with free version</a>'),  admin_url('edit.php?post_type=gs-logo-slider&page=gs-logo-shortcode&gslogo_nag_ignore=0'));
                 echo "</p></div>";
             }

@@ -35,12 +35,25 @@ final class Scripts {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
+		add_action( 'gs_logo__add_assets', array($this, 'add_sort_assets') );
 		add_action( 'plugins_loaded', [ $this, 'add_assets' ], 20 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_scripts' ], 9999 );
 		add_action( 'admin_head', [ $this, 'print_plugin_icon_css' ] );
 
 		return $this;
+	}
+
+	/**
+	 * Adding assets on the $this->styles[] array for sorting.
+	 *
+	 * @since 1.0.0
+	 */
+
+	public function add_sort_assets( $gs_logo_scripts ) {
+				        
+        $gs_logo_scripts->add_style( 'gs-logo-sort', GSL_PLUGIN_URI . 'assets/admin/css/gs-logo-sort.min.css', [], GSL_VERSION );
+        $gs_logo_scripts->add_script( 'gs-logo-sort', GSL_PLUGIN_URI . 'assets/admin/js/gs-logo-sort.min.js', ['jquery', 'jquery-ui-sortable'], GSL_VERSION, true );
 	}
 
 	/**
@@ -54,11 +67,13 @@ final class Scripts {
 		$this->add_style( 'gs-bootstrap-grid', GSL_PLUGIN_URI . 'assets/libs/bootstrap-grid/bootstrap-grid.min.css', [], GSL_VERSION );
 		$this->add_style( 'gs-swiper', GSL_PLUGIN_URI . 'assets/libs/swiper-js/swiper.min.css', [], GSL_VERSION );
 		$this->add_style( 'gs-tippyjs', GSL_PLUGIN_URI . 'assets/libs/tippyjs/tippy.css', [], GSL_VERSION );
+		$this->add_style( 'gs-logo-admin', GSL_PLUGIN_URI . 'assets/admin/css/gs-plugins-free.min.css', [], GSL_VERSION );
 		
 		// Scripts
 		$this->add_script( 'gs-swiper', GSL_PLUGIN_URI . 'assets/libs/swiper-js/swiper.min.js', ['jquery'], GSL_VERSION, true );
 		$this->add_script( 'gs-images-loaded', GSL_PLUGIN_URI . 'assets/libs/images-loaded/images-loaded.min.js', ['jquery'], GSL_VERSION, true );
 		$this->add_script( 'gs-tippyjs', GSL_PLUGIN_URI . 'assets/libs/tippyjs/tippy-bundle.umd.min.js', [], GSL_VERSION, true );
+		$this->add_script( 'gs-logo-admin', GSL_PLUGIN_URI . 'assets/admin/js/gs-logo-admin.min.js', ['jquery'], GSL_VERSION );
 		
 		if ( ! is_pro_active() || ! is_plugin_loaded() ) {
 			$this->add_style( 'gs-logo-public', GSL_PLUGIN_URI . 'assets/css/gs-logo.min.css', [], GSL_VERSION );
@@ -339,14 +354,33 @@ final class Scripts {
 	}
 
 	public function enqueue_admin_scripts( $hook ) {
+		
+		global $post;
+		$load_script = false;
 
-		if ( $hook != 'gs-logo-slider_page_gs-logo-shortcode' ) return;
+		// Allow scripts loading in new gs-logo-slider page
+		if ( $hook == 'post-new.php' && $_GET['post_type'] == 'gs-logo-slider' ) $load_script = true;
+
+		// Allow scripts loading in gs-logo-slider edit page
+		if ($hook == 'post.php' && $post->post_type == 'gs-logo-slider') $load_script = true;
+
+		if ( $hook == 'gs-logo-slider_page_gs-logo-shortcode' ) $load_script = true;
+
+		if ( !$load_script ) return;
 		
 		// Register Styles
 		$this->wp_register_style_all( 'admin' );
 
 		// Register Scripts
 		$this->wp_register_script_all( 'admin' );
+
+		// Enqueue Admin Style
+		$this->wp_enqueue_style( 'gs-logo-admin' );
+
+		// Enqueue Admin Script
+		$this->wp_enqueue_script( 'gs-logo-admin' );
+
+		wp_localize_script( 'gs-logo-admin', '_gslogo_admin_data', array( 'is_pro_active' => wp_validate_boolean( is_pro_active() ) ) );
 	
 	}
 

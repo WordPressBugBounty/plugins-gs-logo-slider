@@ -26,7 +26,9 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 		
 		$selectors = [];
 
-		if ( empty($targets) ) return;
+		if ( ! empty($targets) ) {
+			if ( gettype($targets) !== 'array' ) $targets = [$targets];
+		}
 
 		if ( gettype($targets) !== 'array' ) $targets = [$targets];
 
@@ -34,7 +36,11 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 			foreach ( $targets as $target ) $selectors[] = $selector_divi . $target;
 		}
 
-		foreach ( $targets as $target ) $selectors[] = $selector . $target;
+		if ( empty($targets) ) {
+			$selectors[] = $selector;
+		} else {
+			foreach ( $targets as $target ) $selectors[] = $selector . $target;
+		}
 
 		echo wp_strip_all_tags( sprintf( '%s{%s:%s}', join(',', $selectors), $prop, $value ) );
 
@@ -77,6 +83,51 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 			echo "}";
 		}
 
+		if( 'rounded-border' === $settings['gs_l_theme'] ){
+
+			$border = str_replace(",", " ", $settings['gs_l_rb_border']);
+
+			$border_radius = !empty($settings['gs_l_rb_border_radius']) ? $settings['gs_l_rb_border_radius'] : '10,10,10,10';
+			$border_radius = explode( ',', $border_radius );
+			$border_radius = array_map(function( $value ){
+				$value = trim($value);
+				if ( is_numeric($value) ) {
+					return $value . 'px';
+				} elseif ( strpos($value, 'px') !== false || strpos($value, '%') !== false ) {
+					return $value;
+				}
+				return '20px'; // Default value if not valid
+			}, $border_radius );
+			$border_radius = implode( ' ', $border_radius );
+			
+			$hover_shadow_color = !empty($settings['gs_l_rb_hover_shadow_color']) ? $settings['gs_l_rb_hover_shadow_color'] : '#1d202f';
+
+			$hover_shadow_control = !empty($settings['gs_l_rb_hover_shadow_control']) ? $settings['gs_l_rb_hover_shadow_control'] : '6,6,15,0';
+			$hover_shadow_control = explode( ',', $hover_shadow_control );
+			$hover_shadow_control = array_map(function( $value ){
+				$value = trim($value);
+				if ( is_numeric($value) ) {
+					return $value . 'px';
+				} elseif ( strpos($value, 'px') !== false || strpos($value, '%') !== false ) {
+					return $value;
+				}
+				return '20px'; // Default value if not valid
+			}, $hover_shadow_control );
+			$hover_shadow_control = implode( ' ', $hover_shadow_control );
+
+			$hover_shadow = $hover_shadow_control . ' ' . $hover_shadow_color;
+
+			$this->generateStyle( $selector, $selector_divi,  ' .gs_logo_single', 'border', $border );
+			$this->generateStyle( $selector, $selector_divi,  ' .gs_logo_single', 'border-radius', $border_radius );
+			$this->generateStyle( $selector, $selector_divi,  ' .gs_logo_single:hover', 'box-shadow', $hover_shadow );
+		}
+
+		if( 'shape-2' === $settings['gs_l_theme'] ){
+			$this->generateStyle( $selector, $selector_divi,  '', '--gs-s2-border-thickness', $settings['gs_l_s2_border_thickness'] . 'px' );
+			$this->generateStyle( $selector, $selector_divi,  '', '--gs-s2-gradient-start', $settings['gs_l_s2_gradient_start'] );
+			$this->generateStyle( $selector, $selector_divi,  '', '--gs-s2-gradient-end', $settings['gs_l_s2_gradient_end'] );
+		}
+
 		return ob_get_clean();
 	}
 
@@ -112,6 +163,12 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 
 	}
 
+	public function enqueue_localize_script(){
+		$ajax_url = admin_url('admin-ajax.php');
+		$nonce = wp_create_nonce('gslogo_user_action');
+		wp_localize_script( 'gs-logo-public', 'GSLogoData', array( 'ajaxUrl' => $ajax_url, 'nonce' => $nonce ) );
+	}
+
 	public function enqueue_plugin_assets( $main_post_id, $assets = [] ) {
 
 		if ( empty($assets) || empty($assets['styles']) || empty($assets['scripts']) ) return;
@@ -134,6 +191,8 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 
 		wp_enqueue_style( 'gs-logo-public' );
 		wp_enqueue_script( 'gs-logo-public' );
+
+		$this->enqueue_localize_script();
 
 		if ( is_divi_active() ) {
 			wp_enqueue_style( 'gs-logo-divi-public' );
@@ -159,6 +218,8 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 
 		plugin()->scripts->wp_enqueue_style_all( 'public', $exclude );
 		plugin()->scripts->wp_enqueue_script_all( 'public' );
+
+		$this->enqueue_localize_script();
 
 		// Shortcode Generated CSS
 		$css = $this->get_shortcode_custom_css( $settings );

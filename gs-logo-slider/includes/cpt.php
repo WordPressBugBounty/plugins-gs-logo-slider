@@ -60,32 +60,35 @@ class Cpt {
 	
 	function gs_logo_category() {
 	
-		$labels = array(
-			'name'                       => _x( 'Logo Categories', 'Taxonomy General Name', 'gslogo' ),
-			'singular_name'              => _x( 'Logo Category', 'Taxonomy Singular Name', 'gslogo' ),
-			'menu_name'                  => __( 'Logo Category', 'gslogo' ),
-			'all_items'                  => __( 'All Logo Category', 'gslogo' ),
-			'parent_item'                => __( 'Parent Logo Category', 'gslogo' ),
-			'parent_item_colon'          => __( 'Parent Logo Category:', 'gslogo' ),
-			'new_item_name'              => __( 'New Logo Category', 'gslogo' ),
-			'add_new_item'               => __( 'Add New Logo Category', 'gslogo' ),
-			'edit_item'                  => __( 'Edit Logo Category', 'gslogo' ),
-			'update_item'                => __( 'Update Logo Category', 'gslogo' ),
-			'separate_items_with_commas' => __( 'Separate Logo Category with commas', 'gslogo' ),
-			'search_items'               => __( 'Search Logo Category', 'gslogo' ),
-			'add_or_remove_items'        => __( 'Add or remove Logo Category', 'gslogo' ),
-			'choose_from_most_used'      => __( 'Choose from the most used Logo categories', 'gslogo' ),
-			'not_found'                  => __( 'Not Found', 'gslogo' ),
-		);
-		$args = array(
-			'labels'                     => $labels,
-			'hierarchical'               => true,
-			'public'                     => false,
-			'show_ui'                    => true,
-			'show_admin_column'          => true,
-			'show_tagcloud'              => false,
-		);
-		register_taxonomy( 'logo-category', array( 'gs-logo-slider' ), $args );
+		if( ! taxonomy_exists( 'logo-category' ) ) {
+
+			$labels = array(
+				'name'                       => _x( 'Logo Categories', 'Taxonomy General Name', 'gslogo' ),
+				'singular_name'              => _x( 'Logo Category', 'Taxonomy Singular Name', 'gslogo' ),
+				'menu_name'                  => __( 'Logo Category', 'gslogo' ),
+				'all_items'                  => __( 'All Logo Category', 'gslogo' ),
+				'parent_item'                => __( 'Parent Logo Category', 'gslogo' ),
+				'parent_item_colon'          => __( 'Parent Logo Category:', 'gslogo' ),
+				'new_item_name'              => __( 'New Logo Category', 'gslogo' ),
+				'add_new_item'               => __( 'Add New Logo Category', 'gslogo' ),
+				'edit_item'                  => __( 'Edit Logo Category', 'gslogo' ),
+				'update_item'                => __( 'Update Logo Category', 'gslogo' ),
+				'separate_items_with_commas' => __( 'Separate Logo Category with commas', 'gslogo' ),
+				'search_items'               => __( 'Search Logo Category', 'gslogo' ),
+				'add_or_remove_items'        => __( 'Add or remove Logo Category', 'gslogo' ),
+				'choose_from_most_used'      => __( 'Choose from the most used Logo categories', 'gslogo' ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			);
+			register_taxonomy( 'logo-category', array( 'gs-logo-slider' ), $args );
+		}
 	
 	}	
 	

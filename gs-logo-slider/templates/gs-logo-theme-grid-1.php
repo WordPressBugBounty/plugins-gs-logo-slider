@@ -15,13 +15,17 @@ global $gs_logo_loop;
 
 ?>
 
-<div class="gs_logo_container gs_logo_container_grid gs_logo_fix_height_and_center" style="justify-content:<?php echo esc_attr($gs_l_align); ?>">
+<div class="gs_logo_container gs_logo_container_grid gs_logo_fix_height_and_center <?php echo ( $filter_enabled === 'on' ) ? 'gs-logos-filter-wrapper' : '' ?>" style="justify-content:<?php echo esc_attr($gs_l_align); ?>">
 
 	<?php if ( $gs_logo_loop->have_posts() ) : ?>
 
 		<?php while ( $gs_logo_loop->have_posts() ) : $gs_logo_loop->the_post(); ?>
 
-			<div class="gs_logo_single--wrapper">
+			<?php
+				$single_wrapper_filter_classes = 'gs-filter-single-item ' . \GSLOGO\get_item_terms_slugs( 'logo-category', ' ' );
+			?>
+
+			<div class="gs_logo_single--wrapper <?php echo ( $filter_enabled === 'on' ) ? esc_attr( $single_wrapper_filter_classes ) : '' ?>">
 				<div class="gs_logo_single">
 					
 					<!-- Logo Image -->
@@ -32,6 +36,9 @@ global $gs_logo_loop;
 
 					<!-- Logo Category -->
 					<?php include Template_Loader::locate_template( 'partials/gs-logo-layout-cat.php' ); ?>
+
+					<!-- Logo Details -->
+					<?php include Template_Loader::locate_template( 'partials/gs-logo-layout-details-2.php' ); ?>
 
 				</div>
 			</div>
