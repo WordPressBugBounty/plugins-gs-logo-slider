@@ -942,12 +942,8 @@ final class Builder {
                 'value' => '3d-circular-slider'
             ],
             [
-                'label' => __( 'Shape - 1', 'gslogo' ),
-                'value' => 'shape-1'
-            ],
-            [
-                'label' => __( 'Shape - 2', 'gslogo' ),
-                'value' => 'shape-2'
+                'label' => __( 'Hexagon', 'gslogo' ),
+                'value' => 'hexagon'
             ]
         ];
 

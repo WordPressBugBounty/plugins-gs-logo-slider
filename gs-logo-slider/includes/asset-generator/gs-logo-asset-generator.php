@@ -122,10 +122,10 @@ class GS_Logo_Asset_Generator extends GS_Asset_Generator_Base {
 			$this->generateStyle( $selector, $selector_divi,  ' .gs_logo_single:hover', 'box-shadow', $hover_shadow );
 		}
 
-		if( 'shape-2' === $settings['gs_l_theme'] ){
-			$this->generateStyle( $selector, $selector_divi,  '', '--gs-s2-border-thickness', $settings['gs_l_s2_border_thickness'] . 'px' );
-			$this->generateStyle( $selector, $selector_divi,  '', '--gs-s2-gradient-start', $settings['gs_l_s2_gradient_start'] );
-			$this->generateStyle( $selector, $selector_divi,  '', '--gs-s2-gradient-end', $settings['gs_l_s2_gradient_end'] );
+		if( 'hexagon' === $settings['gs_l_theme'] ){
+			$this->generateStyle( $selector, $selector_divi,  '', '--gs-hexagon-border-thickness', $settings['gs_l_s2_border_thickness'] . 'px' );
+			$this->generateStyle( $selector, $selector_divi,  '', '--gs-hexagon-gradient-start', $settings['gs_l_s2_gradient_start'] );
+			$this->generateStyle( $selector, $selector_divi,  '', '--gs-hexagon-gradient-end', $settings['gs_l_s2_gradient_end'] );
 		}
 
 		return ob_get_clean();

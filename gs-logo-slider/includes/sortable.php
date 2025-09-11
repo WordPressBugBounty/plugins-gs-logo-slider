@@ -355,7 +355,7 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 							</ol>
 		
 							<ul>
-								<li>Follow <a href="https://docs.gsplugins.com/gs-logo-slider/manage-the-logos/sort-order/" target="_blank">Documentation</a> to learn more.</li>
+								<li>Follow <a href="https://docs.gsplugins.com/gs-logo-slider/manage-the-logos/sort-order/#reordering-groups-categories" target="_blank">Documentation</a> to learn more.</li>
 								<li><a href="https://www.gsplugins.com/contact/" target="_blank">Contact us</a> for support.</li>
 							</ul>
 

@@ -19,13 +19,6 @@ class Notices {
         $maybe_later        = get_site_option('gslogo_maybe_later');
 
         if ('yes' == $review_dismissal) {
-
-            // Set 'gslogo_review_dismiss' to 'no' after 6 months of review dismissal
-            $timestamp_plus_6_months = $activation_time + (6 * 30 * 24 * 60 * 60); // 6 months in seconds
-            if (time() > $timestamp_plus_6_months) {
-                update_site_option('gslogo_review_dismiss', 'no');
-            }
-
             return;
         }
 

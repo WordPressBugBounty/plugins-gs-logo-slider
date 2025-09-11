@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 3.7.5
+Stable tag: 3.7.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -327,12 +327,15 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.7.6 [11th Sep 2025] =
+* [Updated]: Category Reorder Documentation Link.
+
 = Version 3.7.5 [1st Sep 2025] =
 * [Added]: Sort Order Menu at the Free Plan.
 * [Added]: Image filter & Image Filter Hover Control.
 * [Added]: New Meta Field - 'Logo Expire At'.
 * [Added]: Logo Title Tag Selector. (H1-H5, Span, Div, or P).
-* [Added]: New Theme - Rounded Border, Horizontal Scroll, 3D Circular, Shape 1 & 2.
+* [Added]: New Theme - Rounded Border, Horizontal Scroll, 3D Circular, Hexagon.
 * [Added]: Restrict users from publishing logos without a title.
 * [Added]: Logo content, excerpt control with control (Grid 1, List 1 & Table 1 theme)
 * [Added]: Tooltip controls (position, bg gradient color, and text color)
@@ -688,12 +691,15 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade notice ==
+= Version 3.7.6 [11th Sep 2025] =
+* [Updated]: Category Reorder Documentation Link.
+
 = Version 3.7.5 [1st Sep 2025] =
 * [Added]: Sort Order Menu at the Free Plan.
 * [Added]: Image filter & Image Filter Hover Control.
 * [Added]: New Meta Field - 'Logo Expire At'.
 * [Added]: Logo Title Tag Selector. (H1-H5, Span, Div, or P).
-* [Added]: New Theme - Rounded Border, Horizontal Scroll, 3D Circular, Shape 1 & 2.
+* [Added]: New Theme - Rounded Border, Horizontal Scroll, 3D Circular, Hexagon.
 * [Added]: Restrict users from publishing logos without a title.
 * [Added]: Logo content, excerpt control with control (Grid 1, List 1 & Table 1 theme)
 * [Added]: Tooltip controls (position, bg gradient color, and text color)
