@@ -216,31 +216,31 @@ msgstr ""
 msgid "Remove Image"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:71, ../includes/notices.php:64
+#: ../build/gs-logo-slider/includes/notices.php:64
 msgid "Leave A Review?"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:72, ../includes/notices.php:65
+#: ../build/gs-logo-slider/includes/notices.php:65
 msgid "We hope you've enjoyed using <b>GS Logo Slider</b>! Would you consider leaving us a review on WordPress.org?"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:77, ../includes/notices.php:70
+#: ../build/gs-logo-slider/includes/notices.php:70
 msgid "Sure! I'd love to!"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:83, ../includes/notices.php:76
+#: ../build/gs-logo-slider/includes/notices.php:76
 msgid "I've already left a review"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:89, ../includes/notices.php:82
+#: ../build/gs-logo-slider/includes/notices.php:82
 msgid "Maybe Later"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:95, ../includes/notices.php:88
+#: ../build/gs-logo-slider/includes/notices.php:88
 msgid "I need help!"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/notices.php:101, ../includes/notices.php:94
+#: ../build/gs-logo-slider/includes/notices.php:94
 msgid "Never show again"
 msgstr ""
 
@@ -1242,275 +1242,271 @@ msgstr ""
 msgid "3D Circular Slider"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:945
-msgid "Shape - 1"
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:945, ../includes/shortcode-builder/builder.php:945
+msgid "Hexagon"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:949
-msgid "Shape - 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:969, ../includes/shortcode-builder/builder.php:965
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:965, ../includes/shortcode-builder/builder.php:965
 msgid "Normal Pagination"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:976, ../includes/shortcode-builder/builder.php:972
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:972, ../includes/shortcode-builder/builder.php:972
 msgid "AJAX Pagination"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:980, ../includes/shortcode-builder/builder.php:976
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:976, ../includes/shortcode-builder/builder.php:976
 msgid "Load More Button"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:984, ../includes/shortcode-builder/builder.php:980
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:980, ../includes/shortcode-builder/builder.php:980
 msgid "Load More On Scroll"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1015, ../includes/shortcode-builder/builder.php:1011
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1011, ../includes/shortcode-builder/builder.php:1011
 msgid "Set Custom Size"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1027, ../includes/shortcode-builder/builder.php:1023
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1023, ../includes/shortcode-builder/builder.php:1023
 msgid "None"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1034, ../includes/shortcode-builder/builder.php:1030
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1030, ../includes/shortcode-builder/builder.php:1030
 msgid "Blur"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1038, ../includes/shortcode-builder/builder.php:1034
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1034, ../includes/shortcode-builder/builder.php:1034
 msgid "Brightness"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1042, ../includes/shortcode-builder/builder.php:1038
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1038, ../includes/shortcode-builder/builder.php:1038
 msgid "Contrast"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1046, ../includes/shortcode-builder/builder.php:1042
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1042, ../includes/shortcode-builder/builder.php:1042
 msgid "Grayscale"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1050, ../includes/shortcode-builder/builder.php:1046
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1046, ../includes/shortcode-builder/builder.php:1046
 msgid "Hue Rotate"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1054, ../includes/shortcode-builder/builder.php:1050
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1050, ../includes/shortcode-builder/builder.php:1050
 msgid "Invert"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1058, ../includes/shortcode-builder/builder.php:1054
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1054, ../includes/shortcode-builder/builder.php:1054
 msgid "Opacity"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1062, ../includes/shortcode-builder/builder.php:1058
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1058, ../includes/shortcode-builder/builder.php:1058
 msgid "Saturate"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1066, ../includes/shortcode-builder/builder.php:1062
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1062, ../includes/shortcode-builder/builder.php:1062
 msgid "Sepia"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1088, ../includes/shortcode-builder/builder.php:1084
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1084, ../includes/shortcode-builder/builder.php:1084
 msgid "New Tab"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1092, ../includes/shortcode-builder/builder.php:1088
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1088, ../includes/shortcode-builder/builder.php:1088
 msgid "Same Window"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1099, ../includes/shortcode-builder/builder.php:1095
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1095, ../includes/shortcode-builder/builder.php:1095
 msgid "Hard Crop"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1103, ../includes/shortcode-builder/builder.php:1099
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1099, ../includes/shortcode-builder/builder.php:1099
 msgid "Soft Crop"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1110, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1219, ../includes/shortcode-builder/builder.php:1106, ../includes/shortcode-builder/builder.php:1215
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1106, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1215, ../includes/shortcode-builder/builder.php:1106, ../includes/shortcode-builder/builder.php:1215
 msgid "Bottom"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1114, ../includes/shortcode-builder/builder.php:1110
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1110, ../includes/shortcode-builder/builder.php:1110
 msgid "Left Right"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1118, ../includes/shortcode-builder/builder.php:1114
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1114, ../includes/shortcode-builder/builder.php:1114
 msgid "Left Right Outside"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1125, ../includes/shortcode-builder/builder.php:1121
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1121, ../includes/shortcode-builder/builder.php:1121
 msgid "H1"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1129, ../includes/shortcode-builder/builder.php:1125
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1125, ../includes/shortcode-builder/builder.php:1125
 msgid "H2"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1133, ../includes/shortcode-builder/builder.php:1129
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1129, ../includes/shortcode-builder/builder.php:1129
 msgid "H3"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1137, ../includes/shortcode-builder/builder.php:1133
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1133, ../includes/shortcode-builder/builder.php:1133
 msgid "H4"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1141, ../includes/shortcode-builder/builder.php:1137
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1137, ../includes/shortcode-builder/builder.php:1137
 msgid "H5"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1145, ../includes/shortcode-builder/builder.php:1141
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1141, ../includes/shortcode-builder/builder.php:1141
 msgid "H6"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1149, ../includes/shortcode-builder/builder.php:1145
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1145, ../includes/shortcode-builder/builder.php:1145
 msgid "Span"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1153, ../includes/shortcode-builder/builder.php:1149
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1149, ../includes/shortcode-builder/builder.php:1149
 msgid "Div"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1157, ../includes/shortcode-builder/builder.php:1153
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1153, ../includes/shortcode-builder/builder.php:1153
 msgid "P"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1180, ../includes/shortcode-builder/builder.php:1176
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1176, ../includes/shortcode-builder/builder.php:1176
 msgid "Solid"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1184, ../includes/shortcode-builder/builder.php:1180
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1180, ../includes/shortcode-builder/builder.php:1180
 msgid "Dotted"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1188, ../includes/shortcode-builder/builder.php:1184
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1184, ../includes/shortcode-builder/builder.php:1184
 msgid "Dashed"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1192, ../includes/shortcode-builder/builder.php:1188
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1188, ../includes/shortcode-builder/builder.php:1188
 msgid "Double"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1196, ../includes/shortcode-builder/builder.php:1192
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1192, ../includes/shortcode-builder/builder.php:1192
 msgid "Groove"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1200, ../includes/shortcode-builder/builder.php:1196
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1196, ../includes/shortcode-builder/builder.php:1196
 msgid "Ridge"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1204, ../includes/shortcode-builder/builder.php:1200
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1200, ../includes/shortcode-builder/builder.php:1200
 msgid "Inset"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1208, ../includes/shortcode-builder/builder.php:1204
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1204, ../includes/shortcode-builder/builder.php:1204
 msgid "Outset"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1215, ../includes/shortcode-builder/builder.php:1211
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1211, ../includes/shortcode-builder/builder.php:1211
 msgid "Top"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1223, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1240, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1259, ../includes/shortcode-builder/builder.php:1219, ../includes/shortcode-builder/builder.php:1236, ../includes/shortcode-builder/builder.php:1255
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1219, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1236, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1255, ../includes/shortcode-builder/builder.php:1219, ../includes/shortcode-builder/builder.php:1236, ../includes/shortcode-builder/builder.php:1255
 msgid "Left"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1227, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1248, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1263, ../includes/shortcode-builder/builder.php:1223, ../includes/shortcode-builder/builder.php:1244, ../includes/shortcode-builder/builder.php:1259
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1223, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1244, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1259, ../includes/shortcode-builder/builder.php:1223, ../includes/shortcode-builder/builder.php:1244, ../includes/shortcode-builder/builder.php:1259
 msgid "Right"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1244, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1255, ../includes/shortcode-builder/builder.php:1240, ../includes/shortcode-builder/builder.php:1251
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1240, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1251, ../includes/shortcode-builder/builder.php:1240, ../includes/shortcode-builder/builder.php:1251
 msgid "Center"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1272, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1283, ../includes/shortcode-builder/builder.php:1268, ../includes/shortcode-builder/builder.php:1279
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1268, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1279, ../includes/shortcode-builder/builder.php:1268, ../includes/shortcode-builder/builder.php:1279
 msgid "Characters"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1276, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1287, ../includes/shortcode-builder/builder.php:1272, ../includes/shortcode-builder/builder.php:1283
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1272, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1283, ../includes/shortcode-builder/builder.php:1272, ../includes/shortcode-builder/builder.php:1283
 msgid "Words"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1294, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1328, ../includes/shortcode-builder/builder.php:1290, ../includes/shortcode-builder/builder.php:1324
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1290, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1324, ../includes/shortcode-builder/builder.php:1290, ../includes/shortcode-builder/builder.php:1324
 msgid "Custom Order"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1298, ../includes/shortcode-builder/builder.php:1294
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1294, ../includes/shortcode-builder/builder.php:1294
 msgid "Logo ID"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1302, ../includes/shortcode-builder/builder.php:1298
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1298, ../includes/shortcode-builder/builder.php:1298
 msgid "Logo Name"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1306, ../includes/shortcode-builder/builder.php:1302
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1302, ../includes/shortcode-builder/builder.php:1302
 msgid "Date"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1310, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1344, ../includes/shortcode-builder/builder.php:1306, ../includes/shortcode-builder/builder.php:1340
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1306, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1340, ../includes/shortcode-builder/builder.php:1306, ../includes/shortcode-builder/builder.php:1340
 msgid "Random"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1317, ../includes/shortcode-builder/builder.php:1313
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1313, ../includes/shortcode-builder/builder.php:1313
 msgid "DESC"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1321, ../includes/shortcode-builder/builder.php:1317
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1317, ../includes/shortcode-builder/builder.php:1317
 msgid "ASC"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1332, ../includes/shortcode-builder/builder.php:1328
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1328, ../includes/shortcode-builder/builder.php:1328
 msgid "Term ID"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1336, ../includes/shortcode-builder/builder.php:1332
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1332, ../includes/shortcode-builder/builder.php:1332
 msgid "Term Name"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1340, ../includes/shortcode-builder/builder.php:1336
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1336, ../includes/shortcode-builder/builder.php:1336
 msgid "Count"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1367, ../includes/shortcode-builder/builder.php:1363
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1363, ../includes/shortcode-builder/builder.php:1363
 msgid "nofollow"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1371, ../includes/shortcode-builder/builder.php:1367
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1367, ../includes/shortcode-builder/builder.php:1367
 msgid "noopener"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1375, ../includes/shortcode-builder/builder.php:1371
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1371, ../includes/shortcode-builder/builder.php:1371
 msgid "noreferrer"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1379, ../includes/shortcode-builder/builder.php:1375
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1375, ../includes/shortcode-builder/builder.php:1375
 msgid "nofollow noopener"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1383, ../includes/shortcode-builder/builder.php:1379
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1379, ../includes/shortcode-builder/builder.php:1379
 msgid "nofollow noreferrer"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1387, ../includes/shortcode-builder/builder.php:1383
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1383, ../includes/shortcode-builder/builder.php:1383
 msgid "noopener noreferrer"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1391, ../includes/shortcode-builder/builder.php:1387
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1387, ../includes/shortcode-builder/builder.php:1387
 msgid "nofollow noopener noreferrer"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1433, ../includes/shortcode-builder/builder.php:1429
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1429, ../includes/shortcode-builder/builder.php:1429
 msgid "Load More"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1465, ../includes/shortcode-builder/builder.php:1461
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1461, ../includes/shortcode-builder/builder.php:1461
 msgid "Read More"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1482, ../includes/shortcode-builder/builder.php:1478
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1478, ../includes/shortcode-builder/builder.php:1478
 msgid "Preference saved"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1490, ../includes/shortcode-builder/builder.php:1486
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1486, ../includes/shortcode-builder/builder.php:1486
 msgid "No preference provided"
 msgstr ""
 
@@ -1552,8 +1548,4 @@ msgstr ""
 
 #: ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:13, ../includes/integrations/beaver/beaver-widget-logo.php:13
 msgid "Basic"
-msgstr ""
-
-#: ../includes/shortcode-builder/builder.php:945
-msgid "Hexagon"
 msgstr ""

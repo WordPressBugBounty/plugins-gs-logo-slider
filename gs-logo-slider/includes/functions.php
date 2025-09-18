@@ -282,6 +282,8 @@ function on_deactivation() {
     delete_option('gslogo_active_time');
     delete_option('gslogo_maybe_later');
     delete_option('gsadmin_maybe_later');
+    delete_option('gslogo_review_dismiss');
+    delete_user_meta( get_current_user_id(), 'gslogo_ignore_notice279' );
 }
 
 /**

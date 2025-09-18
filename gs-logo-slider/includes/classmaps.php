@@ -7,7 +7,6 @@ return array(
     'Cpt'             => 'includes/cpt.php',
     'Hooks'           => 'includes/hooks.php',
     'Metabox'         => 'includes/metabox.php',
-    'Notices'         => 'includes/notices.php',
     'Scripts'         => 'includes/scripts.php',
     'Shortcode'       => 'includes/shortcode.php',
     'Template_Loader' => 'includes/template-loader.php',

@@ -20,7 +20,6 @@ class Plugin {
     public $cpt;
     public $hooks;
     public $metabox;
-    public $notices;
     public $scripts;
     public $shortcode;
     public $builder;
@@ -36,7 +35,6 @@ class Plugin {
         $this->cpt             = new Cpt;
         $this->hooks           = new Hooks;
         $this->metabox         = new Metabox;
-        $this->notices         = new Notices;
         $this->scripts         = new Scripts;
         $this->shortcode       = new Shortcode;
         $this->builder         = new Builder;
