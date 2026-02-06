@@ -35,25 +35,12 @@ final class Scripts {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		add_action( 'gs_logo__add_assets', array($this, 'add_sort_assets') );
 		add_action( 'plugins_loaded', [ $this, 'add_assets' ], 20 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_scripts' ], 9999 );
 		add_action( 'admin_head', [ $this, 'print_plugin_icon_css' ] );
 
 		return $this;
-	}
-
-	/**
-	 * Adding assets on the $this->styles[] array for sorting.
-	 *
-	 * @since 1.0.0
-	 */
-
-	public function add_sort_assets( $gs_logo_scripts ) {
-				        
-        $gs_logo_scripts->add_style( 'gs-logo-sort', GSL_PLUGIN_URI . 'assets/admin/css/gs-logo-sort.min.css', [], GSL_VERSION );
-        $gs_logo_scripts->add_script( 'gs-logo-sort', GSL_PLUGIN_URI . 'assets/admin/js/gs-logo-sort.min.js', ['jquery', 'jquery-ui-sortable'], GSL_VERSION, true );
 	}
 
 	/**

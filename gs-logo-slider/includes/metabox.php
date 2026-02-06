@@ -83,8 +83,6 @@ class Metabox {
 						<input type="text" id="gs_logo_expire_at" class="form-control" name="gs_logo_expire_at" value="<?php echo isset($expire_at) ? esc_attr($expire_at) : ''; ?>" placeholder="<?php _e( 'Logo Expire At', 'gslogo' ); ?>" />
 					</div>
 
-
-
 					<?php if( ! is_pro_active() || ! is_gs_logo_pro_valid() ) : ?>
 						<div class="gs-logo-pro-field--inner">
 							<div class="gs-logo-pro-field--content">
@@ -220,16 +218,29 @@ class Metabox {
 
 		// Sanitize user input.
 		$gsl_client_url = isset($_POST['gs_logo_slider_url_field']) ? sanitize_url($_POST['gs_logo_slider_url_field']) : '';
-		$gsl_expire_at  = isset($_POST['gs_logo_expire_at']) ? sanitize_text_field($_POST['gs_logo_expire_at']) : '';
+		$gsl_expire_at  = isset($_POST['gs_logo_expire_at']) ? sanitize_text_field(trim( wp_unslash($_POST['gs_logo_expire_at']) )) : '';
 
-		// Update the meta field in the database.
-		if( '' !== $gsl_client_url ) update_post_meta($post_id, 'client_url', $gsl_client_url);
-		if( '' !== $gsl_expire_at ) update_post_meta($post_id, 'gs_logo_expire_at', $gsl_expire_at);
+		// Update the client url
+		update_post_meta($post_id, 'client_url', $gsl_client_url);
 
-		// Update Secondary image
-		if( is_pro_active() && isset( $_POST['_listing_cover_image'] ) ) {
-			$image_id = (int) $_POST['_listing_cover_image'];
-			update_post_meta( $post_id, '_listing_image_id', $image_id );
+		if( is_pro_active() ) {
+			if ( isset($_POST['gs_logo_expire_at']) ) {
+
+				if ( $gsl_expire_at === '' ) {
+					// Remove meta completely
+					delete_post_meta( $post_id, 'gs_logo_expire_at' );
+				} else {
+					// Save valid datetime
+					update_post_meta( $post_id, 'gs_logo_expire_at', sanitize_text_field( $gsl_expire_at ) );
+				}
+			}
+
+			// Update Secondary image
+			if( isset( $_POST['_listing_cover_image'] ) ) {
+				$image_id = (int) $_POST['_listing_cover_image'];
+				update_post_meta( $post_id, '_listing_image_id', $image_id );
+			}
 		}
+
 	}
 }

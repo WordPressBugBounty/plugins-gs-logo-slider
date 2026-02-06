@@ -51,7 +51,7 @@ if ( !empty($gs_logo_url) ) {
     ));
 
     // Anchor tag including Image tag
-    if ( !empty($client_url) ) {
+    if ( !empty($client_url) && $gs_l_link_logos === 'on' ) {
         $html = sprintf( '<a href="%s" target="%s" rel="%s">%s</a>', esc_url_raw( $client_url ), esc_attr( $gs_l_clkable ), esc_attr( $gs_l_link_rels ), $html );
     }
 

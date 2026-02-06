@@ -161,7 +161,7 @@ class Import_Export {
 
         // Import the Terms Data
         if (!empty($json_data['terms'])) {
-            plugin()->cpt->gs_logo_category();
+            plugin()->cpt->register_taxonomies();
             $this->import__terms($json_data['terms']);
         }
 
@@ -224,7 +224,7 @@ class Import_Export {
                 'parent' => $term['parent']
             );
                 
-            $inserted_term = wp_insert_term($term['name'], 'logo-category', $term_data);
+            $inserted_term = wp_insert_term($term['name'], $term['taxonomy'], $term_data);
             
             if (is_wp_error($inserted_term)) continue;
 
@@ -455,7 +455,10 @@ class Import_Export {
                 $post_data['meta_input'][$meta_key] = $meta_value;
             }
 
-            $post_data['tax_input']['logo-category'] = wp_get_post_terms($ID, 'logo-category', ['fields' => 'ids']);
+            $post_data['tax_input'] = [];
+            foreach ( $this->get_taxonomy_list() as $taxonomy ) {
+                $post_data['tax_input'][$taxonomy] = wp_get_post_terms($ID, $taxonomy, ['fields' => 'ids']);
+            }
 
             unset($post_data['meta_input']['_edit_last']);
             unset($post_data['meta_input']['_edit_lock']);
@@ -487,7 +490,7 @@ class Import_Export {
 
         // Add Terms Data to the zip file
         $json_data['terms'] = get_terms([
-            'taxonomy' => 'logo-category',
+            'taxonomy' => $this->get_taxonomy_list(),
             'hide_empty' => false
         ]);
 
@@ -546,7 +549,7 @@ class Import_Export {
 
     public function get_taxonomy_list() {
 
-        $taxonomies = ['logo-category'];
+        $taxonomies = ['logo-category', 'logo-tag', 'logo-extra-one', 'logo-extra-two', 'logo-extra-three', 'logo-extra-four', 'logo-extra-five'];
 
         return array_filter( $taxonomies, 'taxonomy_exists' );
     }

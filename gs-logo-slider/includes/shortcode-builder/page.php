@@ -14,6 +14,10 @@ $routes = [
 		'title' => __( 'Preferences', 'gslogo' )
 	],
 	[
+		'slug'  => '/taxonomies',
+		'title' => __( 'Taxonomies', 'gslogo' )
+	],
+	[
 		'slug'  => '/demo-data',
 		'title' => __( 'Demo Data', 'gslogo' )
 	],
@@ -30,10 +34,10 @@ $routes = [
 			<header class="gs-logo-slider-header">
 				<div class="gs-containeer-f">
 					<div class="gs-roow">
-						<div class="logo-area col-xs-6">
+						<div class="logo-area col-xs-3">
 							<router-link to="/"><img src="<?php echo GSL_PLUGIN_URI . 'assets/img/logo.svg'; ?>" alt="GS Logo Slider Logo"></router-link>
 						</div>
-						<div class="menu-area col-xs-6 text-right">
+						<div class="menu-area col-xs-9 text-right">
 							<ul>
 								<?php
 								foreach($routes as $route) { ?>

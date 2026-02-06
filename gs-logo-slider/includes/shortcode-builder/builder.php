@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 final class Builder {
 
     private $option_name = 'gs_logo_slider_shortcode_prefs';
+    private $taxonomy_option_name = 'gs_logo_slider_taxonomy_settings';
 
     public function __construct() {
         
@@ -27,6 +28,9 @@ final class Builder {
 
         add_action( 'wp_ajax_gslogo_get_shortcode_pref', array($this, 'get_shortcode_pref') );
         add_action( 'wp_ajax_gslogo_save_shortcode_pref', array($this, 'save_shortcode_pref') );
+
+        add_action( 'wp_ajax_gslogo_get_taxonomy_settings', array($this, 'get_taxonomy_settings') );
+        add_action( 'wp_ajax_gslogo_save_taxonomy_settings', array($this, 'save_taxonomy_settings') );
 
         add_action( 'template_include', array($this, 'populate_shortcode_preview') );
         add_action( 'show_admin_bar', array($this, 'hide_admin_bar_from_preview') );
@@ -55,7 +59,7 @@ final class Builder {
         if ( $this->is_gslogo_shortcode_preview() ) {
 
             // Create our fake post
-            $post_id = rand( 1, 99999 ) - 9999999;
+            $post_id = 0;
             $post = new \stdClass();
             $post->ID = $post_id;
             $post->post_author = 1;
@@ -148,6 +152,8 @@ final class Builder {
 
     public function get_logo_categories() {
 
+        if ( $this->get_tax_option('enable_category_tax') !== 'on' ) return [];
+
         $_terms = get_terms( 'logo-category' );
 
         $terms = [];
@@ -176,13 +182,13 @@ final class Builder {
         }
 
         do_action( 'gs_logo_register_scripts' );
-
-        wp_localize_script( 'gs-logo-shortcode', '_gslogo_data', $this->get_localized_data() );
-
+        
         if( $hook === 'gs-logo-slider_page_gs-logo-shortcode' ){
             wp_enqueue_style( 'gs-logo-shortcode' );
             wp_enqueue_script( 'gs-logo-shortcode' );
         }
+        
+        wp_localize_script( 'gs-logo-shortcode', '_gslogo_data', $this->get_localized_data() );
         
     }
 
@@ -196,6 +202,7 @@ final class Builder {
                 "delete_shortcodes" 	        => wp_create_nonce( "_gslogo_delete_shortcodes_gs_" ),
                 "temp_save_shortcode_settings" 	=> wp_create_nonce( "_gslogo_temp_save_shortcode_settings_gs_" ),
                 "save_shortcode_pref" 	        => wp_create_nonce( "_gslogo_save_shortcode_pref_gs_" ),
+                "save_taxonomy_settings" 	    => wp_create_nonce( "_gslogo_save_taxonomy_settings_gs_" ),
                 "import_gslogo_demo" 	        => wp_create_nonce( "_gslogo_simport_gslogo_demo_gs_" ),
                 "import_export"      	        => wp_create_nonce( "_gslogo_import_export_nonce_gs_" )
             ),
@@ -209,6 +216,8 @@ final class Builder {
         $data['translations']       = $this->get_translation_srtings();
         $data['preference']         = $this->get_shortcode_default_prefs();
         $data['preference_options'] = $this->get_shortcode_prefs_options();
+        $data['taxonomy_default_settings']  = $this->get_taxonomy_default_settings();
+        $data['taxonomy_settings']  = $this->get_taxonomy_settings();
 
         $data['demo_data'] = [
             'logo_data'      => wp_validate_boolean( get_option('gslogo_dummy_logo_data_created') ),
@@ -250,7 +259,22 @@ final class Builder {
 
     public function validate_shortcode_settings( $shortcode_settings ) {
         $shortcode_settings = shortcode_atts( $this->get_shortcode_default_settings(), $shortcode_settings );
-        return array_map( 'sanitize_text_field', $shortcode_settings );
+
+        $shortcode_settings['posts']              = intval( $shortcode_settings['posts'] );
+
+        foreach ( $shortcode_settings as $key => $value ) {
+
+            // If array → sanitize IDs
+            if ( is_array( $value ) ) {
+                $shortcode_settings[$key] = array_map( 'absint', $value );
+                continue;
+            }
+
+            // Everything else is a string → sanitize as text
+            $shortcode_settings[$key] = sanitize_text_field( $value );
+        }
+        
+        return $shortcode_settings;
     }
 
     protected function get_shortcode_db_columns() {
@@ -626,6 +650,9 @@ final class Builder {
             'image-size--placeholder' => __('Select Size', 'gslogo'),
             'image-size--help' => __('Select the attachment size from the registered sources', 'gslogo'),
 
+            'gs-l-link-logos' => __('Link Logos', 'gslogo'),
+            'gs-l-link-logos--help' => __('Enable/Disable Linking of logos to their respective links', 'gslogo'),
+
             'custom-image-size' => __('Custom Image Size', 'gslogo'),
             'custom-image-size-width--placeholder' => __('Width', 'gslogo'),
             'custom-image-size-height--placeholder' => __('Height', 'gslogo'),
@@ -766,10 +793,6 @@ final class Builder {
             'filter-order' => __('Filter Order', 'gslogo'),
             'filter-order-by' => __('Filter Order By', 'gslogo'),
 
-            'logo-cat' => __('Categories', 'gslogo'),
-            'logo-cat--placeholder' => __('Categories', 'gslogo'),
-            'logo-cat--help' => __('Select specific logo category to show that specific category logos', 'gslogo'),
-
             'install-demo-data' => __('Install Demo Data', 'gslogo'),
             'install-demo-data-description' => __('Quick start with GS Plugins by installing the demo data', 'gslogo'),
 
@@ -809,7 +832,40 @@ final class Builder {
             'shortcode-name' => __('Shortcode Name', 'gslogo'),
             'name-of-the-shortcode' => __('Shortcode Name', 'gslogo'),
             'save-shortcode' => __('Save Shortcode', 'gslogo'),
-            'preview-shortcode' => __('Preview', 'gslogo')
+            'preview-shortcode' => __('Preview', 'gslogo'),
+
+            'taxonomies-page'                   => __('Taxonomies', 'gslogo'),
+            'taxonomies-page--des'              => __('Global settings for Taxonomies', 'gslogo'),
+
+            'taxonomy_category'                 => __('Category', 'gslogo'),
+            'taxonomy_tag'                      => __('Tag', 'gslogo'),
+            'taxonomy_language'                 => __('Language', 'gslogo'),
+            'taxonomy_location'                 => __('Location', 'gslogo'),
+            'taxonomy_gender'                   => __('Gender', 'gslogo'),
+            'taxonomy_specialty'                => __('Specialty', 'gslogo'),
+            'taxonomy_extra_one'                => __('Extra One', 'gslogo'),
+            'taxonomy_extra_two'                => __('Extra Two', 'gslogo'),
+            'taxonomy_extra_three'              => __('Extra Three', 'gslogo'),
+            'taxonomy_extra_four'               => __('Extra Four', 'gslogo'),
+            'taxonomy_extra_five'               => __('Extra Five', 'gslogo'),
+
+            // Extra Taxonomy Settings
+            'enable_extra_tax'                  => __('Enable Taxonomy', 'gslogo'),
+            'enable_extra_tax--details'         => __('Enable Taxonomy for logos', 'gslogo'),
+            'extra_tax_label'                   => __('Taxonomy Label', 'gslogo'),
+            'extra_tax_label--details'          => __('Set Taxonomy Label', 'gslogo'),
+            'extra_tax_plural_label'            => __('Taxonomy Plural Label', 'gslogo'),
+            'extra_tax_plural_label--details'   => __('Set Taxonomy Plural Label', 'gslogo'),
+            'enable_extra_tax_archive'          => __('Enable Taxonomy Archive', 'gslogo'),
+            'enable_extra_tax_archive--details' => __('Enable Taxonomy Archive', 'gslogo'),
+            'extra_tax_archive_slug'            => __('Taxonomy Archive Slug', 'gslogo'),
+            'extra_tax_archive_slug--details'   => __('Set Taxonomy Archive Slug', 'gslogo'),
+
+            // Taxonomy include exclude
+            'include-tax--details'              => __('Select specific terms to display specific logos', 'gslogo'),
+            'exclude-tax--details'              => __('Select specific terms to exclude specific logos', 'gslogo'),
+
+            'save-settings'                     => __('Save Settings', 'gslogo'),
 
         ];
         
@@ -837,6 +893,10 @@ final class Builder {
         ];
 
         $pro_themes = [
+            [
+                'label' => __( 'Slider 2', 'gslogo' ),
+                'value' => 'slider2'
+            ],
             [
                 'label' => __( 'Ticker 1', 'gslogo' ),
                 'value' => 'ticker1'
@@ -884,6 +944,10 @@ final class Builder {
             [
                 'label' => __( 'Filter - 3', 'gslogo' ),
                 'value' => 'filter3'
+            ],
+            [
+                'label' => __( 'Filter - 4', 'gslogo' ),
+                'value' => 'filter4'
             ],
             [
                 'label' => __( 'Live Filter - 1', 'gslogo' ),
@@ -1013,6 +1077,38 @@ final class Builder {
         ];
 
         return $_sizes;
+
+    }
+
+    public function get_logo_terms( $tax_name, $idsOnly = false ) {
+
+        $taxonomies = get_taxonomies( [], 'names' );
+
+        if ( ! in_array( $tax_name, $taxonomies, true ) ) {
+            return [];
+        }
+
+        $_terms = get_terms([
+            'taxonomy'   => $tax_name,
+            'hide_empty' => false,
+        ]);
+
+        if ( is_wp_error($_terms) || empty($_terms) ) {
+            return [];
+        }
+        
+        if ( $idsOnly ) return wp_list_pluck( $_terms, 'term_id' );
+
+        $terms = [];
+
+        foreach ( $_terms as $term ) {
+            $terms[] = [
+                'label' => $term->name,
+                'value' => $term->term_id
+            ];
+        }
+
+        return $terms;
 
     }
 
@@ -1160,11 +1256,11 @@ final class Builder {
 
             'gs_logo_filter_type' => [
                 [
-                    'label' => __( 'Normal Filter', 'gsteam' ),
+                    'label' => __( 'Normal Filter', 'gslogo' ),
                     'value' => 'normal-filter'
                 ],
                 [
-                    'label' => __( 'Ajax Filter', 'gsteam' ),
+                    'label' => __( 'Ajax Filter', 'gslogo' ),
                     'value' => 'ajax-filter'
                 ]
             ],
@@ -1261,7 +1357,13 @@ final class Builder {
                 ]
             ],
 
-            'logo_cat' => $this->get_logo_categories(),
+            'category'          => $this->get_logo_terms('logo-category'),
+            'tag'               => $this->get_logo_terms('logo-tag'),
+            'extra_one'         => $this->get_logo_terms('logo-extra-one'),
+            'extra_two'         => $this->get_logo_terms('logo-extra-two'),
+            'extra_three'       => $this->get_logo_terms('logo-extra-three'),
+            'extra_four'        => $this->get_logo_terms('logo-extra-four'),
+            'extra_five'        => $this->get_logo_terms('logo-extra-five'),
 
             'gs_l_content_limit_type' => [
                 [
@@ -1391,6 +1493,63 @@ final class Builder {
         ];
     }
 
+    public function get_taxonomy_default_settings() {
+
+        return [
+
+            // Category Taxonomy
+            'enable_category_tax' => 'on',
+            'category_tax_label' => __('Logo Category', 'gslogo'),
+            'category_tax_plural_label' => __('Logo Categories', 'gslogo'),
+            'enable_category_tax_archive' => 'on',
+            'category_tax_archive_slug' => 'logo-category',
+
+            // Tag Taxonomy
+            'enable_tag_tax' => 'off',
+            'tag_tax_label' => __('Logo Tag', 'gslogo'),
+            'tag_tax_plural_label' => __('Logo Tags', 'gslogo'),
+            'enable_tag_tax_archive' => 'on',
+            'tag_tax_archive_slug' => 'logo-tag',
+
+            // Extra One Taxonomy
+            'enable_extra_one_tax' => 'off',
+            'extra_one_tax_label' => __('Extra 1', 'gslogo'),
+            'extra_one_tax_plural_label' => __('Extra 1', 'gslogo'),
+            'enable_extra_one_tax_archive' => 'on',
+            'extra_one_tax_archive_slug' => 'gs-logo-extra-one',
+
+            // Extra Two Taxonomy
+            'enable_extra_two_tax' => 'off',
+            'extra_two_tax_label' => __('Extra 2', 'gslogo'),
+            'extra_two_tax_plural_label' => __('Extra 2', 'gslogo'),
+            'enable_extra_two_tax_archive' => 'off',
+            'extra_two_tax_archive_slug' => 'gs-logo-extra-two',
+
+            // Extra Three Taxonomy
+            'enable_extra_three_tax' => 'off',
+            'extra_three_tax_label' => __('Extra 3', 'gslogo'),
+            'extra_three_tax_plural_label' => __('Extra 3', 'gslogo'),
+            'enable_extra_three_tax_archive' => 'off',
+            'extra_three_tax_archive_slug' => 'gs-logo-extra-three',
+
+            // Extra Four Taxonomy
+            'enable_extra_four_tax' => 'off',
+            'extra_four_tax_label' => __('Extra 4', 'gslogo'),
+            'extra_four_tax_plural_label' => __('Extra 4', 'gslogo'),
+            'enable_extra_four_tax_archive' => 'off',
+            'extra_four_tax_archive_slug' => 'gs-logo-extra-four',
+
+            // Extra Five Taxonomy
+            'enable_extra_five_tax' => 'off',
+            'extra_five_tax_label' => __('Extra 5', 'gslogo'),
+            'extra_five_tax_plural_label' => __('Extra 5', 'gslogo'),
+            'enable_extra_five_tax_archive' => 'off',
+            'extra_five_tax_archive_slug' => 'gs-logo-extra-five',
+
+        ];
+
+    }
+
     function get_shortcode_default_settings() {
         return [
             'posts' 	               => -1,
@@ -1400,7 +1559,21 @@ final class Builder {
             'filter_orderby'           => 'name',
             'gs_l_title'               => 'on',
             'title_tag'                => 'h3',
-            'logo_cat'	               => '',
+            'gs_l_link_logos'          => 'on',
+            'include_category'         => [],
+            'include_tag'              => [],
+            'include_extra_one'        => [],
+            'include_extra_two'        => [],
+            'include_extra_three'      => [],
+            'include_extra_four'       => [],
+            'include_extra_five'       => [],
+            'exclude_category'         => [],
+            'exclude_tag'              => [],
+            'exclude_extra_one'        => [],
+            'exclude_extra_two'        => [],
+            'exclude_extra_three'      => [],
+            'exclude_extra_four'       => [],
+            'exclude_extra_five'       => [],
             'gs_l_ctrl'                => 'on',
             'gs_l_ctrl_pos'            => 'bottom',
             'gs_l_pagi'                => 'off',
@@ -1487,6 +1660,87 @@ final class Builder {
         }
 
         $this->_save_shortcode_pref( $_POST['prefs'], true );
+    }
+
+    public function get_tax_option( $option, $default = '' ) {
+        $options = (array) get_option( $this->taxonomy_option_name, [] );
+        $defaults = $this->get_taxonomy_default_settings();
+        $options = array_merge($defaults, $options);
+
+        if ( str_contains($option, '_label') && empty($options[$option]) ) {
+            return $defaults[$option];
+        }
+
+        if ( isset($options[$option]) ) return $options[$option];
+        return $default;
+    }
+
+    public function validate_taxonomy_settings( $settings ) {
+
+        $defaults = $this->get_taxonomy_default_settings();
+
+        if ( empty($settings) ) {
+            $settings = $defaults;
+        } else {
+            foreach ( $settings as $setting_key => $setting_val ) {
+                if ( str_contains($setting_key, '_label') && empty($setting_val) ) {
+                    $settings[$setting_key] = $defaults[$setting_key];
+                }
+            }
+        }
+        
+        return array_map( 'sanitize_text_field', $settings );
+    }
+
+    public function _get_taxonomy_settings( $is_ajax ) {
+
+        $settings = (array) get_option( $this->taxonomy_option_name, [] );
+        $settings = $this->validate_taxonomy_settings( $settings );
+
+        if( ! is_gs_logo_pro_valid() ){
+            $settings['enable_extra_one_tax'] = 'off';
+            $settings['enable_extra_two_tax'] = 'off';
+            $settings['enable_extra_three_tax'] = 'off';
+            $settings['enable_extra_four_tax'] = 'off';
+            $settings['enable_extra_five_tax'] = 'off';
+        }
+
+        if ( $is_ajax ) {
+            wp_send_json_success( $settings );
+        }
+
+        return $settings;
+
+    }
+
+    public function get_taxonomy_settings() {
+        return $this->_get_taxonomy_settings( wp_doing_ajax() );
+    }
+
+    public function _save_taxonomy_settings( $settings, $is_ajax ) {
+
+        if ( empty($settings) ) $settings = [];
+
+        $settings = $this->validate_taxonomy_settings( $settings );
+        update_option( $this->taxonomy_option_name, $settings, true );
+        
+        // Clean permalink flush
+        delete_option( 'GS_Logo_plugin_permalinks_flushed' );
+
+        do_action( 'gs_logo_tax_settings_update' );
+    
+        if ( $is_ajax ) wp_send_json_success( __('Taxonomy settings saved', 'gslogo') );
+    }
+
+    public function save_taxonomy_settings() {
+
+        check_ajax_referer( '_gslogo_save_taxonomy_settings_gs_' );
+        
+        if ( empty($_POST['tax_settings']) ) {
+            wp_send_json_error( __('No settings provided', 'gslogo'), 400 );
+        }
+
+        $this->_save_taxonomy_settings( $_POST['tax_settings'], true );
     }
 
     public function validate_preference( $settings ) {
@@ -1607,9 +1861,11 @@ final class Builder {
 
     public function maybe_upgrade_data( $old_version ){
         if ( version_compare( $old_version, '3.7.5' ) < 0 ) $this->upgrade_to_3_7_5();
+        if ( version_compare( $old_version, '3.7.9' ) < 0 ) $this->upgrade_to_3_7_9();
     }
 
     public function upgrade_to_3_7_5() {
+
         $shortcodes = $this->_get_shortcodes( null, false );
 
         if ( ! $shortcodes || ! is_array( $shortcodes ) || ! count( $shortcodes ) ) return;
@@ -1647,9 +1903,46 @@ final class Builder {
                 "updated_at" 		    => current_time( 'mysql')
             );
         
-            $num_row_updated = $wpdb->update( "{$wpdb->prefix}gs_logo_slider" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_shortcode_db_columns() );
+            $wpdb->update( "{$wpdb->prefix}gs_logo_slider" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_shortcode_db_columns() );
         }
 
+    }
+
+    public function upgrade_to_3_7_9(){
+
+        $shortcodes = $this->_get_shortcodes( null, false );
+
+        if ( ! $shortcodes || ! is_array( $shortcodes ) || ! count( $shortcodes ) ) return;
+
+        foreach ( $shortcodes as $shortcode ) {
+
+            $shortcode_id       = $shortcode['id'];
+            $shortcode_settings = json_decode( $shortcode["shortcode_settings"], true );
+            $logo_cat           = isset( $shortcode_settings['logo_cat'] ) ? $shortcode_settings['logo_cat'] : '';
+
+            if( empty( $logo_cat ) ){
+                continue;
+            }
+
+            $logo_cat = explode(',', $logo_cat );
+
+            $cat_ids = get_term_ids_by_slugs( $logo_cat, 'logo-category' );
+
+            // I will set data here
+            $shortcode_settings['include_category'] = $cat_ids;
+
+            $shortcode_settings = $this->validate_shortcode_settings( $shortcode_settings );
+    
+            $wpdb = $this->get_wpdb();
+        
+            $data = array(
+                "shortcode_name" 	    => $shortcode['shortcode_name'],
+                "shortcode_settings" 	=> json_encode($shortcode_settings),
+                "updated_at" 		    => current_time( 'mysql')
+            );
+        
+            $wpdb->update( "{$wpdb->prefix}gs_logo_slider" , $data, array( 'id' => absint( $shortcode_id ) ),  $this->get_shortcode_db_columns() );
+        }
     }
 
 }

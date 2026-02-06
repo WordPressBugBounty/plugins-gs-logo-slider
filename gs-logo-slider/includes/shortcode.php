@@ -1,6 +1,6 @@
-<?php 
-namespace GSLOGO;
+<?php
 
+namespace GSLOGO;
 use function GSLOGOPRO\is_plugin_loaded;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -164,19 +164,200 @@ class Shortcode {
 				],
 			];
 		}
+
+		/* ========== Tax include ========== */
+
+		$is_include_exist = !empty($include_category) || !empty($include_tag) || !empty($include_extra_one) || !empty($include_extra_two) || !empty($include_extra_three) || !empty($include_extra_four) || !empty($include_extra_five);
 	
-		if ( !empty($logo_cat) ) {
+		if( $is_include_exist ){
+			$args['tax_query'] = [ 'relation' => 'OR' ];
+		}
+
+		if ( !empty($include_category) ) {
 	
-			$args['tax_query'] = [
+			$args['tax_query'][] = [
 				[
 					'taxonomy' => 'logo-category',
-					'field'    => 'slug',
-					'terms'    => explode(',', $logo_cat),
+					'field'    => 'term_id',
+					'terms'    => $include_category,
 					'operator' => 'IN'
 				],
 			];
 	
 		}
+	
+		if ( !empty($include_tag) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-tag',
+					'field'    => 'term_id',
+					'terms'    => $include_tag,
+					'operator' => 'IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($include_extra_one) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-one',
+					'field'    => 'term_id',
+					'terms'    => $include_extra_one,
+					'operator' => 'IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($include_extra_two) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-two',
+					'field'    => 'term_id',
+					'terms'    => $include_extra_two,
+					'operator' => 'IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($include_extra_three) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-three',
+					'field'    => 'term_id',
+					'terms'    => $include_extra_three,
+					'operator' => 'IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($include_extra_four) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-four',
+					'field'    => 'term_id',
+					'terms'    => $include_extra_four,
+					'operator' => 'IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($include_extra_five) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-five',
+					'field'    => 'term_id',
+					'terms'    => $include_extra_five,
+					'operator' => 'IN'
+				],
+			];
+	
+		}
+
+
+		/* ========== Tax exclude ========== */
+
+		if ( !empty($exclude_category) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-category',
+					'field'    => 'term_id',
+					'terms'    => $exclude_category,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($exclude_tag) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-tag',
+					'field'    => 'term_id',
+					'terms'    => $exclude_tag,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($exclude_extra_one) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-one',
+					'field'    => 'term_id',
+					'terms'    => $exclude_extra_one,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($exclude_extra_two) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-two',
+					'field'    => 'term_id',
+					'terms'    => $exclude_extra_two,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($exclude_extra_three) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-three',
+					'field'    => 'term_id',
+					'terms'    => $exclude_extra_three,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($exclude_extra_four) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-four',
+					'field'    => 'term_id',
+					'terms'    => $exclude_extra_four,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+	
+		if ( !empty($exclude_extra_five) ) {
+	
+			$args['tax_query'][] = [
+				[
+					'taxonomy' => 'logo-extra-five',
+					'field'    => 'term_id',
+					'terms'    => $exclude_extra_five,
+					'operator' => 'NOT IN'
+				],
+			];
+	
+		}
+
 
 		// Handle Pagination while Filter is off
 		if ( 'off' === $filter_enabled ) {
@@ -318,12 +499,12 @@ class Shortcode {
 
 				$filters = $ajax_datas['filters'];
 								
-				if( ! empty($filters['group']) && '' !== $filters['group'] ) {
-					// Search through group
+				if( ! empty($filters['category']) && '' !== $filters['category'] ) {
+					// Search through category
 					$args['tax_query'][] = [
 						'taxonomy' => 'logo-category',
 						'field'    => 'slug',
-						'terms'    => $filters['group']
+						'terms'    => $filters['category']
 					];
 				}
 
@@ -370,12 +551,14 @@ class Shortcode {
 			$data_options['per_load'] = $per_load;
 			$data_options['initial_items'] = $initial_items;
 		}
+
+		$sort_mode = apply_filters( 'gs_logo_isotope_sort_mode', 'name', $id ); // name | original-order
 	
 		ob_start();
 
 		?>
 	
-		<div id="<?php echo 'gs_logo_area_' . esc_attr( $id ); ?>" data-shortcode-id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?> <?php echo esc_attr($img_effect_class); ?>" data-options='<?php echo json_encode($data_options); ?>' style="opacity: 0; visibility: hidden;">
+		<div id="<?php echo 'gs_logo_area_' . esc_attr( $id ); ?>" data-sort="<?php echo esc_attr($sort_mode); ?>" data-shortcode-id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?> <?php echo esc_attr($img_effect_class); ?>" data-options='<?php echo json_encode($data_options); ?>' style="opacity: 0; visibility: hidden;">
 			<div class="gs_logo_area--inner">
 
 				<!-- Category Filters - New (Global) -->

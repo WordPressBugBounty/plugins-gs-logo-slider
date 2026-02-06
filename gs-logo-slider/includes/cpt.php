@@ -7,7 +7,7 @@ class Cpt {
 
 	public function __construct() {
 		add_action( 'init', [ $this, 'GS_Logo_Slider' ] );
-		add_action( 'init', [ $this, 'gs_logo_category' ], 0 );
+		add_action( 'init', [ $this, 'register_taxonomies' ], 0 );
 		add_action( 'after_setup_theme', [ $this, 'gs_logo_theme_support' ] );
 	}
 
@@ -57,28 +57,52 @@ class Cpt {
 	
 		register_post_type( 'gs-logo-slider', $args );
 	}
+
+	public function register_taxonomies() {
+		$this->category();
+		$this->tag();
+
+		if( is_gs_logo_pro_valid() ){
+			$this->extra_one();
+			$this->extra_two();
+			$this->extra_three();
+			$this->extra_four();
+			$this->extra_five();
+		}
+	}
 	
-	function gs_logo_category() {
+	function category() {
+
+		if ( plugin()->builder->get_tax_option('enable_category_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('category_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('category_tax_label');
 	
 		if( ! taxonomy_exists( 'logo-category' ) ) {
 
 			$labels = array(
-				'name'                       => _x( 'Logo Categories', 'Taxonomy General Name', 'gslogo' ),
-				'singular_name'              => _x( 'Logo Category', 'Taxonomy Singular Name', 'gslogo' ),
-				'menu_name'                  => __( 'Logo Category', 'gslogo' ),
-				'all_items'                  => __( 'All Logo Category', 'gslogo' ),
-				'parent_item'                => __( 'Parent Logo Category', 'gslogo' ),
-				'parent_item_colon'          => __( 'Parent Logo Category:', 'gslogo' ),
-				'new_item_name'              => __( 'New Logo Category', 'gslogo' ),
-				'add_new_item'               => __( 'Add New Logo Category', 'gslogo' ),
-				'edit_item'                  => __( 'Edit Logo Category', 'gslogo' ),
-				'update_item'                => __( 'Update Logo Category', 'gslogo' ),
-				'separate_items_with_commas' => __( 'Separate Logo Category with commas', 'gslogo' ),
-				'search_items'               => __( 'Search Logo Category', 'gslogo' ),
-				'add_or_remove_items'        => __( 'Add or remove Logo Category', 'gslogo' ),
-				'choose_from_most_used'      => __( 'Choose from the most used Logo categories', 'gslogo' ),
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
 				'not_found'                  => __( 'Not Found', 'gslogo' ),
 			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('category_tax_archive_slug', 'logo-category'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
 			$args = array(
 				'labels'                     => $labels,
 				'hierarchical'               => true,
@@ -86,11 +110,282 @@ class Cpt {
 				'show_ui'                    => true,
 				'show_admin_column'          => true,
 				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
 			);
 			register_taxonomy( 'logo-category', array( 'gs-logo-slider' ), $args );
 		}
 	
-	}	
+	}
+
+	public function tag() {
+
+		if ( plugin()->builder->get_tax_option('enable_tag_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('tag_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('tag_tax_label');
+	
+		if( ! taxonomy_exists( 'logo-tag' ) ) {
+
+			$labels = array(
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('tag_tax_archive_slug', 'logo-tag'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
+			);
+			register_taxonomy( 'logo-tag', array( 'gs-logo-slider' ), $args );
+		}
+	}
+
+	public function extra_one() {
+
+		if ( plugin()->builder->get_tax_option('enable_extra_one_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('extra_one_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('extra_one_tax_label');
+	
+		if( ! taxonomy_exists( 'logo-extra-one' ) ) {
+
+			$labels = array(
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('extra_one_tax_archive_slug', 'logo-extra-one'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
+			);
+			register_taxonomy( 'logo-extra-one', array( 'gs-logo-slider' ), $args );
+		}
+	}
+
+	public function extra_two() {
+
+		if ( plugin()->builder->get_tax_option('enable_extra_two_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('extra_two_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('extra_two_tax_label');
+	
+		if( ! taxonomy_exists( 'logo-extra-two' ) ) {
+
+			$labels = array(
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('extra_two_tax_archive_slug', 'logo-extra-two'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
+			);
+			register_taxonomy( 'logo-extra-two', array( 'gs-logo-slider' ), $args );
+		}
+	}
+
+	public function extra_three() {
+
+		if ( plugin()->builder->get_tax_option('enable_extra_three_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('extra_three_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('extra_three_tax_label');
+	
+		if( ! taxonomy_exists( 'logo-extra-three' ) ) {
+
+			$labels = array(
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('extra_three_tax_archive_slug', 'logo-extra-three'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
+			);
+			register_taxonomy( 'logo-extra-three', array( 'gs-logo-slider' ), $args );
+		}
+	}
+
+	public function extra_four() {
+
+		if ( plugin()->builder->get_tax_option('enable_extra_four_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('extra_four_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('extra_four_tax_label');
+	
+		if( ! taxonomy_exists( 'logo-extra-four' ) ) {
+
+			$labels = array(
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('extra_four_tax_archive_slug', 'logo-extra-four'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
+			);
+			register_taxonomy( 'logo-extra-four', array( 'gs-logo-slider' ), $args );
+		}
+	}
+
+	public function extra_five() {
+
+		if ( plugin()->builder->get_tax_option('enable_extra_five_tax') !== 'on' ) return;
+		
+		$plural = plugin()->builder->get_tax_option('extra_five_tax_plural_label');
+		$singular = plugin()->builder->get_tax_option('extra_five_tax_label');
+	
+		if( ! taxonomy_exists( 'logo-extra-five' ) ) {
+
+			$labels = array(
+				'name'                       => $plural,
+				'singular_name'              => $singular,
+				'all_items'                  => sprintf( __('All %s'), $plural ),
+				'parent_item'                => sprintf( __('Parent %s'), $singular ),
+				'parent_item_colon'          => sprintf( __('Parent %s'), $singular ),
+				'new_item_name'              => sprintf( __('New %s'), $singular ),
+				'add_new_item'               => sprintf( __('Add New %s'), $singular ),
+				'edit_item'                  => sprintf( __('Edit %s'), $singular ),
+				'update_item'                => sprintf( __('Update %s'), $singular ),
+				'separate_items_with_commas' => sprintf( __('Separate %s with commas'), $plural ),
+				'search_items'               => sprintf( __('Search %s'), $plural ),
+				'add_or_remove_items'        => sprintf( __('Add or remove %s'), $plural ),
+				'choose_from_most_used'      => sprintf( __('Choose from the most used %s'), $plural ),
+				'not_found'                  => __( 'Not Found', 'gslogo' ),
+			);
+
+			$rewrite = array(
+				'slug'                       => plugin()->builder->get_tax_option('extra_five_tax_archive_slug', 'logo-extra-five'),
+				'with_front'                 => true,
+				'hierarchical'               => false,
+			);
+
+			$args = array(
+				'labels'                     => $labels,
+				'hierarchical'               => true,
+				'public'                     => false,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_tagcloud'              => false,
+			    'rewrite'                    => $rewrite,
+			);
+			register_taxonomy( 'logo-extra-five', array( 'gs-logo-slider' ), $args );
+		}
+	}
 	
 	function gs_logo_theme_support()  {
 		// Add theme support for Featured Images

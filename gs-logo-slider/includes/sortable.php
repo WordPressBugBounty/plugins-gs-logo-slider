@@ -201,15 +201,7 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 			
 			$sortable = new \WP_Query('post_type=' . $this->posttype . '&posts_per_page=' . $this->ppp . '&orderby=menu_order&order=ASC');
 
-			if ( ! is_pro_active() ) : ?>
-
-			<div class="gs-logo-disable--sort-page">
-				<div class="gs-logo-disable--sort-inner">
-					<div class="gs-logo-disable--term-message"><a href="https://www.gsplugins.com/product/gs-logo-slider/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-			<?php endif; ?>
+			?>
 
 				<div id="icon-edit" class="icon32"></div>
 				<h2 class="gs-plugin-title"><span><?php _e('Custom Order for Logos', 'gslogo'); ?></span> <img src="<?php echo GSL_PLUGIN_URI; ?>/assets/img/loader.svg" id="loading-animation" /></h2>
@@ -250,7 +242,7 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 							<div class="notice notice-warning">
 								<h3><?php _e( 'No Logo Found!', 'gslogo' ); ?></h3>
 								<p><?php _e( 'We didn\'t find any logo.</br>Please add some logos to sort them.', 'gslogo' ); ?></p>
-								<a href="<?php echo admin_url('post-new.php?post_type=gs-logo-slider'); ?>" class="button button-primary button-large"><?php _e( 'Add Member', 'gslogo' ); ?></a>
+								<a href="<?php echo admin_url('post-new.php?post_type=gs-logo-slider'); ?>" class="button button-primary button-large"><?php _e( 'Add Logo', 'gslogo' ); ?></a>
 							</div>
 			
 						<?php endif; ?>
@@ -293,19 +285,8 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 				'orderby' => 'term_order',
 				'order' => 'ASC',
 			) );
-
-			// echo '<pre>';
-			// var_dump($terms);
-
-			if ( ! is_pro_active() ) : ?>
-
-			<div class="gs-logo-disable--sort-page">
-				<div class="gs-logo-disable--sort-inner">
-					<div class="gs-logo-disable--term-message"><a href="https://www.gsplugins.com/product/gs-logo-slider/#pricing">Upgrade to PRO</a></div>
-				</div>
-			</div>
-
-			<?php endif; ?>
+			
+			?>
 
 				<div id="icon-edit" class="icon32"></div>
 				<h2 class="gs-plugin-title"><span><?php _e('Custom Order for Categories', 'gslogo'); ?></span> <img src="<?php echo GSL_PLUGIN_URI; ?>/assets/img/loader.svg" id="loading-animation" /></h2>
@@ -335,7 +316,7 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 							<div class="notice notice-warning">
 								<h3><?php _e( 'No Category Found!', 'gslogo' ); ?></h3>
 								<p><?php _e( 'We didn\'t find any Category.</br>Please add some categories to sort them.', 'gslogo' ); ?></p>
-								<a href="<?php echo admin_url('post-new.php?post_type=gs-logo-slider'); ?>" class="button button-primary button-large"><?php _e( 'Add Member', 'gslogo' ); ?></a>
+								<a href="<?php echo admin_url('edit-tags.php?taxonomy=logo-category&post_type=gs-logo-slider'); ?>" class="button button-primary button-large"><?php _e( 'Add Category', 'gslogo' ); ?></a>
 							</div>
 			
 						<?php endif; ?>
@@ -372,9 +353,9 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 		public function gs_logo_sort_scripts( $hook ) {
 
 			if ( $hook != 'gs-logo-slider_page_sort_gs-logo-slider' ) return;
-			
-			plugin()->scripts->wp_enqueue_style( 'gs-logo-sort' );
-			plugin()->scripts->wp_enqueue_script( 'gs-logo-sort' );
+
+			wp_enqueue_style('gs-logo-sort', GSL_PLUGIN_URI . 'assets/admin/css/gs-logo-sort.min.css', array(), GSL_VERSION);
+			wp_enqueue_script('gs-logo-sort', GSL_PLUGIN_URI . 'assets/admin/js/gs-logo-sort.min.js', array('jquery', 'jquery-ui-sortable'), GSL_VERSION, true);
 
 			if ( empty($_GET['object_type']) || $_GET['object_type'] == 'gs-logo-slider' ) {
 				$action = 'sort_logos';

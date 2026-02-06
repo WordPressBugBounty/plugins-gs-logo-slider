@@ -3,9 +3,9 @@ Contributors: gsplugins, itszaman, samdani, itsariful
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, client logo
 Requires at least: 4.3
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 3.7.7
+Stable tag: 3.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -327,6 +327,28 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.8.2 [19th Jan 2026] =
+* [Fixed]: Category include/exclude in Query.
+
+= Version 3.8.1 [22nd Dec 2025] =
+* [Added]: Support to other taxonomies ready for export import.
+* [Fixed]: Allowed linking for the details-2 template.
+* [Fixed]: Meta field *Logo Expiry* Issue.
+
+= Version 3.8.0 [15th Dec 2025] =
+* [Added]: Logo Link Switcher.
+* [Added]: New Themes - **Slider - 2** and **Filter - 4**.
+* [Fixed]: Logo Import Issue.
+* [Fixed]: *Client Site URL* Meta Data Updating Issue.
+
+= Version 3.7.9 [20th Nov 2025] =
+* [Fixed]: Category Include Data and DB Migrator.
+
+= Version 3.7.8 [18th Nov 2025] =
+* [Added]: Sort Script & CSS.
+* [Added]: Tag & Extra 5 Taxonomies.
+* [Added]: Taxonomy Include Exclude in Query.
+
 = Version 3.7.7 [18th Sep 2025] =
 * [Removed]: Admin Notice and Related Options.
 
@@ -693,7 +715,29 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 = version 1.0 =
 * Initial release
 
-== Upgrade notice ==
+== Upgrade Notice ==
+= Version 3.8.2 [19th Jan 2026] =
+* [Fixed]: Category include/exclude in Query.
+
+= Version 3.8.1 [22nd Dec 2025] =
+* [Added]: Support to other taxonomies ready for export import.
+* [Fixed]: Allowed linking for the details-2 template.
+* [Fixed]: Meta field *Logo Expiry* Issue.
+
+= Version 3.8.0 [15th Dec 2025] =
+* [Added]: Logo Link Switcher.
+* [Added]: New Themes - **Slider - 2** and **Filter - 4**.
+* [Fixed]: Logo Import Issue.
+* [Fixed]: *Client Site URL* Meta Data Updating Issue.
+
+= Version 3.7.9 [20th Nov 2025] =
+* [Fixed]: Category Include Data and DB Migrator.
+
+= Version 3.7.8 [18th Nov 2025] =
+* [Added]: Sort Script & CSS.
+* [Added]: Tag & Extra 5 Taxonomies.
+* [Added]: Taxonomy Include Exclude in Query.
+
 = Version 3.7.7 [18th Sep 2025] =
 * [Removed]: Admin Notice and Related Options.
 

@@ -133,20 +133,22 @@ function gs_get_meta_values_options( $meta_key = '', $post_type = 'gs-logo-slide
 
 }
 
-function gs_get_terms( $term_name, $order = 'ASC', $orderby = 'name' ) {
+function gs_get_terms( $tax_name, $order = 'ASC', $orderby = 'name', $include = '', $exclude = '' ) {
 
     $terms = get_terms([
-        'taxonomy' => $term_name,
+        'taxonomy' => $tax_name,
         'orderby'  => $orderby,
         'order'    => $order,
+        'include'  => $include,
+        'exclude'  => $exclude,
     ]);
 
     return wp_list_pluck($terms, 'name', 'slug');
 }
 
-function gs_get_terms_options( $term_name, $echo = true, $order = 'ASC', $orderby = 'name' ) {
+function gs_get_terms_options( $term_name, $echo = true, $order = 'ASC', $orderby = 'name', $include = '', $exclude = '' ) {
 
-    $terms = gs_get_terms( $term_name, $order, $orderby );
+    $terms = gs_get_terms( $term_name, $order, $orderby, $include, $exclude );
     
     $html = '';
 
@@ -311,26 +313,6 @@ function is_gs_logo_pro_valid() {
     return gs_logo_pro_is_valid();
 }
 
-function gs_logo_trim_content( $content = '', $limit = 100, $type = 'chars', $read_more_text = 'Read More' ) {
-
-    $content = wp_strip_all_tags( $content ); // Remove HTML
-
-    $client_url = get_post_meta( get_the_ID(), 'client_url', true );
-
-    if ( $type === 'words' ) {
-        $words = explode( ' ', $content );
-        if ( count( $words ) > $limit ) {
-            $content = implode( ' ', array_slice( $words, 0, $limit ) ) . '<a href="'. $client_url .'"> '. $read_more_text .'</a>';
-        }
-    } else { // Default to chars
-        if ( mb_strlen( $content ) > $limit ) {
-            $content = mb_substr( $content, 0, $limit ) . '<a href="'. $client_url .'"> '. $read_more_text .'</a>';
-        }
-    }
-
-    return $content;
-}
-
 function get_current_full_url() {
     $protocol = is_ssl() ? 'https://' : 'http://';
     $host     = $_SERVER['HTTP_HOST'];
@@ -379,4 +361,29 @@ function is_grid_theme( $theme ){
 
 function is_list_theme( $theme ){
     return in_array( $theme, array( 'list1', 'list2', 'list3', 'list4' ) );
+}
+
+function get_term_ids_by_slugs( $slugs = [], $taxonomy = '' ) {
+
+    if ( empty( $slugs ) || empty( $taxonomy ) ) {
+        return [];
+    }
+
+    global $wpdb;
+
+    $slugs = array_map( 'sanitize_title', (array) $slugs );
+    
+    $placeholders = implode( ',', array_fill( 0, count( $slugs ), '%s' ) );
+
+    $query = $wpdb->prepare(
+        "SELECT t.term_id 
+         FROM {$wpdb->terms} AS t
+         INNER JOIN {$wpdb->term_taxonomy} AS tt ON t.term_id = tt.term_id
+         WHERE tt.taxonomy = %s
+         AND t.slug IN ($placeholders)",
+        array_merge( [ $taxonomy ], $slugs )
+    );
+
+    return $wpdb->get_col( $query );
+
 }
