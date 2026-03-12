@@ -32,7 +32,7 @@ final class Builder {
         add_action( 'wp_ajax_gslogo_get_taxonomy_settings', array($this, 'get_taxonomy_settings') );
         add_action( 'wp_ajax_gslogo_save_taxonomy_settings', array($this, 'save_taxonomy_settings') );
 
-        add_action( 'template_include', array($this, 'populate_shortcode_preview') );
+        add_filter( 'template_include', array($this, 'populate_shortcode_preview') );
         add_action( 'show_admin_bar', array($this, 'hide_admin_bar_from_preview') );
 
         return $this;
@@ -122,9 +122,13 @@ final class Builder {
             $wp->register_globals();
 
 
-            include GSL_PLUGIN_DIR . 'includes/shortcode-builder/preview.php';
+            $preview_template = GSL_PLUGIN_DIR . 'includes/shortcode-builder/preview.php';
 
-            return;
+            if ( file_exists( $preview_template ) ) {
+                return $preview_template;
+            }
+
+            return $template;
 
         }
 
@@ -651,7 +655,7 @@ final class Builder {
             'image-size--help' => __('Select the attachment size from the registered sources', 'gslogo'),
 
             'gs-l-link-logos' => __('Link Logos', 'gslogo'),
-            'gs-l-link-logos--help' => __('Enable/Disable Linking of logos to their respective links', 'gslogo'),
+            'gs-l-link-logos--help' => __('Enable/Disable Linking of logos to their respective url\'s', 'gslogo'),
 
             'custom-image-size' => __('Custom Image Size', 'gslogo'),
             'custom-image-size-width--placeholder' => __('Width', 'gslogo'),
@@ -696,7 +700,7 @@ final class Builder {
             'gs-l-play-pause--help' => __('Pause on mouse hover over the logo slider. Default Off', 'gslogo'),
 
             'gs-l-title' => __('Logo Title', 'gslogo'),
-            'gs-l-title--help' => __('Display Logo including / excluding Title. Default Off', 'gslogo'),
+            'gs-l-title--help' => __('Display Logo Title.', 'gslogo'),
 
             'title-tag' => __('Title Tag', 'gslogo'),
             'title-tag--help' => __('Select logo title tag. Default H3.', 'gslogo'),

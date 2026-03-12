@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 3.8.2
+Stable tag: 3.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Logo Slider: The best responsive plugin for Logo Showcase, Logo Carousel, and di
 
 The plugin is user-friendly, creating a dedicated logo post type and offering a user-friendly Shortcode generator for easy embedding. Its responsive design ensures that responsive sliders look great on all devices, and the lightweight plugin keeps your site running smoothly. Focus on what matters with GS Logo Slider.
 
-🎬 [Live Demo](https://logo.gsplugins.com) ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-logo-slider) 📚 [Documentation](https://docs.gsplugins.com/gs-logo-slider) 🙋‍♂️ [Support](https://www.gsplugins.com/contact)
+🎬 [Live Demo](https://logo.gsplugins.com/) ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-logo-slider/) 📚 [Documentation](https://docs.gsplugins.com/gs-logo-slider/) 🙋‍♂️ [Support](https://www.gsplugins.com/contact/)
 
 https://www.youtube.com/playlist?list=PLLrT2alOaYX7BYElWvN_juWXo7yYAcjoh
 
@@ -149,22 +149,22 @@ Use the following shortcode to display logos for partners, clients, or sponsors.
 `
 
 ### Documentation
-If you have any questions regarding the **WordPress Logo Carousel** plugin and how to work with it, We recommend referring to our comprehensive online documentation. It provides detailed information and instructions to assist you in navigating and utilizing the plugin effectively. You can find the [Documentation](https://docs.gsplugins.com/gs-logo-slider) here.
+If you have any questions regarding the **WordPress Logo Carousel** plugin and how to work with it, We recommend referring to our comprehensive online documentation. It provides detailed information and instructions to assist you in navigating and utilizing the plugin effectively. You can find the [Documentation](https://docs.gsplugins.com/gs-logo-slider/) here.
 
 ### Quick Support & Bug Reporting
-If you encounter any problems or discover bugs, please post them in our [Support](https://www.gsplugins.com/contact) channel. We aim to respond as soon as possible (excluding holidays). 
+If you encounter any problems or discover bugs, please post them in our [Support](https://www.gsplugins.com/contact/) channel. We aim to respond as soon as possible (excluding holidays). 
 
 ***Pro users are requested to contact our support channel for dedicated assistance.***
 
-🙋‍♂️ Alternatively, you can reach out to us through our [Support](https://www.gsplugins.com/contact) or [WordPress.org](https://wordpress.org/support/plugin/gs-logo-slider/) support forum.
+🙋‍♂️ Alternatively, you can reach out to us through our [Support](https://www.gsplugins.com/contact/) or [WordPress.org](https://wordpress.org/support/plugin/gs-logo-slider/) support forum.
 
 ### Development Team
 Crafted and Developed with Passion by [GS Plugins](https://www.gsplugins.com)
 
 ### Confused?
 
-🎬 [View live Demos &raquo;](https://logo.gsplugins.com)
-📚 [Documentation &raquo;](https://docs.gsplugins.com/gs-logo-slider)
+🎬 [View live Demos &raquo;](https://logo.gsplugins.com/)
+📚 [Documentation &raquo;](https://docs.gsplugins.com/gs-logo-slider/)
 
 
 ### 🔥 You may like other plugins from [GS Plugins](https://www.gsplugins.com)
@@ -219,7 +219,7 @@ Crafted and Developed with Passion by [GS Plugins](https://www.gsplugins.com)
 
 Install it as a regular WordPress plugin. Here are different ways to install the plugin : 
 
-*   [Visual Installation & Usage Guide &raquo;](https://docs.gsplugins.com/gs-logo-slider)
+*   [Visual Installation & Usage Guide &raquo;](https://docs.gsplugins.com/gs-logo-slider/)
 
 = Install by Search Plugin =
 - In your Admin, go to the menu Plugins > Add New
@@ -280,7 +280,7 @@ First, install the plugin on your WordPress website. Then add the Shortcode wher
 
 You can add the shortcode to display logos anywhere at your site.
 
-Check [Shortcode Attributes & Usage](https://docs.gsplugins.com/gs-logo-slider/shortcode-usage) docs for a detailed guide.
+Check [Shortcode Attributes & Usage](https://docs.gsplugins.com/gs-logo-slider/shortcode-usage/) docs for a detailed guide.
 
 = Can I use an external link in the logo of my client’s website on the plugin? =
 Yes, you can. Add the company's website address by starting it with **https://** in the company URL field. Logo will automatically link with the URL.
@@ -293,7 +293,7 @@ Minimum WordPress Version: 5.8 or higher is required for using the plugin. We re
 For the logos, you can use JPG, JPEG, PNG, GIF and other image formats.
 
 = Can I get a custom-developed plugin for my website? =
-Yes, we do provide custom development services. In case of a personal or a business need, you can [contact us](https://www.gsplugins.com/contact) for custom support. 
+Yes, we do provide custom development services. In case of a personal or a business need, you can [contact us](https://www.gsplugins.com/contact/) for custom support. 
 
 = What makes our plugin stand out from other WordPress plugins? =
 Our plugin is user-friendly, feature-rich, and optimized for performance, ensuring your website runs smoothly. We offer robust support, regular updates, and extensive customization options. Plus, our positive user feedback highlights its reliability and effectiveness.
@@ -327,6 +327,11 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.8.3 [12th Mar 2026] =
+* [Added]: YOOtheme support.
+* [Updated]: *template_include* hook to proper filter usage and prevented returning null.
+* [Updated]: Help text improvements.
+
 = Version 3.8.2 [19th Jan 2026] =
 * [Fixed]: Category include/exclude in Query.
 
@@ -716,6 +721,11 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade Notice ==
+= Version 3.8.3 [12th Mar 2026] =
+* [Added]: YOOtheme support.
+* [Updated]: *template_include* hook to proper filter usage and prevented returning null.
+* [Updated]: Help text improvements.
+
 = Version 3.8.2 [19th Jan 2026] =
 * [Fixed]: Category include/exclude in Query.
 
