@@ -2,6 +2,8 @@
 
 namespace GSLogoAppSero;
 
+use function GSLOGO\is_gs_logo_pro_valid;
+
 /**
  * Appsero Insights
  *
@@ -409,6 +411,11 @@ class Insights {
      * @return void
      */
     public function admin_notice() {
+
+        if( is_gs_logo_pro_valid() ) {
+            return;
+        }
+
         if ( $this->notice_dismissed() ) {
             return;
         }
