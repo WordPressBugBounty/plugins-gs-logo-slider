@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 3.8.4
+Stable tag: 3.8.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -327,6 +327,17 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.8.5 [12th Aug 2026] =
+* [Added]: New fields to add info: Mission, Vision, Established On, Number of Employees, Formation Structure, Client Since, Map Location, Video, Funding Type, Funding Source, Company Social Links, Life in Company / Image Gallery, Pitch Deck / Company Presentation (PDF). 
+* [Added]: Divi 5 support for the logo shortcode module.
+* [Added]: Missing taxonomy controls with on/off options and dynamic labels in Single Template 01.
+* [Added]: Single Template 01 styling, colors, icons, and responsive spacing.
+* [Added]: Popup and panel handling with separated hooks.
+* [Added]: Module icon sizing and overall CSS styling.
+* [Fixed]: Divi DependencyInterface fatal error.
+* [Updated]: Popup and panel options are now restricted appropriately in the Free version.
+* [Updated]: Removed outdated drawer-related handling and unused single template media link.
+
 = Version 3.8.4 [15th Jun 2026] =
 * [Updated]: Disabled Appsero notice for pro users.
 
@@ -724,6 +735,17 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade Notice ==
+= Version 3.8.5 [12th Aug 2026] =
+* [Added]: New fields to add info: Mission, Vision, Established On, Number of Employees, Formation Structure, Client Since, Map Location, Video, Funding Type, Funding Source, Company Social Links, Life in Company / Image Gallery, Pitch Deck / Company Presentation (PDF). 
+* [Added]: Divi 5 support for the logo shortcode module.
+* [Added]: Missing taxonomy controls with on/off options and dynamic labels in Single Template 01.
+* [Added]: Single Template 01 styling, colors, icons, and responsive spacing.
+* [Added]: Popup and panel handling with separated hooks.
+* [Added]: Module icon sizing and overall CSS styling.
+* [Fixed]: Divi DependencyInterface fatal error.
+* [Updated]: Popup and panel options are now restricted appropriately in the Free version.
+* [Updated]: Removed outdated drawer-related handling and unused single template media link.
+
 = Version 3.8.4 [15th Jun 2026] =
 * [Updated]: Disabled Appsero notice for pro users.
 

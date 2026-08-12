@@ -12,7 +12,7 @@
  * Plugin Name:			GS Logo Slider Lite
  * Plugin URI:			https://www.gsplugins.com/product/gs-logo-slider/
  * Description:       	Best Responsive Logo slider to display partners, clients or sponsors Logo on WordPress site. Display anywhere at your site using shortcode like [gslogo id=1] & Widget. Check <a href="https://logo.gsplugins.com/">GS Logo Slider Demo</a> & <a href="https://docs.gsplugins.com/gs-logo-slider/">Documention</a>.
- * Version:           	3.8.4
+ * Version:           	3.8.5
  * Author:       		GS Plugins
  * Author URI:       	https://www.gsplugins.com/
  * Text Domain:       	gslogo
@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Defining constants
  */
 if ( ! defined( 'GSL_VERSION' ) )
-    define( 'GSL_VERSION', '3.8.4' );
+    define( 'GSL_VERSION', '3.8.5' );
 
 if ( ! defined( 'GSL_MIN_PRO_VERSION' ) )
     define( 'GSL_MIN_PRO_VERSION', '3.5.3' );

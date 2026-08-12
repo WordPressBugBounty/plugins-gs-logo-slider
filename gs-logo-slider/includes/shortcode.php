@@ -596,6 +596,9 @@ class Shortcode {
 				?>
 
 			</div>
+
+			<?php do_action( 'gs_logo_detail_shell', $_settings, $id ); ?>
+
 		</div>
 	
 		<?php

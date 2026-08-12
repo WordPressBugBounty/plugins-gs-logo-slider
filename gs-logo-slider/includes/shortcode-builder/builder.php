@@ -641,6 +641,9 @@ final class Builder {
             'enable_single_page' => __('Enable Single Pages', 'gslogo'),
             'enable_single_page-details' => __('Enable Single Pages for logos', 'gslogo'),
             
+            'single_page_style' => __('Single Page Style', 'gslogo'),
+            'single_page_style--details' => __('Select the style of the single logo page', 'gslogo'),
+
             'disable_lazy_load' => __('Disable Lazy Load', 'gslogo'),
             'disable_lazy_load-details' => __('Disable Lazy Load for logos', 'gslogo'),
             
@@ -656,6 +659,15 @@ final class Builder {
 
             'gs-l-link-logos' => __('Link Logos', 'gslogo'),
             'gs-l-link-logos--help' => __('Enable/Disable Linking of logos to their respective url\'s', 'gslogo'),
+
+            'gs_logo_link_type' => __('Link Type', 'gslogo'),
+            'gs_logo_link_type__details' => __('Select the type of link to be used for the logos', 'gslogo'),
+
+            'popup_style' => __('Popup Style', 'gslogo'),
+            'popup_style__details' => __('Select the style of the popup', 'gslogo'),
+
+            'panel_style' => __('Panel Style', 'gslogo'),
+            'panel_style__details' => __('Select the style of the panel', 'gslogo'),
 
             'custom-image-size' => __('Custom Image Size', 'gslogo'),
             'custom-image-size-width--placeholder' => __('Width', 'gslogo'),
@@ -1175,6 +1187,109 @@ final class Builder {
 
     }
 
+    public function get_logo_link_type_options() {
+
+        $options = [
+            [
+                'label' => __( 'Single Page', 'gslogo' ),
+                'value' => 'single-page'
+            ],
+            [
+                'label' => __( 'Popup', 'gslogo' ),
+                'value' => 'popup'
+            ],
+            [
+                'label' => __( 'Panel', 'gslogo' ),
+                'value' => 'panel'
+            ],
+            [
+                'label' => __( 'Client Site URL', 'gslogo' ),
+                'value' => 'client-site-url'
+            ]
+        ];
+
+        if ( ! is_pro_active() || ! is_plugin_loaded() || ! gs_logo_pro_is_valid() ) {
+            $options = array_map( function( $item ) {
+                if ( in_array( $item['value'], [ 'popup', 'panel' ], true ) ) {
+                    $item['pro'] = true;
+                }
+                return $item;
+            }, $options );
+        }
+
+        return $options;
+    }
+
+    public function get_popup_style_options() {
+
+        $options = [
+            [
+                'label' => __( 'Style 01', 'gslogo' ),
+                'value' => 'style-01'
+            ],
+            [
+                'label' => __( 'Style 02', 'gslogo' ),
+                'value' => 'style-02'
+            ],
+            [
+                'label' => __( 'Style 03', 'gslogo' ),
+                'value' => 'style-03'
+            ],
+            [
+                'label' => __( 'Style 04', 'gslogo' ),
+                'value' => 'style-04'
+            ],
+            [
+                'label' => __( 'Style 05', 'gslogo' ),
+                'value' => 'style-05'
+            ]
+        ];
+
+        if ( ! is_pro_active() || ! is_plugin_loaded() || ! gs_logo_pro_is_valid() ) {
+            $options = array_map( function( $item ) {
+                $item['pro'] = true;
+                return $item;
+            }, $options );
+        }
+
+        return $options;
+    }
+
+    public function get_panel_style_options() {
+
+        $options = [
+            [
+                'label' => __( 'Style 01', 'gslogo' ),
+                'value' => 'style-01'
+            ],
+            [
+                'label' => __( 'Style 02', 'gslogo' ),
+                'value' => 'style-02'
+            ],
+            [
+                'label' => __( 'Style 03', 'gslogo' ),
+                'value' => 'style-03'
+            ],
+            [
+                'label' => __( 'Style 04', 'gslogo' ),
+                'value' => 'style-04'
+            ],
+            [
+                'label' => __( 'Style 05', 'gslogo' ),
+                'value' => 'style-05'
+            ]
+        ];
+
+        if ( ! is_pro_active() || ! is_plugin_loaded() || ! gs_logo_pro_is_valid() ) {
+            $options = array_map( function( $item ) {
+                $item['pro'] = true;
+                return $item;
+            }, $options );
+        }
+
+        return $options;
+    }
+
     public function get_shortcode_default_options() {
 
         return [
@@ -1361,6 +1476,12 @@ final class Builder {
                 ]
             ],
 
+            'gs_logo_link_type' => $this->get_logo_link_type_options(),
+
+            'popup_style' => $this->get_popup_style_options(),
+
+            'panel_style' => $this->get_panel_style_options(),
+
             'category'          => $this->get_logo_terms('logo-category'),
             'tag'               => $this->get_logo_terms('logo-tag'),
             'extra_one'         => $this->get_logo_terms('logo-extra-one'),
@@ -1455,6 +1576,7 @@ final class Builder {
     public function get_shortcode_default_prefs() {
         return [
             'enable_single_page' => 'off',
+            'single_page_style' => 'style-01',
             'disable_lazy_load' => 'off',
             'lazy_load_class' => 'skip-lazy',
             'anchor_tag_rel' => 'noopener',
@@ -1464,6 +1586,28 @@ final class Builder {
 
     public function get_shortcode_prefs_options() {
         return [
+            'single_page_style' => [
+                [
+                    'label' => __( 'Style 01', 'gslogo' ),
+                    'value' => 'style-01'
+                ],
+                [
+                    'label' => __( 'Style 02', 'gslogo' ),
+                    'value' => 'style-02'
+                ],
+                [
+                    'label' => __( 'Style 03', 'gslogo' ),
+                    'value' => 'style-03'
+                ],
+                [
+                    'label' => __( 'Style 04', 'gslogo' ),
+                    'value' => 'style-04'
+                ],
+                [
+                    'label' => __( 'Style 05', 'gslogo' ),
+                    'value' => 'style-05'
+                ]
+            ],
             'anchor_tag_rel' => [
                 [
                     'label' => __( 'nofollow', 'gslogo' ),
@@ -1564,6 +1708,9 @@ final class Builder {
             'gs_l_title'               => 'on',
             'title_tag'                => 'h3',
             'gs_l_link_logos'          => 'on',
+            'gs_logo_link_type'        => 'single-page',
+            'popup_style'              => 'style-01',
+            'panel_style'              => 'style-01',
             'include_category'         => [],
             'include_tag'              => [],
             'include_extra_one'        => [],
@@ -1753,6 +1900,7 @@ final class Builder {
         $settings = shortcode_atts( $defaults, $settings );
 
         $settings['enable_single_page']        = sanitize_text_field( $settings['enable_single_page'] );
+        $settings['single_page_style']         = sanitize_text_field( $settings['single_page_style'] );
         $settings['disable_lazy_load']         = sanitize_text_field( $settings['disable_lazy_load'] );
         $settings['lazy_load_class']           = sanitize_text_field( $settings['lazy_load_class'] );
         $settings['gs_logo_slider_custom_css'] = wp_strip_all_tags( $settings['gs_logo_slider_custom_css'] );

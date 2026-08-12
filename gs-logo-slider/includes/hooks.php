@@ -17,6 +17,7 @@ class Hooks {
         add_filter( 'jetpack_content_options_featured_image_exclude_cpt', [$this, 'jetpack__featured_image_exclude_cpt']);
         add_filter( 'use_block_editor_for_post_type', [$this, 'disable_gutenberg'], 10, 2 );
         add_filter( 'get_terms_orderby', array( $this, 'gs_logo_order_terms' ), 10, 3 );
+        add_filter( 'single_template', [ $this, 'gs_logo_single_template' ], -1 );
     }
 
 
@@ -54,6 +55,16 @@ class Hooks {
             default:
                 return $orderby;
         }
+    }
+
+    public function gs_logo_single_template($single_logo_template) {
+        global $post;
+
+        if ($post->post_type == 'gs-logo-slider') {
+            $single_logo_template = Template_Loader::locate_template('gs-logo-template-single.php');
+        }
+
+        return $single_logo_template;
     }
 
     function disable_gutenberg( $current_status, $post_type ) {

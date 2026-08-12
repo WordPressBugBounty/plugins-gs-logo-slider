@@ -12,7 +12,25 @@ function is_divi_active() {
 }
 
 function is_divi_editor() {
-    if ( !empty($_POST['action']) && $_POST['action'] == 'et_pb_process_computed_property' && !empty($_POST['module_type']) && $_POST['module_type'] == 'gs_logo_slider' ) return true;
+    // Divi 4 computed property (legacy layouts during migration).
+    if ( ! empty( $_POST['action'] ) && $_POST['action'] == 'et_pb_process_computed_property' && ! empty( $_POST['module_type'] ) && $_POST['module_type'] == 'gs_logo_slider' ) {
+        return true;
+    }
+
+    // Divi 5 Visual Builder / Theme Builder.
+    if ( function_exists( 'et_core_is_fb_enabled' ) && et_core_is_fb_enabled() && function_exists( 'et_builder_d5_enabled' ) && et_builder_d5_enabled() ) {
+        return true;
+    }
+
+    // Divi 5 REST preview for GS Logo module.
+    if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+        $rest_route = isset( $GLOBALS['wp']->query_vars['rest_route'] ) ? (string) $GLOBALS['wp']->query_vars['rest_route'] : '';
+        if ( $rest_route && false !== strpos( $rest_route, '/gs-logo/v1/divi' ) ) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 function is_pro_active() {
@@ -361,6 +379,250 @@ function is_grid_theme( $theme ){
 
 function is_list_theme( $theme ){
     return in_array( $theme, array( 'list1', 'list2', 'list3', 'list4' ) );
+}
+
+/**
+ * Formation structure options (matches metabox).
+ *
+ * @return array<string, string>
+ */
+function gs_logo_get_formation_structures() {
+	return apply_filters( 'gs_logo_formation_structures', [
+		'sole_proprietorship' => __( 'Sole Proprietorship', 'gslogo' ),
+		'partnership'         => __( 'Partnership', 'gslogo' ),
+		'llc'                 => __( 'LLC', 'gslogo' ),
+		'corporation'         => __( 'Corporation', 'gslogo' ),
+		'non_profit'          => __( 'Non-Profit', 'gslogo' ),
+		'government'          => __( 'Government', 'gslogo' ),
+		'cooperative'         => __( 'Cooperative', 'gslogo' ),
+		'other'               => __( 'Other', 'gslogo' ),
+	] );
+}
+
+/**
+ * Funding type options (matches metabox).
+ *
+ * @return array<string, string>
+ */
+function gs_logo_get_funding_types() {
+	return apply_filters( 'gs_logo_funding_types', [
+		'angel'          => __( 'Angel', 'gslogo' ),
+		'seed'           => __( 'Seed', 'gslogo' ),
+		'series_a'       => __( 'Series A', 'gslogo' ),
+		'series_b'       => __( 'Series B', 'gslogo' ),
+		'series_c'       => __( 'Series C', 'gslogo' ),
+		'series_d'       => __( 'Series D+', 'gslogo' ),
+		'bootstrapped'   => __( 'Bootstrapped', 'gslogo' ),
+		'debt_financing' => __( 'Debt Financing', 'gslogo' ),
+		'grant'          => __( 'Grant', 'gslogo' ),
+		'crowdfunding'   => __( 'Crowdfunding', 'gslogo' ),
+		'private_equity' => __( 'Private Equity', 'gslogo' ),
+		'other'          => __( 'Other', 'gslogo' ),
+	] );
+}
+
+/**
+ * @param string $key Formation structure key.
+ * @return string
+ */
+function gs_logo_get_formation_structure_label( $key ) {
+	$structures = gs_logo_get_formation_structures();
+	return isset( $structures[ $key ] ) ? $structures[ $key ] : '';
+}
+
+/**
+ * @param string $key Funding type key.
+ * @return string
+ */
+function gs_logo_get_funding_type_label( $key ) {
+	$types = gs_logo_get_funding_types();
+	return isset( $types[ $key ] ) ? $types[ $key ] : '';
+}
+
+/**
+ * Social platform labels for single templates.
+ *
+ * @return array<string, string>
+ */
+function gs_logo_get_social_platform_labels() {
+	return apply_filters( 'gs_logo_social_platform_labels', [
+		'facebook'   => __( 'Facebook', 'gslogo' ),
+		'twitter'    => __( 'X / Twitter', 'gslogo' ),
+		'instagram'  => __( 'Instagram', 'gslogo' ),
+		'linkedin'   => __( 'LinkedIn', 'gslogo' ),
+		'youtube'    => __( 'YouTube', 'gslogo' ),
+		'pinterest'  => __( 'Pinterest', 'gslogo' ),
+		'github'     => __( 'GitHub', 'gslogo' ),
+		'tumblr'     => __( 'Tumblr', 'gslogo' ),
+		'vimeo'      => __( 'Vimeo', 'gslogo' ),
+		'whatsapp'   => __( 'WhatsApp', 'gslogo' ),
+		'reddit'     => __( 'Reddit', 'gslogo' ),
+		'skype'      => __( 'Skype', 'gslogo' ),
+		'soundcloud' => __( 'SoundCloud', 'gslogo' ),
+		'dribbble'   => __( 'Dribbble', 'gslogo' ),
+		'behance'    => __( 'Behance', 'gslogo' ),
+		'website'    => __( 'Website / Other', 'gslogo' ),
+	] );
+}
+
+/**
+ * Map social icon keys to inline SVG sprite IDs.
+ *
+ * @param string $icon_key Platform key.
+ * @return string
+ */
+function gs_logo_single_social_sprite_id( $icon_key ) {
+	$icon_key = sanitize_key( (string) $icon_key );
+
+	$map = [
+		'facebook'   => 'gs-i-facebook',
+		'twitter'    => 'gs-i-twitter',
+		'x'          => 'gs-i-twitter',
+		'instagram'  => 'gs-i-instagram',
+		'linkedin'   => 'gs-i-linkedin',
+		'youtube'    => 'gs-i-youtube',
+		'pinterest'  => 'gs-i-pinterest',
+		'github'     => 'gs-i-github',
+		'tumblr'     => 'gs-i-tumblr',
+		'vimeo'      => 'gs-i-vimeo',
+		'whatsapp'   => 'gs-i-whatsapp',
+		'reddit'     => 'gs-i-reddit',
+		'skype'      => 'gs-i-skype',
+		'soundcloud' => 'gs-i-soundcloud',
+		'dribbble'   => 'gs-i-dribbble',
+		'behance'    => 'gs-i-behance',
+		'website'    => 'gs-i-globe',
+	];
+
+	return isset( $map[ $icon_key ] ) ? $map[ $icon_key ] : 'gs-i-globe';
+}
+
+/**
+ * Map social icon keys to brand modifier class names for template styling.
+ *
+ * @param string $icon_key Platform key.
+ * @return string
+ */
+function gs_logo_single_social_brand_class( $icon_key ) {
+	$icon_key = sanitize_key( (string) $icon_key );
+
+	$map = [
+		'facebook'   => 'facebook',
+		'twitter'    => 'twitter',
+		'x'          => 'twitter',
+		'instagram'  => 'instagram',
+		'linkedin'   => 'linkedin',
+		'youtube'    => 'youtube',
+		'pinterest'  => 'pinterest',
+		'github'     => 'github',
+		'tumblr'     => 'tumblr',
+		'vimeo'      => 'vimeo',
+		'whatsapp'   => 'whatsapp',
+		'reddit'     => 'reddit',
+		'skype'      => 'skype',
+		'soundcloud' => 'soundcloud',
+		'dribbble'   => 'dribbble',
+		'behance'    => 'behance',
+		'website'    => 'default',
+	];
+
+	return isset( $map[ $icon_key ] ) ? $map[ $icon_key ] : 'default';
+}
+
+/**
+ * Whether a social sprite uses filled paths (vs stroke icons like globe/link).
+ *
+ * @param string $sprite_id Sprite symbol id.
+ * @return bool
+ */
+function gs_logo_single_social_is_brand_sprite( $sprite_id ) {
+	$sprite_id = sanitize_key( ltrim( (string) $sprite_id, '#' ) );
+
+	return ! in_array( $sprite_id, [ 'gs-i-globe', 'gs-i-link' ], true );
+}
+
+/**
+ * Parse a YouTube or Vimeo URL for single-page video blocks.
+ *
+ * @param string $url Video URL.
+ * @return array|null
+ */
+/**
+ * Build taxonomy columns for single logo templates.
+ *
+ * @param int $post_id Logo post ID.
+ * @return array<int, array<string, mixed>>
+ */
+function gs_logo_get_single_taxonomy_columns( $post_id ) {
+	$taxonomy_columns = [];
+	$taxonomy_map     = [
+		'logo-category'    => [ 'empty_icon' => 'gs-i-building' ],
+		'logo-tag'         => [ 'empty_icon' => 'gs-i-link' ],
+		'logo-extra-one'   => [ 'empty_icon' => 'gs-i-building' ],
+		'logo-extra-two'   => [ 'empty_icon' => 'gs-i-building' ],
+		'logo-extra-three' => [ 'empty_icon' => 'gs-i-building' ],
+		'logo-extra-four'  => [ 'empty_icon' => 'gs-i-building' ],
+		'logo-extra-five'  => [ 'empty_icon' => 'gs-i-link' ],
+	];
+
+	foreach ( $taxonomy_map as $taxonomy_slug => $taxonomy_meta ) {
+		if ( ! taxonomy_exists( $taxonomy_slug ) ) {
+			continue;
+		}
+
+		$tax_object = get_taxonomy( $taxonomy_slug );
+		$terms      = get_the_terms( $post_id, $taxonomy_slug );
+
+		if ( is_wp_error( $terms ) ) {
+			$terms = [];
+		}
+
+		$taxonomy_columns[] = [
+			'slug'       => $taxonomy_slug,
+			'label'      => $tax_object && ! empty( $tax_object->labels->name ) ? $tax_object->labels->name : $taxonomy_slug,
+			'singular'   => $tax_object && ! empty( $tax_object->labels->singular_name ) ? $tax_object->labels->singular_name : $taxonomy_slug,
+			'terms'      => $terms,
+			'empty_icon' => $taxonomy_meta['empty_icon'],
+			'is_tag'     => ( 'logo-tag' === $taxonomy_slug || 0 === strpos( $taxonomy_slug, 'logo-extra-' ) ),
+		];
+	}
+
+	return $taxonomy_columns;
+}
+
+function gs_logo_get_video_embed_data( $url ) {
+
+	$url = trim( (string) $url );
+
+	if ( '' === $url ) {
+		return null;
+	}
+
+	if ( preg_match( '#(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([a-zA-Z0-9_-]{6,})#i', $url, $matches ) ) {
+		$video_id = $matches[1];
+		return [
+			'provider'    => 'youtube',
+			'id'          => $video_id,
+			'watch_url'   => $url,
+			'thumbnail'   => sprintf( 'https://img.youtube.com/vi/%s/hqdefault.jpg', $video_id ),
+			'embed_url'   => sprintf( 'https://www.youtube.com/embed/%s', $video_id ),
+			'watch_label' => __( 'Watch on YouTube', 'gslogo' ),
+		];
+	}
+
+	if ( preg_match( '#vimeo\.com/(?:video/)?(\d+)#i', $url, $matches ) ) {
+		$video_id = $matches[1];
+		return [
+			'provider'    => 'vimeo',
+			'id'          => $video_id,
+			'watch_url'   => $url,
+			'thumbnail'   => '',
+			'embed_url'   => sprintf( 'https://player.vimeo.com/video/%s', $video_id ),
+			'watch_label' => __( 'Watch on Vimeo', 'gslogo' ),
+		];
+	}
+
+	return null;
 }
 
 function get_term_ids_by_slugs( $slugs = [], $taxonomy = '' ) {
