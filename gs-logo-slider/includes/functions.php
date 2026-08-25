@@ -649,3 +649,180 @@ function get_term_ids_by_slugs( $slugs = [], $taxonomy = '' ) {
     return $wpdb->get_col( $query );
 
 }
+
+function get_logo_visibility_field( $group, $field_key ) {
+
+	$defaults = [
+		'desktop'          => true,
+		'tablet'           => true,
+		'mobile_landscape' => true,
+		'mobile'           => true,
+	];
+
+	$visibility_settings = isset( $GLOBALS['gs_logo_visibility_settings'] ) ? $GLOBALS['gs_logo_visibility_settings'] : null;
+
+	if ( empty( $visibility_settings ) && isset( $GLOBALS['gs_logo_shortcode_settings']['visibility_settings'] ) ) {
+		$visibility_settings = $GLOBALS['gs_logo_shortcode_settings']['visibility_settings'];
+	}
+
+	if ( empty( $visibility_settings ) || ! is_array( $visibility_settings ) ) {
+		return $defaults;
+	}
+
+	if ( ! isset( $visibility_settings[ $group ][ $field_key ] ) || ! is_array( $visibility_settings[ $group ][ $field_key ] ) ) {
+		return $defaults;
+	}
+
+	return wp_parse_args( $visibility_settings[ $group ][ $field_key ], $defaults );
+}
+
+function get_current_visibility_group() {
+
+	if ( ! empty( $GLOBALS['gs_logo_visibility_group'] ) ) {
+		return $GLOBALS['gs_logo_visibility_group'];
+	}
+
+	return 'initial';
+}
+
+function is_visible( $field, $device = '' ) {
+
+	if ( ! is_array( $field ) ) {
+		return true;
+	}
+
+	if ( empty( $device ) ) {
+		return wp_validate_boolean( $field['desktop'] ?? false )
+			|| wp_validate_boolean( $field['tablet'] ?? false )
+			|| wp_validate_boolean( $field['mobile_landscape'] ?? false )
+			|| wp_validate_boolean( $field['mobile'] ?? false );
+	}
+
+	if ( in_array( $device, [ 'desktop', 'tablet', 'mobile_landscape', 'mobile' ], true ) ) {
+		return isset( $field[ $device ] ) ? wp_validate_boolean( $field[ $device ] ) : false;
+	}
+
+	return false;
+}
+
+function get_visible_classes( $field, $additional_class = '' ) {
+
+	$devices = [
+		'desktop'          => 'gs-logo--hide-md',
+		'tablet'           => 'gs-logo--hide-sm',
+		'mobile_landscape' => 'gs-logo--hide-xs',
+		'mobile'           => 'gs-logo--hide-xxs',
+	];
+
+	$classes = [];
+
+	if ( ! empty( $additional_class ) ) {
+		$classes[] = $additional_class;
+	}
+
+	if ( ! is_array( $field ) ) {
+		return $classes;
+	}
+
+	foreach ( $devices as $device => $class ) {
+		if ( ! is_visible( $field, $device ) ) {
+			$classes[] = $class;
+		}
+	}
+
+	return $classes;
+}
+
+function print_visible_classes( $field, $additional_class = '' ) {
+	$classes = get_visible_classes( $field, $additional_class );
+	echo esc_attr( implode( ' ', $classes ) );
+}
+
+function logo_visibility_should_show( $field_key, $group = null ) {
+
+	if ( empty( $group ) ) {
+		$group = get_current_visibility_group();
+	}
+
+	return is_visible( get_logo_visibility_field( $group, $field_key ) );
+}
+
+function logo_visibility_classes( $field_key, $additional_class = '', $group = null ) {
+
+	if ( empty( $group ) ) {
+		$group = get_current_visibility_group();
+	}
+
+	return implode( ' ', get_visible_classes( get_logo_visibility_field( $group, $field_key ), $additional_class ) );
+}
+
+/**
+ * Visibility classes for a table column that represents multiple fields.
+ * A device hide class is added only when every field is hidden on that device.
+ */
+function logo_visibility_classes_any( $field_keys, $additional_class = '', $group = null ) {
+
+	if ( empty( $group ) ) {
+		$group = get_current_visibility_group();
+	}
+
+	$devices = [
+		'desktop'          => 'gs-logo--hide-md',
+		'tablet'           => 'gs-logo--hide-sm',
+		'mobile_landscape' => 'gs-logo--hide-xs',
+		'mobile'           => 'gs-logo--hide-xxs',
+	];
+
+	$classes = [];
+
+	if ( ! empty( $additional_class ) ) {
+		$classes[] = $additional_class;
+	}
+
+	foreach ( $devices as $device => $class ) {
+		$any_visible = false;
+
+		foreach ( (array) $field_keys as $field_key ) {
+			if ( is_visible( get_logo_visibility_field( $group, $field_key ), $device ) ) {
+				$any_visible = true;
+				break;
+			}
+		}
+
+		if ( ! $any_visible ) {
+			$classes[] = $class;
+		}
+	}
+
+	return implode( ' ', $classes );
+}
+
+function logo_visibility_empty_if_hidden( $value, $field_key, $empty = '' ) {
+
+	if ( logo_visibility_should_show( $field_key ) ) {
+		return $value;
+	}
+
+	return $empty;
+}
+
+function logo_visibility_filter_rows( $rows ) {
+
+	$filtered = [];
+
+	foreach ( (array) $rows as $row ) {
+		if ( ! is_array( $row ) ) {
+			continue;
+		}
+
+		$key = isset( $row['visibility_key'] ) ? $row['visibility_key'] : '';
+
+		if ( $key && ! logo_visibility_should_show( $key ) ) {
+			continue;
+		}
+
+		$filtered[] = $row;
+	}
+
+	return $filtered;
+}

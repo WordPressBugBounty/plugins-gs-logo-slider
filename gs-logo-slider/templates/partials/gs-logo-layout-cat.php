@@ -11,7 +11,10 @@ namespace GSLOGO;
  * @version 1.0.0
  */
 
-if ( !empty($show_cat) && $show_cat == "on" ) {
+if ( ! logo_visibility_should_show( 'logo_categories' ) ) {
+    return;
+}
+
     $allowed_tags = ['h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
     $logo_cat_tag = (string) apply_filters( 'gs_logo_category_tag', 'div' );
     
@@ -23,6 +26,4 @@ if ( !empty($show_cat) && $show_cat == "on" ) {
 
     $cats = wp_list_pluck( $cats, 'name' );
 
-    printf( '<%1$s class="gs_logo_cats">%2$s</%1$s>', $logo_cat_tag, join(', ', $cats) );
-
-}
+    printf( '<%1$s class="%2$s">%3$s</%1$s>', $logo_cat_tag, esc_attr( logo_visibility_classes( 'logo_categories', 'gs_logo_cats' ) ), join(', ', $cats) );

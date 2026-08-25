@@ -3,9 +3,9 @@ Contributors: gsplugins, itszaman, samdani, itsariful
 Donate link: https://www.paypal.com/donate/?hosted_button_id=K7K8YF4U3SCNQ
 Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, client logo
 Requires at least: 4.3
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 3.8.6
+Stable tag: 3.8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -313,6 +313,12 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.8.7 [25th Aug 2026] =
+* [Added]: Visibility controls for initial, popup, and panel views.
+* [Improved]: Shortcode tab labels for a cleaner interface.
+* [Improved]: Shortcode tab cursor and clickable pointer area.
+* [Improved]: Overall shortcode builder usability.
+
 = Version 3.8.6 [16th Aug 2026] =
 * [Added]: Divi 5 support for the Logo shortcode module.
 
@@ -723,6 +729,12 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade Notice ==
+= Version 3.8.7 [25th Aug 2026] =
+* [Added]: Visibility controls for initial, popup, and panel views.
+* [Improved]: Shortcode tab labels for a cleaner interface.
+* [Improved]: Shortcode tab cursor and clickable pointer area.
+* [Improved]: Overall shortcode builder usability.
+
 = Version 3.8.6 [16th Aug 2026] =
 * [Added]: Divi 5 support for the Logo shortcode module.
 

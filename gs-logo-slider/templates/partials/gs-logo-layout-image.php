@@ -39,6 +39,12 @@ if ( $disable_lazy_load == 'on' && !empty($lazy_load_class) ) {
     $logo_img_classes[] = $lazy_load_class;
 }
 
+$logo_img_classes[] = logo_visibility_classes( 'logo_image' );
+
+if ( ! logo_visibility_should_show( 'logo_image' ) ) {
+    return;
+}
+
 if ( !empty($gs_logo_url) ) {
 
     $disable_lazy_load = gs_get_option( 'disable_lazy_load', 'off' );

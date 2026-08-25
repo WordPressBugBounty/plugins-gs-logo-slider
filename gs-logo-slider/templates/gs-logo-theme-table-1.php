@@ -27,17 +27,17 @@ global $gs_logo_loop;
 			<div class="gs-logos-table-row">
 
 				<!-- Logo Image -->
-				<div class="gs-logos-table-cell gsc-image">
+				<div class="<?php echo esc_attr( logo_visibility_classes( 'logo_image', 'gs-logos-table-cell gsc-image' ) ); ?>">
 					<?php include Template_Loader::locate_template( 'partials/gs-logo-layout-image.php' ); ?>
 				</div>
 
 				<!-- Logo Title -->
-				<div class="gs-logos-table-cell gsc-name">
+				<div class="<?php echo esc_attr( logo_visibility_classes( 'logo_title', 'gs-logos-table-cell gsc-name' ) ); ?>">
 					<?php include Template_Loader::locate_template( 'partials/gs-logo-layout-title.php' ); ?>
 				</div>
 
 				<!-- Logo Details -->
-				<div class="gs-logos-table-cell gsc-desc">
+				<div class="<?php echo esc_attr( logo_visibility_classes_any( [ 'logo_content', 'logo_excerpt' ], 'gs-logos-table-cell gsc-desc' ) ); ?>">
 					<?php
 						if( is_pro_active() && is_gs_logo_pro_valid() ) {
 							include Template_Loader::locate_template( 'partials/gs-logo-layout-details-2.php' );

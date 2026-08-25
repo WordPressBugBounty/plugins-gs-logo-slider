@@ -11,6 +11,10 @@ namespace GSLOGO;
  * @version 1.0.0
  */
 
+if ( ! logo_visibility_should_show( 'logo_content' ) ) {
+    return;
+}
+
 ?>
 
-<div class="gs-logo-details justify"><?php the_content(); ?></div>
+<div class="<?php echo esc_attr( logo_visibility_classes( 'logo_content', 'gs-logo-details justify' ) ); ?>"><?php the_content(); ?></div>

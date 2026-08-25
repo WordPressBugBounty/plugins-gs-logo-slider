@@ -141,6 +141,14 @@ class Shortcode {
 		
 		extract( $atts );
 
+		$visibility_settings = isset( $settings['visibility_settings'] ) ? $settings['visibility_settings'] : [];
+		if ( empty( $visibility_settings ) || ! is_array( $visibility_settings ) ) {
+			$visibility_settings = plugin()->builder->get_visibility_defaults( isset( $settings['gs_l_theme'] ) ? $settings['gs_l_theme'] : 'slider1', $settings );
+		}
+		$GLOBALS['gs_logo_visibility_settings'] = $visibility_settings;
+		$GLOBALS['gs_logo_shortcode_settings']  = $settings;
+		$GLOBALS['gs_logo_visibility_group']    = 'initial';
+
 		$now = current_time( 'mysql' );
 	
 		$args = [

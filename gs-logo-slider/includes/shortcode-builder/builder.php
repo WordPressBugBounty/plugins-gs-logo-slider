@@ -7,7 +7,11 @@ use function GSLOGOPRO\is_plugin_loaded;
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+require_once GSL_PLUGIN_DIR . 'includes/visibility.php';
+
 final class Builder {
+
+    use Visibility_Settings;
 
     private $option_name = 'gs_logo_slider_shortcode_prefs';
     private $taxonomy_option_name = 'gs_logo_slider_taxonomy_settings';
@@ -230,6 +234,11 @@ final class Builder {
 
         $data['is_pro_active'] = wp_validate_boolean( is_pro_active() );
 
+        $data['theme_visibility_fields']       = $this->get_theme_visibility_fields();
+        $data['overlay_visibility_fields']     = $this->get_overlay_visibility_fields();
+        $data['popup_style_visibility_fields'] = $this->get_popup_style_visibility_fields();
+        $data['panel_style_visibility_fields'] = $this->get_panel_style_visibility_fields();
+
         return $data;
     }
 
@@ -262,22 +271,46 @@ final class Builder {
     }
 
     public function validate_shortcode_settings( $shortcode_settings ) {
-        $shortcode_settings = shortcode_atts( $this->get_shortcode_default_settings(), $shortcode_settings );
 
-        $shortcode_settings['posts']              = intval( $shortcode_settings['posts'] );
+        if ( ! is_array( $shortcode_settings ) ) {
+            $shortcode_settings = [];
+        }
+
+        $defaults = $this->get_shortcode_default_settings();
+        $theme    = isset( $shortcode_settings['gs_l_theme'] ) ? $shortcode_settings['gs_l_theme'] : $defaults['gs_l_theme'];
+
+        if ( empty( $shortcode_settings['visibility_settings'] ) || ! is_array( $shortcode_settings['visibility_settings'] ) ) {
+            $shortcode_settings['visibility_settings'] = $this->get_visibility_defaults( $theme, $shortcode_settings );
+        }
+
+        $shortcode_settings = shortcode_atts( $defaults, $shortcode_settings );
+
+        $shortcode_settings['posts'] = intval( $shortcode_settings['posts'] );
 
         foreach ( $shortcode_settings as $key => $value ) {
 
+            if ( 'visibility_settings' === $key ) {
+                continue;
+            }
+
             // If array → sanitize IDs
             if ( is_array( $value ) ) {
-                $shortcode_settings[$key] = array_map( 'absint', $value );
+                $shortcode_settings[ $key ] = array_map( 'absint', $value );
                 continue;
             }
 
             // Everything else is a string → sanitize as text
-            $shortcode_settings[$key] = sanitize_text_field( $value );
+            $shortcode_settings[ $key ] = sanitize_text_field( $value );
         }
-        
+
+        $shortcode_settings['visibility_settings'] = $this->validate_visibility_settings(
+            $shortcode_settings['visibility_settings'],
+            $shortcode_settings['gs_l_theme'],
+            $shortcode_settings
+        );
+
+        $shortcode_settings = $this->sync_legacy_visibility_keys( $shortcode_settings );
+
         return $shortcode_settings;
     }
 
@@ -842,9 +875,42 @@ final class Builder {
             'delete-all' => __('Delete All', 'gslogo'),
             'create-a-new-shortcode-and' => __('Create a new shortcode & save it to use globally in anywhere', 'gslogo'),
             'edit-shortcode' => __('Edit Shortcode', 'gslogo'),
-            'general-settings' => __('General Settings', 'gslogo'),
-            'style-settings' => __('Style Settings', 'gslogo'),
-            'query-settings' => __('Query Settings', 'gslogo'),
+            'general-settings' => __('General', 'gslogo'),
+            'style-settings' => __('Style', 'gslogo'),
+            'query-settings' => __('Query', 'gslogo'),
+            'visibility-settings' => __('Visibility', 'gslogo'),
+            'visibility-settings-short' => __('Visibility', 'gslogo'),
+            'visibility-initial-view' => __('Initial View', 'gslogo'),
+            'visibility-popup' => __('Popup Visibility', 'gslogo'),
+            'visibility-panel' => __('Panel Visibility', 'gslogo'),
+            'visibility-field' => __('Field', 'gslogo'),
+            'visibility-desktop' => __('Desktop', 'gslogo'),
+            'visibility-tablet' => __('Tablet', 'gslogo'),
+            'visibility-large-mobile' => __('Large Mobile', 'gslogo'),
+            'visibility-mobile' => __('Mobile', 'gslogo'),
+            'visibility-logo-image' => __('Logo Image', 'gslogo'),
+            'visibility-logo-title' => __('Logo Title', 'gslogo'),
+            'visibility-logo-categories' => __('Categories', 'gslogo'),
+            'visibility-logo-content' => __('Content', 'gslogo'),
+            'visibility-logo-excerpt' => __('Excerpt', 'gslogo'),
+            'visibility-logo-website' => __('Website', 'gslogo'),
+            'visibility-logo-about' => __('About', 'gslogo'),
+            'visibility-logo-vision' => __('Vision', 'gslogo'),
+            'visibility-logo-mission' => __('Mission', 'gslogo'),
+            'visibility-logo-email' => __('Email', 'gslogo'),
+            'visibility-logo-address' => __('Address', 'gslogo'),
+            'visibility-logo-established' => __('Established On', 'gslogo'),
+            'visibility-logo-employees' => __('Number of Employees', 'gslogo'),
+            'visibility-logo-formation' => __('Formation Structure', 'gslogo'),
+            'visibility-logo-client-since' => __('Member Since', 'gslogo'),
+            'visibility-logo-funding-type' => __('Funding Type', 'gslogo'),
+            'visibility-logo-funding-source' => __('Funding Source', 'gslogo'),
+            'visibility-logo-social' => __('Social Links', 'gslogo'),
+            'visibility-logo-gallery' => __('Photo Gallery', 'gslogo'),
+            'visibility-logo-video' => __('Company Video', 'gslogo'),
+            'visibility-logo-map' => __('Location Map', 'gslogo'),
+            'visibility-logo-pitch-deck' => __('Pitch Deck', 'gslogo'),
+            'visibility-logo-taxonomies' => __('Taxonomies', 'gslogo'),
             'shortcode-name' => __('Shortcode Name', 'gslogo'),
             'name-of-the-shortcode' => __('Shortcode Name', 'gslogo'),
             'save-shortcode' => __('Save Shortcode', 'gslogo'),
@@ -1786,6 +1852,12 @@ final class Builder {
             'row_heading_image'        => 'Image',
             'row_heading_name'         => 'Name',
             'row_heading_desc'         => 'Description',
+            'visibility_settings'      => $this->get_visibility_defaults( 'slider1', [
+                'gs_l_title'        => 'on',
+                'show_cat'          => 'off',
+                'gs_l_show_content' => 'off',
+                'gs_l_show_excerpt' => 'off',
+            ] ),
         ];
     }
 

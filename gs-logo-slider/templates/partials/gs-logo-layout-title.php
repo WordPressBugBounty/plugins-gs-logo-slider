@@ -11,7 +11,10 @@ namespace GSLOGO;
  * @version 1.0.0
  */
 
-if ( $title == "on" ) {
+if ( ! logo_visibility_should_show( 'logo_title' ) ) {
+    return;
+}
+
     $allowed_tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
     $logo_title_tag = (string) apply_filters( 'gs_logo_title_tag', $title_tag );
     
@@ -19,6 +22,4 @@ if ( $title == "on" ) {
         $logo_title_tag = 'h3';
     }
 
-    printf( '<%1$s class="gs_logo_title">%2$s</%1$s>', $logo_title_tag, get_the_title() );
-
-}
+    printf( '<%1$s class="%2$s">%3$s</%1$s>', $logo_title_tag, esc_attr( logo_visibility_classes( 'logo_title', 'gs_logo_title' ) ), get_the_title() );
