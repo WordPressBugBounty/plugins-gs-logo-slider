@@ -90,8 +90,12 @@ class Shortcode {
 		$atts['id'] = sanitize_text_field( $atts['id'] );
 	
 		$is_preview = ! empty($atts['preview']);
+
+		// Integrations (e.g. Gutenberg builder block) can pass a resolved settings
+		// array instead of relying on a saved shortcode row or a preview transient.
+		$inline_settings = isset($atts['settings']) && is_array($atts['settings']) ? $atts['settings'] : null;
 	
-		$settings = $this->get_shortcode_settings( $atts['id'], $is_preview );
+		$settings = $this->get_shortcode_settings( $atts['id'], $is_preview, $inline_settings );
 	
 		if ( empty($settings) ) return sprintf( '<p style="color:#cf7e16;background:#fff5e8;padding:10px;font-size:16px;border:1px solid #f1d7b5;border-radius:4px;line-height:1.6;">GS Logo Slider: The shortcode with the ID of <strong>%s</strong> was not found.</p>', esc_html( $atts['id'] ) );
 	
@@ -632,9 +636,13 @@ class Shortcode {
 	
 	}
 
-	public function get_shortcode_settings($id, $is_preview = false) {
+	public function get_shortcode_settings($id, $is_preview = false, $inline_settings = null) {
 
 		$default_settings = array_merge( ['id' => $id, 'is_preview' => $is_preview], plugin()->builder->get_shortcode_default_settings() );
+
+		if ( is_array( $inline_settings ) ) {
+			return shortcode_atts( $default_settings, $inline_settings );
+		}
 	
 		if ( $is_preview ) {
 			$preview_settings = plugin()->builder->validate_shortcode_settings( get_transient($id) );

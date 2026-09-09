@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 3.8.7
+Stable tag: 3.8.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,7 +39,7 @@ Logo sliders help businesses show their partners and clients, building trust and
 * **Image Size Control**: Select logo image sizes from Thumbnail, Medium, Large, or other registered sources.
 * **Template Override**: Override default templates for a personalized touch.
 * **Drag & Drop Reorder**: Easily reorder logos as needed.
-* **Gutenberg Block Available**: Seamlessly integrate logos with the block editor.
+* **Gutenberg Blocks**: Insert a saved shortcode with **GS Logo Shortcodes**, or build a slider, grid, list, or table inline with the **GS Logo Slider Builder** block.
 * **Logo Shortcode Ready**: Easily insert logos using Shortcodes.
 * **Tooltip Option**: Add informative tooltip descriptions to logos.
 * **Multiple Sliders on Same Page**: Display sliders from different categories on the same page.
@@ -313,6 +313,19 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.8.8 [9th Sep 2026] =
+* [Added]: Gutenberg visual builder block.
+* [Added]: Elementor widget support.
+* [Added]: 3D Slider support in Elementor.
+* [Added]: Bulk visibility selection.
+* [Improved]: Visibility controls with checkboxes.
+* [Improved]: Initial visibility handling.
+* [Improved]: Tooltip preview in builder.
+* [Improved]: Tooltip color settings.
+* [Improved]: Taxonomy include/exclude options.
+* [Improved]: Gutenberg block naming.
+* [Improved]: PRO and license activation checks.
+
 = Version 3.8.7 [25th Aug 2026] =
 * [Added]: Visibility controls for initial, popup, and panel views.
 * [Improved]: Shortcode tab labels for a cleaner interface.
@@ -729,6 +742,19 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade Notice ==
+= Version 3.8.8 [9th Sep 2026] =
+* [Added]: Gutenberg visual builder block.
+* [Added]: Elementor widget support.
+* [Added]: 3D Slider support in Elementor.
+* [Added]: Bulk visibility selection.
+* [Improved]: Visibility controls with checkboxes.
+* [Improved]: Initial visibility handling.
+* [Improved]: Tooltip preview in builder.
+* [Improved]: Tooltip color settings.
+* [Improved]: Taxonomy include/exclude options.
+* [Improved]: Gutenberg block naming.
+* [Improved]: PRO and license activation checks.
+
 = Version 3.8.7 [25th Aug 2026] =
 * [Added]: Visibility controls for initial, popup, and panel views.
 * [Improved]: Shortcode tab labels for a cleaner interface.

@@ -45,8 +45,15 @@ final class Integrations {
     }
 
     public function integration_with_gutenberg() {
+
         require_once GSL_PLUGIN_DIR . 'includes/integrations/integration-gutenberg.php';
         Integration_Gutenberg::get_instance();
+
+        if ( apply_filters( 'gs_logo_integration_gutenberg_builder', true ) ) {
+            require_once GSL_PLUGIN_DIR . 'includes/integrations/integration-gutenberg-builder.php';
+            Integration_Gutenberg_Builder::get_instance();
+        }
+
     }
 
     public function integration_with_divi() {

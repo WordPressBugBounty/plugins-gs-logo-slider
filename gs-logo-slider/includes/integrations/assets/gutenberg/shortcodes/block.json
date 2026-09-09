@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "gslogo/shortcodes",
+	"title": "GS Logo Shortcodes",
+	"category": "widgets",
+	"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><rect x=\"1\" y=\"6\" width=\"4\" height=\"12\" rx=\"1.5\" fill=\"#FC9D7F\"/><rect x=\"19\" y=\"6\" width=\"4\" height=\"12\" rx=\"1.5\" fill=\"#EA8BF2\"/><rect x=\"6.5\" y=\"3.5\" width=\"11\" height=\"17\" rx=\"2\" fill=\"#6472EF\"/><circle cx=\"12\" cy=\"12\" r=\"3\" fill=\"#3F50EB\"/></svg>",
+	"description": "Insert a saved GS Logo shortcode to display a logo slider, grid, or gallery.",
+	"keywords": [ "logo", "gslogo", "slider", "shortcode", "showcase", "carousel" ],
+	"textdomain": "gslogo",
+	"editorScript": "gs-logo-block",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false
+	}
+}

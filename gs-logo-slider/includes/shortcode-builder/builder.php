@@ -880,7 +880,7 @@ final class Builder {
             'query-settings' => __('Query', 'gslogo'),
             'visibility-settings' => __('Visibility', 'gslogo'),
             'visibility-settings-short' => __('Visibility', 'gslogo'),
-            'visibility-initial-view' => __('Initial View', 'gslogo'),
+            'visibility-initial-view' => __('Initial View Visibility', 'gslogo'),
             'visibility-popup' => __('Popup Visibility', 'gslogo'),
             'visibility-panel' => __('Panel Visibility', 'gslogo'),
             'visibility-field' => __('Field', 'gslogo'),
