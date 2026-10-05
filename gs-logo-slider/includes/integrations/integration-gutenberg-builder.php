@@ -271,6 +271,7 @@ class Integration_Gutenberg_Builder {
             'is_pro_active'                => wp_validate_boolean( is_pro_active() ),
             'is_pro_license_valid'         => wp_validate_boolean( is_gs_logo_pro_valid() ),
             'instance_prefix'              => self::INSTANCE_PREFIX,
+            'premium_url'                  => 'https://www.gsplugins.com/product/gs-logo-slider/#pricing',
             'labels'                       => [
                 'block_title'       => __( 'GS Logo Slider Builder', 'gslogo' ),
                 'block_description' => __( 'Build a logo slider, grid, list, or table with all layout and style options.', 'gslogo' ),
@@ -400,10 +401,96 @@ class Integration_Gutenberg_Builder {
             color: #b26b00;
         }
 
-        /* Premium select choices when Pro / license is locked (still clickable). */
         .gslogo-builder-block--tabs select option.gslogo-builder-block--premium-option {
             background-color: #e2e4e7;
             color: #757575;
+        }
+
+        .gslogo-builder-block--select-menu {
+            position: relative;
+        }
+
+        .gslogo-builder-block--select-menu select.components-select-control__input {
+            display: block;
+            width: 100%;
+        }
+
+        .gslogo-builder-block--select-list {
+            position: absolute;
+            z-index: 30;
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 220px;
+            margin: 4px 0 0;
+            padding: 4px 0;
+            overflow: auto;
+            list-style: none;
+            background: #fff;
+            border: 1px solid #8c8f94;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
+
+        .gslogo-builder-block--select-list li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gslogo-builder-block--select-list .gslogo-builder-block--select-row,
+        .gslogo-builder-block--select-list button.gslogo-builder-block--select-row {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            margin: 0;
+            padding: 6px 12px;
+            border: 0;
+            border-radius: 0;
+            background: #fff;
+            box-shadow: none;
+            color: #2c3338;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: left;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        button.gslogo-builder-block--select-row.is-selected,
+        button.gslogo-builder-block--select-row:hover {
+            background: #007cba;
+            color: #fff;
+        }
+
+        button.gslogo-builder-block--select-row:disabled {
+            background: #e2e4e7;
+            color: #757575;
+            cursor: default;
+        }
+
+        li.gslogo-builder-block--select-row.is-pro {
+            background: #fff;
+            color: #2c3338;
+            cursor: pointer;
+        }
+
+        li.gslogo-builder-block--select-row.is-pro:hover {
+            background: #007cba;
+            color: #fff;
+        }
+
+        li.gslogo-builder-block--select-row.is-pro .gslogo-builder-block--pro-text {
+            color: #2271b1;
+            font-weight: 400;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        li.gslogo-builder-block--select-row.is-pro:hover .gslogo-builder-block--pro-text {
+            color: #fff;
         }
 
         .gslogo-builder-block--locked > *:first-child {
@@ -411,29 +498,111 @@ class Integration_Gutenberg_Builder {
             opacity: 0.6;
         }
 
-        .gslogo-builder-block--devices {
+        .gslogo-builder-block--visibility {
+            overflow: hidden;
+            border: 1px solid #e6e8ee;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .gslogo-builder-block--visibility-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) repeat(4, 32px);
+            align-items: center;
+            column-gap: 6px;
+            min-height: 40px;
+            margin: 0;
+            padding: 6px 10px;
+            border-top: 1px solid #eceef2;
+        }
+
+        .gslogo-builder-block--visibility-head {
+            min-height: 44px;
+            border-top: 0;
+            background: #f4f5f7;
+        }
+
+        .gslogo-builder-block--visibility-label {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            color: #1d2327;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.3;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        button.gslogo-builder-block--visibility-label {
+            height: auto;
+            min-height: 0;
+            font-weight: 400;
+        }
+
+        button.gslogo-builder-block--visibility-label:hover,
+        button.gslogo-builder-block--visibility-label:focus {
+            color: #1d2327;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .gslogo-builder-block--visibility-device {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0 16px;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 28px;
+            border-radius: 6px;
+            background: #e8eaef;
+            color: #5c6370;
         }
 
-        .gslogo-builder-block--devices .components-base-control {
-            margin-bottom: 4px;
+        .gslogo-builder-block--visibility-device svg {
+            display: block;
         }
 
-        .gslogo-builder-block--group {
-            padding-bottom: 12px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid #e0e0e0;
+        .gslogo-builder-block--visibility-check {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 28px;
+            margin: 0;
+            cursor: pointer;
         }
 
-        .gslogo-builder-block--group:last-child {
-            border-bottom: 0;
+        .gslogo-builder-block--visibility-check input {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
         }
 
-        .gslogo-builder-block--group-title {
-            margin: 0 0 8px;
-            font-weight: 600;
+        .gslogo-builder-block--visibility-check span {
+            display: block;
+            box-sizing: border-box;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid #c5c8d0;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .gslogo-builder-block--visibility-check input:checked + span {
+            border-color: #2563eb;
+            background: #2563eb url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3.2 8.2l3 3.1 6.6-6.6'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+        }
+
+        .gslogo-builder-block--visibility-check input:focus-visible + span {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
         }
 
         .gslogo-builder-block--inline {

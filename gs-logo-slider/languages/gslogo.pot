@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-09 09:43+0000\n"
+"POT-Creation-Date: 2026-10-05 06:32+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -491,7 +491,7 @@ msgstr ""
 msgid "No shortcode ID found"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode.php:591, ../includes/shortcode.php:595
+#: ../build/gs-logo-slider/includes/shortcode.php:595, ../includes/shortcode.php:595
 msgid "Please upgrade to pro version to use this template"
 msgstr ""
 
@@ -575,6 +575,102 @@ msgstr ""
 msgid "Dummy Shortcodes deleted"
 msgstr ""
 
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:48, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:275, ../includes/integrations/elementor-builder-widget.php:48, ../includes/integrations/integration-gutenberg-builder.php:276
+msgid "GS Logo Slider Builder"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:155, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:293, ../includes/integrations/elementor-builder-widget.php:155, ../includes/integrations/integration-gutenberg-builder.php:294
+msgid "Thickness"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:169, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:294, ../includes/integrations/elementor-builder-widget.php:169, ../includes/integrations/integration-gutenberg-builder.php:295
+msgid "Type"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:182, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:295, ../includes/integrations/elementor-builder-widget.php:182, ../includes/integrations/integration-gutenberg-builder.php:296
+msgid "Color"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:240, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:296, ../includes/integrations/elementor-builder-widget.php:240, ../includes/integrations/integration-gutenberg-builder.php:297
+msgid "Offset X"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:254, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:297, ../includes/integrations/elementor-builder-widget.php:254, ../includes/integrations/integration-gutenberg-builder.php:298
+msgid "Offset Y"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:268, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:298, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1208, ../includes/integrations/elementor-builder-widget.php:268, ../includes/integrations/integration-gutenberg-builder.php:299, ../includes/shortcode-builder/builder.php:1208
+msgid "Blur"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:282, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:299, ../includes/integrations/elementor-builder-widget.php:282, ../includes/integrations/integration-gutenberg-builder.php:300
+msgid "Spread"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:299, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:282, ../includes/integrations/elementor-builder-widget.php:299, ../includes/integrations/integration-gutenberg-builder.php:283
+msgid "Filter & Pagination"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:437, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:291, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:706, ../includes/integrations/elementor-builder-widget.php:437, ../includes/integrations/integration-gutenberg-builder.php:292, ../includes/shortcode-builder/builder.php:706
+msgid "Width"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:449, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:292, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:707, ../includes/integrations/elementor-builder-widget.php:449, ../includes/integrations/integration-gutenberg-builder.php:293, ../includes/shortcode-builder/builder.php:707
+msgid "Height"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:537, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:283, ../includes/integrations/elementor-builder-widget.php:537, ../includes/integrations/integration-gutenberg-builder.php:284
+msgid "Slider & Autoplay"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:744, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:284, ../includes/integrations/elementor-builder-widget.php:744, ../includes/integrations/integration-gutenberg-builder.php:285
+msgid "Title & Content"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:796, ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:819, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:290, ../includes/integrations/elementor-builder-widget.php:796, ../includes/integrations/elementor-builder-widget.php:819, ../includes/integrations/integration-gutenberg-builder.php:291
+msgid "Limit By"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:915, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:286, ../includes/integrations/elementor-builder-widget.php:915, ../includes/integrations/integration-gutenberg-builder.php:287
+msgid "Table Headings"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1005, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:285, ../includes/integrations/elementor-builder-widget.php:1005, ../includes/integrations/integration-gutenberg-builder.php:286
+msgid "Layout"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1018, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:303, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1500, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1517, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1536, ../includes/integrations/elementor-builder-widget.php:1018, ../includes/integrations/integration-gutenberg-builder.php:304, ../includes/shortcode-builder/builder.php:1500, ../includes/shortcode-builder/builder.php:1517, ../includes/shortcode-builder/builder.php:1536
+msgid "Left"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1022, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1521, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1532, ../includes/integrations/elementor-builder-widget.php:1022, ../includes/shortcode-builder/builder.php:1521, ../includes/shortcode-builder/builder.php:1532
+msgid "Center"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1026, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:301, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1504, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1525, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1540, ../includes/integrations/elementor-builder-widget.php:1026, ../includes/integrations/integration-gutenberg-builder.php:302, ../includes/shortcode-builder/builder.php:1504, ../includes/shortcode-builder/builder.php:1525, ../includes/shortcode-builder/builder.php:1540
+msgid "Right"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1181, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:280, ../includes/integrations/elementor-builder-widget.php:1181, ../includes/integrations/integration-gutenberg-builder.php:281
+msgid "Include"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1206, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:281, ../includes/integrations/elementor-builder-widget.php:1206, ../includes/integrations/integration-gutenberg-builder.php:282
+msgid "Exclude"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1614, ../build/gs-logo-slider/includes/integrations/integration-elementor.php:112, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:277, ../includes/integrations/elementor-builder-widget.php:1614, ../includes/integrations/integration-elementor.php:112, ../includes/integrations/integration-gutenberg-builder.php:278
+msgid "Available in the premium version."
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1627, ../includes/integrations/elementor-builder-widget.php:1627
+msgid "On"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1628, ../includes/integrations/elementor-builder-widget.php:1628
+msgid "Off"
+msgstr ""
+
 #: ../build/gs-logo-slider/includes/integrations/integration-beaver.php:32, ../includes/integrations/integration-beaver.php:32
 msgid "Tab 1"
 msgstr ""
@@ -583,7 +679,7 @@ msgstr ""
 msgid "Shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-beaver.php:39, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:42, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:40, ../includes/integrations/integration-beaver.php:39, ../includes/integrations/integration-gutenberg.php:72, ../includes/integrations/integration-wpb-vc.php:40
+#: ../build/gs-logo-slider/includes/integrations/integration-beaver.php:39, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:72, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:40, ../includes/integrations/integration-beaver.php:39, ../includes/integrations/integration-gutenberg.php:72, ../includes/integrations/integration-wpb-vc.php:40
 msgid "Select Shortcode"
 msgstr ""
 
@@ -599,35 +695,79 @@ msgstr ""
 msgid "No shortcodes found. Create one in GS Logo first."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:141, ../build/gs-logo-slider/includes/integrations/integration-tagdiv.php:61, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:32, ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:10, ../includes/integrations/integration-elementor.php:286, ../includes/integrations/integration-tagdiv.php:61, ../includes/integrations/integration-wpb-vc.php:32, ../includes/integrations/beaver/beaver-widget-logo.php:10
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:127, ../includes/integrations/integration-elementor.php:127
+msgid "Premium Feature"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:286, ../build/gs-logo-slider/includes/integrations/integration-tagdiv.php:61, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:32, ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:10, ../includes/integrations/integration-elementor.php:286, ../includes/integrations/integration-tagdiv.php:61, ../includes/integrations/integration-wpb-vc.php:32, ../includes/integrations/beaver/beaver-widget-logo.php:10
 msgid "GS Logo Slider"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:157, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:894, ../includes/integrations/integration-elementor.php:302, ../includes/shortcode-builder/builder.php:894
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:302, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:894, ../includes/integrations/integration-elementor.php:302, ../includes/shortcode-builder/builder.php:894
 msgid "Content"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:165, ../build/gs-logo-slider/includes/integrations/integration-tagdiv.php:74, ../includes/integrations/integration-elementor.php:310, ../includes/integrations/integration-tagdiv.php:74
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:310, ../build/gs-logo-slider/includes/integrations/integration-tagdiv.php:74, ../includes/integrations/integration-elementor.php:310, ../includes/integrations/integration-tagdiv.php:74
 msgid "Logo Shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:181, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:43, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:114, ../includes/integrations/integration-elementor.php:326, ../includes/integrations/integration-gutenberg.php:73, ../includes/integrations/integration-wpb-vc.php:114
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:326, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:73, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:114, ../includes/integrations/integration-elementor.php:326, ../includes/integrations/integration-gutenberg.php:73, ../includes/integrations/integration-wpb-vc.php:114
 msgid "Edit this shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:183, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:44, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:116, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:872, ../includes/integrations/integration-elementor.php:328, ../includes/integrations/integration-gutenberg.php:74, ../includes/integrations/integration-wpb-vc.php:116, ../includes/shortcode-builder/builder.php:872
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:328, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:74, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:116, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:872, ../includes/integrations/integration-elementor.php:328, ../includes/integrations/integration-gutenberg.php:74, ../includes/integrations/integration-wpb-vc.php:116, ../includes/shortcode-builder/builder.php:872
 msgid "Edit"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:187, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:45, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:120, ../includes/integrations/integration-elementor.php:332, ../includes/integrations/integration-gutenberg.php:75, ../includes/integrations/integration-wpb-vc.php:120
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:332, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:75, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:120, ../includes/integrations/integration-elementor.php:332, ../includes/integrations/integration-gutenberg.php:75, ../includes/integrations/integration-wpb-vc.php:120
 msgid "Create new shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:189, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:122, ../includes/integrations/integration-elementor.php:334, ../includes/integrations/integration-wpb-vc.php:122
+#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:334, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:122, ../includes/integrations/integration-elementor.php:334, ../includes/integrations/integration-wpb-vc.php:122
 msgid "Craete"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:46, ../includes/integrations/integration-gutenberg.php:76
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:276, ../includes/integrations/integration-gutenberg-builder.php:277
+msgid "Build a logo slider, grid, list, or table with all layout and style options."
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:278, ../includes/integrations/integration-gutenberg-builder.php:279
+msgid "This is a premium feature. Please upgrade the plan."
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:279, ../includes/integrations/integration-gutenberg-builder.php:280
+msgid "Please activate your GS Logo Slider Pro license to use this feature."
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:287, ../includes/integrations/integration-gutenberg-builder.php:288
+msgid "Hexagon Gradient"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:288, ../includes/integrations/integration-gutenberg-builder.php:289
+msgid "Border Shadow"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:289, ../includes/integrations/integration-gutenberg-builder.php:290
+msgid "Tooltip Colors"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:300, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1492, ../includes/integrations/integration-gutenberg-builder.php:301, ../includes/shortcode-builder/builder.php:1492
+msgid "Top"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:302, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1387, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1496, ../includes/integrations/integration-gutenberg-builder.php:303, ../includes/shortcode-builder/builder.php:1387, ../includes/shortcode-builder/builder.php:1496
+msgid "Bottom"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:70, ../includes/integrations/integration-gutenberg.php:70
+msgid "GS Logo Shortcodes"
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:71, ../includes/integrations/integration-gutenberg.php:71
+msgid "Insert a saved GS Logo shortcode to display a logo slider, grid, or gallery."
+msgstr ""
+
+#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:76, ../includes/integrations/integration-gutenberg.php:76
 msgid "Create"
 msgstr ""
 
@@ -931,14 +1071,6 @@ msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:705, ../includes/shortcode-builder/builder.php:705
 msgid "Custom Image Size"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:706, ../includes/integrations/elementor-builder-widget.php:437, ../includes/integrations/integration-gutenberg-builder.php:291, ../includes/shortcode-builder/builder.php:706
-msgid "Width"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:707, ../includes/integrations/elementor-builder-widget.php:449, ../includes/integrations/integration-gutenberg-builder.php:292, ../includes/shortcode-builder/builder.php:707
-msgid "Height"
 msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:708, ../includes/shortcode-builder/builder.php:708
@@ -1397,8 +1529,8 @@ msgstr ""
 msgid "Visibility"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:883
-msgid "Initial View"
+#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:883, ../includes/shortcode-builder/builder.php:883
+msgid "Initial View Visibility"
 msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:884, ../includes/shortcode-builder/builder.php:884
@@ -1745,10 +1877,6 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1208, ../includes/integrations/elementor-builder-widget.php:268, ../includes/integrations/integration-gutenberg-builder.php:298, ../includes/shortcode-builder/builder.php:1208
-msgid "Blur"
-msgstr ""
-
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1212, ../includes/shortcode-builder/builder.php:1212
 msgid "Brightness"
 msgstr ""
@@ -1827,10 +1955,6 @@ msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1380, ../includes/shortcode-builder/builder.php:1380
 msgid "Soft Crop"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1387, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1496, ../includes/integrations/integration-gutenberg-builder.php:302, ../includes/shortcode-builder/builder.php:1387, ../includes/shortcode-builder/builder.php:1496
-msgid "Bottom"
 msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1391, ../includes/shortcode-builder/builder.php:1391
@@ -1915,22 +2039,6 @@ msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1485, ../includes/shortcode-builder/builder.php:1485
 msgid "Outset"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1492, ../includes/integrations/integration-gutenberg-builder.php:300, ../includes/shortcode-builder/builder.php:1492
-msgid "Top"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1500, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1517, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1536, ../includes/integrations/elementor-builder-widget.php:1018, ../includes/integrations/integration-gutenberg-builder.php:303, ../includes/shortcode-builder/builder.php:1500, ../includes/shortcode-builder/builder.php:1517, ../includes/shortcode-builder/builder.php:1536
-msgid "Left"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1504, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1525, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1540, ../includes/integrations/elementor-builder-widget.php:1026, ../includes/integrations/integration-gutenberg-builder.php:301, ../includes/shortcode-builder/builder.php:1504, ../includes/shortcode-builder/builder.php:1525, ../includes/shortcode-builder/builder.php:1540
-msgid "Right"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1521, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1532, ../includes/integrations/elementor-builder-widget.php:1022, ../includes/shortcode-builder/builder.php:1521, ../includes/shortcode-builder/builder.php:1532
-msgid "Center"
 msgstr ""
 
 #: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1561, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1572, ../includes/shortcode-builder/builder.php:1561, ../includes/shortcode-builder/builder.php:1572
@@ -2214,116 +2322,4 @@ msgstr ""
 #. translators: %s: error message
 #: ../build/gs-logo-slider/includes/integrations/divi/LogoSliderController.php:139, ../includes/integrations/divi/LogoSliderController.php:139
 msgid "Failed to render shortcode: %s"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:48, ../includes/integrations/integration-gutenberg-builder.php:275
-msgid "GS Logo Slider Builder"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:155, ../includes/integrations/integration-gutenberg-builder.php:293
-msgid "Thickness"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:169, ../includes/integrations/integration-gutenberg-builder.php:294
-msgid "Type"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:182, ../includes/integrations/integration-gutenberg-builder.php:295
-msgid "Color"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:240, ../includes/integrations/integration-gutenberg-builder.php:296
-msgid "Offset X"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:254, ../includes/integrations/integration-gutenberg-builder.php:297
-msgid "Offset Y"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:282, ../includes/integrations/integration-gutenberg-builder.php:299
-msgid "Spread"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:299, ../includes/integrations/integration-gutenberg-builder.php:282
-msgid "Filter & Pagination"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:537, ../includes/integrations/integration-gutenberg-builder.php:283
-msgid "Slider & Autoplay"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:744, ../includes/integrations/integration-gutenberg-builder.php:284
-msgid "Title & Content"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:796, ../includes/integrations/elementor-builder-widget.php:819, ../includes/integrations/integration-gutenberg-builder.php:290
-msgid "Limit By"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:915, ../includes/integrations/integration-gutenberg-builder.php:286
-msgid "Table Headings"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:1005, ../includes/integrations/integration-gutenberg-builder.php:285
-msgid "Layout"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:1181, ../includes/integrations/integration-gutenberg-builder.php:280
-msgid "Include"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:1206, ../includes/integrations/integration-gutenberg-builder.php:281
-msgid "Exclude"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:1614, ../includes/integrations/integration-elementor.php:112, ../includes/integrations/integration-gutenberg-builder.php:277
-msgid "Available in the premium version."
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:1627
-msgid "On"
-msgstr ""
-
-#: ../includes/integrations/elementor-builder-widget.php:1628
-msgid "Off"
-msgstr ""
-
-#: ../includes/integrations/integration-elementor.php:127
-msgid "Premium Feature"
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg-builder.php:276
-msgid "Build a logo slider, grid, list, or table with all layout and style options."
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg-builder.php:278
-msgid "This is a premium feature. Please upgrade the plan."
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg-builder.php:279
-msgid "Please activate your GS Logo Slider Pro license to use this feature."
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg-builder.php:287
-msgid "Hexagon Gradient"
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg-builder.php:288
-msgid "Border Shadow"
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg-builder.php:289
-msgid "Tooltip Colors"
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg.php:70
-msgid "GS Logo Shortcodes"
-msgstr ""
-
-#: ../includes/integrations/integration-gutenberg.php:71
-msgid "Insert a saved GS Logo shortcode to display a logo slider, grid, or gallery."
-msgstr ""
-
-#: ../includes/shortcode-builder/builder.php:883
-msgid "Initial View Visibility"
 msgstr ""

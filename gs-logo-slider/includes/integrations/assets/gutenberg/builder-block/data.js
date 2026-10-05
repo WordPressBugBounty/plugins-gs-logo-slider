@@ -26,21 +26,24 @@ export function label( key ) {
 	return labels[ key ] || '';
 }
 
+function isProOption( option ) {
+	return option.type === 'pro' || !! option.pro;
+}
+
 /**
- * Select options for a setting, converted to the shape SelectControl expects.
- * Options flagged as `pro` by the builder keep their premium marker.
+ * Select options for a setting. Premium rows stay in the list and link to the pricing page.
  */
 export function fieldOptions( settingKey ) {
 
-	const options = blockData.options || {};
-	const list = Array.isArray( options[ settingKey ] ) ? options[ settingKey ] : [];
+	return rawOptions( settingKey ).map( function( option ) {
 
-	return list.map( function( option ) {
+		const premiumLocked = isProOption( option ) && ! isProActive();
+
 		return {
-			label: option.pro ? option.label + ' \u2014 ' + label( 'premium_notice' ) : option.label,
+			label: premiumLocked ? option.label + ' - [PRO]' : option.label,
+			text: option.label,
 			value: String( option.value ),
-			// Visual only — still clickable so the premium alert can fire.
-			premiumLocked: !! option.pro && ! isProActive()
+			premiumLocked: premiumLocked
 		};
 	} );
 }
@@ -51,11 +54,15 @@ export function fieldOptions( settingKey ) {
  */
 export function isPremiumOption( settingKey, value ) {
 
-	const list = rawOptions( settingKey );
+	if ( isProActive() ) return false;
 
-	return list.some( function( item ) {
-		return String( item.value ) === String( value ) && !! item.pro;
+	return rawOptions( settingKey ).some( function( item ) {
+		return String( item.value ) === String( value ) && isProOption( item );
 	} );
+}
+
+export function premiumPageUrl() {
+	return blockData.premium_url || 'https://www.gsplugins.com/product/gs-logo-slider/#pricing';
 }
 
 export function premiumAlertMessage() {

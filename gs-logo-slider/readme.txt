@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 3.8.8
+Stable tag: 3.8.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -313,6 +313,10 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.8.9 [5th Oct 2026] =
+* [Improved]: Visibility field controls.
+* [Improved]: Premium option behavior.
+
 = Version 3.8.8 [9th Sep 2026] =
 * [Added]: Gutenberg visual builder block.
 * [Added]: Elementor widget support.
@@ -742,6 +746,10 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade Notice ==
+= Version 3.8.9 [5th Oct 2026] =
+* [Improved]: Visibility field controls.
+* [Improved]: Premium option behavior.
+
 = Version 3.8.8 [9th Sep 2026] =
 * [Added]: Gutenberg visual builder block.
 * [Added]: Elementor widget support.

@@ -157,6 +157,34 @@ export function updateVisibilityField( attributes, group, fieldKey, device, chec
 }
 
 /**
+ * Toggle every device on a row. The next state follows the desktop checkbox,
+ * matching the YouTube builder.
+ */
+export function toggleVisibilityRow( attributes, group, fieldKey ) {
+
+	const currentField = getVisibilityField( attributes, group, fieldKey );
+	const next = ! currentField.desktop;
+	const updatedField = Object.assign( {}, currentField );
+
+	VISIBILITY_DEVICES.forEach( function( device ) {
+		updatedField[ device.key ] = next;
+	} );
+
+	const currentSettings = attributes.visibility_settings || {};
+	const updatedGroup = Object.assign( {}, getGroup( attributes, group ), { [ fieldKey ]: updatedField } );
+
+	const changes = {
+		visibility_settings: Object.assign( {}, currentSettings, { [ group ]: updatedGroup } )
+	};
+
+	if ( 'initial' === group ) {
+		Object.assign( changes, legacySettingsFor( updatedGroup ) );
+	}
+
+	return changes;
+}
+
+/**
  * Add the visibility fields a theme needs without touching the ones already
  * stored, so switching theme back and forth keeps earlier choices. Mirrors
  * ensureInitialVisibilityFieldsForTheme() in the builder, where a group whose
