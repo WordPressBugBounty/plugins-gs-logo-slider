@@ -524,7 +524,7 @@ class Metabox {
 		?>
 		<div class="gs-logo-pro-field--inner">
 			<div class="gs-logo-pro-field--content">
-				<a href="https://www.gsplugins.com/product/gs-logo-slider/#pricing" target="_blank"><?php esc_html_e( 'Upgrade to PRO', 'gslogo' ); ?></a>
+				<a href="https://www.gsplugins.com/product/gs-logo-slider/pricing/" target="_blank"><?php esc_html_e( 'Upgrade to PRO', 'gslogo' ); ?></a>
 			</div>
 		</div>
 		<?php

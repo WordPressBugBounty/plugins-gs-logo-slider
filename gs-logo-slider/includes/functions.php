@@ -219,7 +219,7 @@ function gs_appsero_init() {
         require_once GSL_PLUGIN_DIR . 'includes/appsero/Client.php';
     }
 
-    $client = new \GSLogoAppSero\Client('2f95117b-b1c6-4486-88c0-6b6d815856bf', 'GS Logo Slider', __FILE__);
+    $client = new \GSLogoAppSero\Client('2f95117b-b1c6-4486-88c0-6b6d815856bf', 'GS Logo Slider', GSL_PLUGIN_FILE);
     // Active insights
     $client->insights()->init();
 }

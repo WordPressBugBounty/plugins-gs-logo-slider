@@ -6,17 +6,17 @@ namespace GSLOGO;
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+ * Activation redirects
+ */
+register_activation_hook( GSL_PLUGIN_FILE, 'GSLOGO\on_activation' );
+
 add_action('plugins_loaded', function() {
     
     /**
      * Compatibility check with Pro plugin
      */
     if ( is_pro_compatible() ) {
-        /**
-         * Activation redirects
-         */
-        register_activation_hook( GSL_PLUGIN_FILE, 'GSLOGO\on_activation' );
-
         /**
          * Init Appsero
          */

@@ -33,6 +33,12 @@ if ( ! class_exists('GSPLUGINS\GS_Asset_Generator_Base') ) {
             add_action( 'gsp_shortcode_updated', [ $this, 'assets_purge_all' ] );
             add_action( 'gsp_shortcode_deleted', [ $this, 'assets_purge_all' ] );
             add_action( 'gsp_preference_update', [ $this, 'assets_purge_all' ] );
+            add_filter( 'is_protected_meta', [ $this, 'protect_assets_meta' ], 10, 2 );
+        }
+
+        // Internal cache meta, users must not set it via custom fields / XML-RPC / REST
+        public function protect_assets_meta( $protected, $meta_key ) {
+            return $meta_key === $this->get_save_key() ? true : $protected;
         }
     
         public function get_assets_model() {
@@ -60,7 +66,13 @@ if ( ! class_exists('GSPLUGINS\GS_Asset_Generator_Base') ) {
                 return get_option( $this->get_save_option_key( $main_post_id ) );
             } else {
                 $data = get_post_meta( $main_post_id, $this->get_save_key(), true );
-                if ( !empty($data) ) return maybe_unserialize($data);
+                if ( !empty($data) ) {
+                    // Never instantiate objects from stored data (PHP Object Injection)
+                    if ( is_serialized( $data ) ) {
+                        $data = PHP_VERSION_ID >= 70000 ? @unserialize( trim( $data ), [ 'allowed_classes' => false ] ) : false;
+                    }
+                    if ( is_array( $data ) ) return $data;
+                }
             }
 
             return '';

@@ -271,7 +271,7 @@ class Integration_Gutenberg_Builder {
             'is_pro_active'                => wp_validate_boolean( is_pro_active() ),
             'is_pro_license_valid'         => wp_validate_boolean( is_gs_logo_pro_valid() ),
             'instance_prefix'              => self::INSTANCE_PREFIX,
-            'premium_url'                  => 'https://www.gsplugins.com/product/gs-logo-slider/#pricing',
+            'premium_url'                  => 'https://www.gsplugins.com/product/gs-logo-slider/pricing/',
             'labels'                       => [
                 'block_title'       => __( 'GS Logo Slider Builder', 'gslogo' ),
                 'block_description' => __( 'Build a logo slider, grid, list, or table with all layout and style options.', 'gslogo' ),

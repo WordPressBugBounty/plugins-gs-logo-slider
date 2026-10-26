@@ -27,6 +27,14 @@ $routes = [
 	]
 ];
 
+if ( ! \GSLOGO\is_pro_active() || ! \GSLOGO\is_gs_logo_pro_valid() ) {
+	$routes[] = [
+		'slug'  => '/go-pro',
+		'title' => __( 'Go Pro', 'gslogo' ),
+		'class' => 'menu-go-pro'
+	];
+}
+
 ?>
 <div class="app-container">
 	<div class="main-container">
@@ -43,7 +51,7 @@ $routes = [
 								foreach($routes as $route) { ?>
 
 									<router-link to=<?php echo esc_attr($route['slug']); ?> custom v-slot="{ isActive, href, navigate, isExactActive }">
-										<li :class="[isActive ? 'router-link-active' : '', isExactActive ? 'router-link-exact-active' : '']">
+										<li class="<?php echo esc_attr( $route['class'] ?? '' ); ?>" :class="[isActive ? 'router-link-active' : '', isExactActive ? 'router-link-exact-active' : '']">
 											<a :href="href" @click="navigate" @keypress.enter="navigate" role="link"><?php echo esc_html($route['title']); ?></a>
 										</li>
 									</router-link>

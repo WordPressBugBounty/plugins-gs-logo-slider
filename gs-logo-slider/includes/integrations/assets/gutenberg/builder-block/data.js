@@ -62,7 +62,7 @@ export function isPremiumOption( settingKey, value ) {
 }
 
 export function premiumPageUrl() {
-	return blockData.premium_url || 'https://www.gsplugins.com/product/gs-logo-slider/#pricing';
+	return blockData.premium_url || 'https://www.gsplugins.com/product/gs-logo-slider/pricing/';
 }
 
 export function premiumAlertMessage() {

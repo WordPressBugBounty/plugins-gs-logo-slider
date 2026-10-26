@@ -13,6 +13,8 @@ class Hooks {
         add_filter( 'plugin_row_meta', [ $this, 'plugin_row_meta' ], 10, 2 );
         add_action( 'plugins_loaded', [ $this, 'plugin_loaded' ] );
         add_action( 'admin_menu', [ $this, 'register_sub_menu'] );
+        add_action( 'admin_menu', [ $this, 'add_submenu_separators' ], 999 );
+        add_action( 'admin_head', [ $this, 'print_submenu_separator_css' ] );
         add_action( 'in_admin_header', [ $this, 'disable_admin_notices' ], PHP_INT_MAX );
         add_filter( 'jetpack_content_options_featured_image_exclude_cpt', [$this, 'jetpack__featured_image_exclude_cpt']);
         add_filter( 'use_block_editor_for_post_type', [$this, 'disable_gutenberg'], 10, 2 );
@@ -88,7 +90,7 @@ class Hooks {
             delete_option('gslogo_activation_redirect');
 
             if ( !isset($_GET['activate-multi']) ) {
-                wp_redirect("edit.php?post_type=gs-logo-slider&page=gs-logo-plugins-help");
+                wp_redirect( Welcome::get_page_url() );
             }
         }
     }
@@ -127,6 +129,111 @@ class Hooks {
         add_submenu_page(
             'edit.php?post_type=gs-logo-slider', 'Taxonomies', 'Taxonomies', 'publish_pages', 'gs-logo-shortcode#/taxonomies', array( plugin()->builder, 'view' )
         );
+    }
+
+    public function add_submenu_separators() {
+        global $submenu;
+
+        $parent = 'edit.php?post_type=gs-logo-slider';
+
+        if ( empty( $submenu[ $parent ] ) || ! is_array( $submenu[ $parent ] ) ) {
+            return;
+        }
+
+        $items          = $submenu[ $parent ];
+        $last_tax_index = null;
+        $import_index   = null;
+        $license_index  = null;
+        $pro_index      = null;
+
+        foreach ( $items as $index => $item ) {
+            $slug = isset( $item[2] ) ? (string) $item[2] : '';
+
+            if ( str_contains( $slug, 'edit-tags.php?taxonomy=' ) ) {
+                $last_tax_index = $index;
+            }
+
+            if ( str_contains( $slug, 'gs-logo-shortcode#/import-export' ) ) {
+                $import_index = $index;
+            }
+
+            if ( 'gs-logo-license' === $slug ) {
+                $license_index = $index;
+            }
+
+            if ( 'gs-logo-plugins-premium' === $slug ) {
+                $pro_index = $index;
+            }
+        }
+
+        $move_license = null !== $license_index && null !== $pro_index;
+        $updated      = [];
+
+        foreach ( $items as $index => $item ) {
+            if ( $move_license && $index === $license_index ) {
+                continue;
+            }
+
+            if ( $move_license && $index === $pro_index ) {
+                $updated[] = $items[ $license_index ];
+            }
+
+            $updated[] = $item;
+
+            if ( $index === $last_tax_index && $this->has_visible_submenu_item_after( $items, $index ) ) {
+                $updated[] = $this->get_submenu_separator( 'gs-logo-menu-separator-tax' );
+            }
+
+            if ( $index === $import_index && $this->has_visible_submenu_item_after( $items, $index ) ) {
+                $updated[] = $this->get_submenu_separator( 'gs-logo-menu-separator-import' );
+            }
+        }
+
+        $submenu[ $parent ] = $updated;
+    }
+
+    private function get_submenu_separator( $slug ) {
+        return [
+            '',
+            'read',
+            $slug,
+            '',
+            'gs-submenu-separator',
+        ];
+    }
+
+    private function has_visible_submenu_item_after( $items, $index ) {
+        $passed = false;
+
+        foreach ( $items as $item_index => $item ) {
+            if ( ! $passed ) {
+                if ( $item_index === $index ) {
+                    $passed = true;
+                }
+                continue;
+            }
+
+            $cap = isset( $item[1] ) ? $item[1] : '';
+
+            if ( $cap && current_user_can( $cap ) ) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function print_submenu_separator_css() {
+        echo '<style>'
+            . '#adminmenu .menu-icon-gs-logo-slider .wp-submenu li.gs-submenu-separator{height:0;margin:6px 0;padding:0;border-top:1px solid #3c434a;font-size:0;line-height:0;pointer-events:none;}'
+            . '#adminmenu .menu-icon-gs-logo-slider .wp-submenu li.gs-submenu-separator a{display:none;}'
+            . '#adminmenu .menu-icon-gs-logo-slider .wp-submenu a[href*="gs-logo-shortcode#/go-pro"]{color:#c4b5fd;font-weight:600;}'
+            . '#adminmenu .menu-icon-gs-logo-slider .wp-submenu .gs-logo-go-pro{display:inline-flex;gap:6px;}'
+            . '#adminmenu .menu-icon-gs-logo-slider .wp-submenu .gs-logo-go-pro:before{content:"";width:14px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\'%3E%3Cpath fill=\'%23f5c542\' d=\'M1.7 11.7h12.6l-1.2-6.3-3.1 2.5L8 3.4 6 7.9 2.9 5.4l-1.2 6.3z\'/%3E%3Cpath fill=\'%23f5c542\' d=\'M1.5 11.8h13v1.6c0 .3-.3.6-.6.6H2.1c-.3 0-.6-.3-.6-.6v-1.6z\'/%3E%3Ccircle fill=\'%23ffe08a\' cx=\'8\' cy=\'3.4\' r=\'1\'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 3px rgba(245,197,66,.55));}'
+            . '#adminmenu .menu-icon-gs-logo-slider .wp-submenu a:hover .gs-logo-go-pro,#adminmenu .menu-icon-gs-logo-slider .wp-submenu .current .gs-logo-go-pro{color:#e9d5ff;}'
+            . '@media (prefers-reduced-motion:no-preference){#adminmenu .menu-icon-gs-logo-slider .wp-submenu .gs-logo-go-pro:before{animation:gs-logo-go-pro-pulse 2.2s ease-in-out infinite;}}'
+            . '@keyframes gs-logo-go-pro-pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 2px rgba(245,197,66,.35))}50%{transform:scale(1.12);filter:drop-shadow(0 0 5px rgba(245,197,66,.8))}}'
+            . '</style>';
     }
 
     public function disable_admin_notices() {

@@ -5,7 +5,7 @@ Tags: Logo Slider, logo carousel, logo carousel slider, logo wordpress plugin, c
 Requires at least: 4.3
 Tested up to: 7.1
 Requires PHP: 5.6
-Stable tag: 3.8.9
+Stable tag: 3.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,9 +17,9 @@ Logo Slider: The best responsive plugin for Logo Showcase, Logo Carousel, and di
 
 The plugin is user-friendly, creating a dedicated logo post type and offering a user-friendly Shortcode generator for easy embedding. Its responsive design ensures that responsive sliders look great on all devices, and the lightweight plugin keeps your site running smoothly. Focus on what matters with GS Logo Slider.
 
-🎬 [Live Demo](https://logo.gsplugins.com/) ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-logo-slider/) 📚 [Documentation](https://docs.gsplugins.com/gs-logo-slider/) 🙋‍♂️ [Support](https://www.gsplugins.com/contact/)
+🎬 [Live Demo](https://logo.gsplugins.com/) ⬆️ [Upgrade to PRO](https://www.gsplugins.com/product/gs-logo-slider/pricing/?utm_source=wordpress.org&utm_medium=readme&utm_campaign=gs-logo-slider) 📚 [Documentation](https://docs.gsplugins.com/gs-logo-slider/) 🙋‍♂️ [Support](https://www.gsplugins.com/contact/)
 
-https://www.youtube.com/playlist?list=PLLrT2alOaYX7BYElWvN_juWXo7yYAcjoh
+https://www.youtube.com/watch?v=6C8fc4dOd1E
 
 ### Why are logo sliders useful for businesses?
 Logo sliders help businesses show their partners and clients, building trust and credibility. They save space on the website while highlighting important relationships. Not only it boosts brand recognition but can lead to more collaborations as well.
@@ -313,6 +313,18 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 23. Divi Builder - Module.
 
 == Changelog ==
+= Version 3.9.0 [26th Oct 2026] =
+* [Added]: Welcome screen & video.
+* [Added]: Go Pro submenu and crown icon.
+* [Added]: Updated demo data and metafields.
+* [Fixed]: Activation redirect.
+* [Fixed]: AppSero integration.
+* [Fixed]: Translation notice from get_plugin_data().
+* [Fixed]: PHP object injection vulnerability.
+* [Improved]: License menu position and styling.
+* [Improved]: Shortcode selector block design.
+* [Improved]: Pricing and demo links.
+
 = Version 3.8.9 [5th Oct 2026] =
 * [Improved]: Visibility field controls.
 * [Improved]: Premium option behavior.
@@ -746,6 +758,18 @@ Yes, Page Builder Support is there for the GS Logo Slider. Gutenberg, Elementor,
 * Initial release
 
 == Upgrade Notice ==
+= Version 3.9.0 [26th Oct 2026] =
+* [Added]: Welcome screen & video.
+* [Added]: Go Pro submenu and crown icon.
+* [Added]: Updated demo data and metafields.
+* [Fixed]: Activation redirect.
+* [Fixed]: AppSero integration.
+* [Fixed]: Translation notice from get_plugin_data().
+* [Fixed]: PHP object injection vulnerability.
+* [Improved]: License menu position and styling.
+* [Improved]: Shortcode selector block design.
+* [Improved]: Pricing and demo links.
+
 = Version 3.8.9 [5th Oct 2026] =
 * [Improved]: Visibility field controls.
 * [Improved]: Premium option behavior.

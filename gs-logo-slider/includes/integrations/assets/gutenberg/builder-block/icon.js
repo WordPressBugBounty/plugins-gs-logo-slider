@@ -1,8 +1,9 @@
 /**
  * Block icon.
  *
- * Same mark as the shortcode picker block. Kept free of SVG ids and filters
- * so both copies can sit in the inserter without clashing.
+ * Path shapes only. WordPress.org renders the block.json icon through wp_kses
+ * and drops rect and circle, which leaves an empty box on the plugin page.
+ * Keep this mark identical in both block.json files.
  */
 
 const React = window.React;
@@ -11,10 +12,10 @@ export default function Icon() {
 
 	return (
 		<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-			<rect x="1" y="6" width="4" height="12" rx="1.5" fill="#FC9D7F" />
-			<rect x="19" y="6" width="4" height="12" rx="1.5" fill="#EA8BF2" />
-			<rect x="6.5" y="3.5" width="11" height="17" rx="2" fill="#6472EF" />
-			<circle cx="12" cy="12" r="3" fill="#3F50EB" />
+			<path fill="#FC9D7F" d="M2.5 6h1a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 1 16.5v-9A1.5 1.5 0 0 1 2.5 6z" />
+			<path fill="#EA8BF2" d="M20.5 6h1a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-9A1.5 1.5 0 0 1 20.5 6z" />
+			<path fill="#6472EF" d="M8.5 3.5h7a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2z" />
+			<path fill="#3F50EB" d="M12 9a3 3 0 0 1 0 6 3 3 0 0 1 0-6z" />
 		</svg>
 	);
 }

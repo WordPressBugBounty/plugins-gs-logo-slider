@@ -122,7 +122,7 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
 
         public function get_taxonomy_list() {
 
-            return ['logo-category'];
+            return ['logo-category', 'logo-tag'];
 
         }
 
@@ -386,9 +386,59 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
 
         }
 
+        public function get_dummy_map_embed( $bbox, $title ) {
+
+            $points = array_map( 'floatval', explode( ',', $bbox ) );
+            $lng    = ( $points[0] + $points[2] ) / 2;
+            $lat    = ( $points[1] + $points[3] ) / 2;
+
+            $src = add_query_arg(
+                [
+                    'q'      => $lat . ',' . $lng,
+                    'z'      => '15',
+                    'hl'     => 'en',
+                    'output' => 'embed',
+                ],
+                'https://maps.google.com/maps'
+            );
+
+            return sprintf(
+                '<iframe src="%1$s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="%2$s"></iframe>',
+                esc_url( $src ),
+                esc_attr( $title )
+            );
+
+        }
+
         public function get_meta_inputs( $meta_inputs = [] ) {
 
-            $meta_inputs['_thumbnail_id'] = $this->get_attachment_id_by_filename( $meta_inputs['_thumbnail_id'] );
+            if ( isset( $meta_inputs['_thumbnail_id'] ) ) {
+                $meta_inputs['_thumbnail_id'] = $this->get_attachment_id_by_filename( $meta_inputs['_thumbnail_id'] );
+            }
+
+            if ( ! empty( $meta_inputs['gs_logo_life_gallery'] ) && is_array( $meta_inputs['gs_logo_life_gallery'] ) ) {
+                $gallery_ids = [];
+
+                foreach ( $meta_inputs['gs_logo_life_gallery'] as $filename ) {
+                    $attachment_id = absint( $this->get_attachment_id_by_filename( $filename ) );
+
+                    if ( $attachment_id ) {
+                        $gallery_ids[] = $attachment_id;
+                    }
+                }
+
+                $meta_inputs['gs_logo_life_gallery'] = $gallery_ids;
+            }
+
+            if ( ! empty( $meta_inputs['gs_logo_pitch_deck_id'] ) ) {
+                $pitch_deck_id = absint( $this->get_attachment_id_by_filename( $meta_inputs['gs_logo_pitch_deck_id'] ) );
+
+                if ( $pitch_deck_id ) {
+                    $meta_inputs['gs_logo_pitch_deck_id'] = $pitch_deck_id;
+                } else {
+                    unset( $meta_inputs['gs_logo_pitch_deck_id'] );
+                }
+            }
 
             return $meta_inputs;
 
@@ -405,182 +455,416 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             $logos = [];
 
             $logos[] = array(
-                'post_title'    => 'GS Logo One',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-one'],
+                'post_title'   => 'Amara',
+                'post_content' => 'Amara is a modern digital solutions company helping businesses create meaningful online experiences through thoughtful design and technology.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-01-12 09:15:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['technology'],
+                    'logo-tag'      => ['digital', 'modern'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-1',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-1',
+                    'client_url'                  => 'https://amara.example/',
+                    'gs_logo_contact_email'       => 'hello@amara.example',
+                    'gs_logo_address'             => '120 Madison Avenue, New York, NY 10016, USA',
+                    'gs_logo_vision'              => '<p>Make digital products feel clear, useful, and human.</p>',
+                    'gs_logo_mission'             => '<p>Help businesses turn ideas into online experiences people actually use.</p>',
+                    'gs_logo_established_on'      => '2016',
+                    'gs_logo_num_employees'       => '48',
+                    'gs_logo_formation_structure' => 'llc',
+                    'gs_logo_client_since'        => '2019',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-74.02,40.70,-73.96,40.76', 'Amara office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=M7lc1UVf-VE',
+                    'gs_logo_funding_type'        => 'seed',
+                    'gs_logo_funding_source'      => 'Northstar Ventures',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/amara' ],
+                        [ 'icon' => 'instagram', 'name' => 'Instagram', 'url' => 'https://instagram.example/amara' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://amara.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-1', 'gs-logo-life-4', 'gs-logo-life-5', 'gs-logo-life-6' ],
+                    'gs_logo_pitch_deck_id'       => 'gs-logo-company-profile',
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Two',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-one', 'category-three'],
+                'post_title'   => 'Earth 2.0',
+                'post_content' => 'Earth 2.0 develops sustainable technology solutions designed to help organizations reduce environmental impact and build a smarter future.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-01-18 10:30:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['technology', 'business'],
+                    'logo-tag'      => ['sustainable', 'innovation'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-2',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-2',
+                    'client_url'                  => 'https://earth20.example/',
+                    'gs_logo_contact_email'       => 'hello@earth20.example',
+                    'gs_logo_address'             => '88 Market Street, San Francisco, CA 94105, USA',
+                    'gs_logo_vision'              => '<p>Build technology that lowers environmental impact without slowing the work down.</p>',
+                    'gs_logo_mission'             => '<p>Give organizations practical tools for a cleaner and smarter operation.</p>',
+                    'gs_logo_established_on'      => '2014',
+                    'gs_logo_num_employees'       => '120',
+                    'gs_logo_formation_structure' => 'corporation',
+                    'gs_logo_client_since'        => '2018',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-122.48,37.74,-122.38,37.81', 'Earth 2.0 office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=aqz-KE-bpKQ',
+                    'gs_logo_funding_type'        => 'series_a',
+                    'gs_logo_funding_source'      => 'Greenfield Capital',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/earth20' ],
+                        [ 'icon' => 'twitter', 'name' => 'X', 'url' => 'https://x.example/earth20' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://earth20.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-6', 'gs-logo-life-5', 'gs-logo-life-1', 'gs-logo-life-4' ],
+                    'gs_logo_pitch_deck_id'       => 'gs-logo-company-profile',
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Three',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-two', 'category-three'],
+                'post_title'   => 'Fox Hub',
+                'post_content' => 'Fox Hub is a creative workspace built for teams that want to collaborate, organize ideas, and turn ambitious concepts into successful projects.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-01-26 11:20:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['creative', 'business'],
+                    'logo-tag'      => ['workspace', 'collaboration'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-3',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-3',
+                    'client_url'                  => 'https://foxhub.example/',
+                    'gs_logo_contact_email'       => 'hello@foxhub.example',
+                    'gs_logo_address'             => '14 Worship Street, London EC2A 2BA, United Kingdom',
+                    'gs_logo_vision'              => '<p>Give teams a shared place to shape ideas and finish the work together.</p>',
+                    'gs_logo_mission'             => '<p>Build a creative workspace where collaboration stays simple and visible.</p>',
+                    'gs_logo_established_on'      => '2018',
+                    'gs_logo_num_employees'       => '32',
+                    'gs_logo_formation_structure' => 'partnership',
+                    'gs_logo_client_since'        => '2020',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-0.16,51.49,-0.08,51.53', 'Fox Hub office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=eRsGyueVLvQ',
+                    'gs_logo_funding_type'        => 'bootstrapped',
+                    'gs_logo_funding_source'      => 'Founder funded',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'instagram', 'name' => 'Instagram', 'url' => 'https://instagram.example/foxhub' ],
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/foxhub' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://foxhub.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-5', 'gs-logo-life-1', 'gs-logo-life-2', 'gs-logo-life-3' ],
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Four',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-two'],
+                'post_title'   => 'Zoo TV',
+                'post_content' => 'Zoo TV creates engaging digital entertainment and original video content for audiences across multiple platforms.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-02-04 08:45:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['creative'],
+                    'logo-tag'      => ['media', 'entertainment'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-4',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-4',
+                    'client_url'                  => 'https://zootv.example/',
+                    'gs_logo_contact_email'       => 'hello@zootv.example',
+                    'gs_logo_address'             => '6400 Sunset Boulevard, Los Angeles, CA 90028, USA',
+                    'gs_logo_vision'              => '<p>Make original stories easy to find and worth watching.</p>',
+                    'gs_logo_mission'             => '<p>Create digital entertainment that travels well across platforms.</p>',
+                    'gs_logo_established_on'      => '2012',
+                    'gs_logo_num_employees'       => '75',
+                    'gs_logo_formation_structure' => 'llc',
+                    'gs_logo_client_since'        => '2017',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-118.40,34.00,-118.22,34.10', 'Zoo TV office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
+                    'gs_logo_funding_type'        => 'series_b',
+                    'gs_logo_funding_source'      => 'Horizon Media Partners',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'youtube', 'name' => 'YouTube', 'url' => 'https://youtube.example/zootv' ],
+                        [ 'icon' => 'instagram', 'name' => 'Instagram', 'url' => 'https://instagram.example/zootv' ],
+                        [ 'icon' => 'twitter', 'name' => 'X', 'url' => 'https://x.example/zootv' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-2', 'gs-logo-life-3', 'gs-logo-life-5', 'gs-logo-life-1' ],
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Five',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-two', 'category-three'],
+                'post_title'   => 'Hex Lab',
+                'post_content' => 'Hex Lab is a product innovation studio combining research, strategy, and creative development to build practical solutions for modern businesses.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-02-11 14:10:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['creative', 'business'],
+                    'logo-tag'      => ['research', 'studio'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-5',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-5',
+                    'client_url'                  => 'https://hexlab.example/',
+                    'gs_logo_contact_email'       => 'hello@hexlab.example',
+                    'gs_logo_address'             => '22 Torstrasse, 10119 Berlin, Germany',
+                    'gs_logo_vision'              => '<p>Turn research into products that teams can ship and maintain.</p>',
+                    'gs_logo_mission'             => '<p>Combine strategy and creative development into practical business solutions.</p>',
+                    'gs_logo_established_on'      => '2015',
+                    'gs_logo_num_employees'       => '26',
+                    'gs_logo_formation_structure' => 'llc',
+                    'gs_logo_client_since'        => '2019',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '13.36,52.49,13.45,52.54', 'Hex Lab office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=LXb3EKWsInQ',
+                    'gs_logo_funding_type'        => 'angel',
+                    'gs_logo_funding_source'      => 'Studio Angels',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/hexlab' ],
+                        [ 'icon' => 'dribbble', 'name' => 'Dribbble', 'url' => 'https://dribbble.example/hexlab' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://hexlab.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-4', 'gs-logo-life-3', 'gs-logo-life-2', 'gs-logo-life-5' ],
+                    'gs_logo_pitch_deck_id'       => 'gs-logo-company-profile',
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Six',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-one', 'category-three'],
+                'post_title'   => 'Light AI',
+                'post_content' => 'Light AI builds intelligent software tools that help teams automate everyday tasks, analyze information, and work more efficiently.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-02-19 09:40:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['technology', 'business'],
+                    'logo-tag'      => ['ai', 'automation'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-6',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-6',
+                    'client_url'                  => 'https://lightai.example/',
+                    'gs_logo_contact_email'       => 'hello@lightai.example',
+                    'gs_logo_address'             => '410 Congress Avenue, Austin, TX 78701, USA',
+                    'gs_logo_vision'              => '<p>Put useful automation in the hands of everyday teams.</p>',
+                    'gs_logo_mission'             => '<p>Build software that takes repetitive work off the calendar.</p>',
+                    'gs_logo_established_on'      => '2020',
+                    'gs_logo_num_employees'       => '64',
+                    'gs_logo_formation_structure' => 'corporation',
+                    'gs_logo_client_since'        => '2022',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-97.78,30.25,-97.70,30.31', 'Light AI office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=C0DPdy98e4c',
+                    'gs_logo_funding_type'        => 'series_a',
+                    'gs_logo_funding_source'      => 'Lumen Ventures',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/lightai' ],
+                        [ 'icon' => 'github', 'name' => 'GitHub', 'url' => 'https://github.example/lightai' ],
+                        [ 'icon' => 'twitter', 'name' => 'X', 'url' => 'https://x.example/lightai' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-4', 'gs-logo-life-1', 'gs-logo-life-5', 'gs-logo-life-6' ],
+                    'gs_logo_pitch_deck_id'       => 'gs-logo-company-profile',
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Seven',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-two', 'category-three'],
+                'post_title'   => 'Muzica',
+                'post_content' => 'Muzica is a digital music platform connecting listeners with fresh releases, independent artists, and curated audio experiences.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-03-02 13:25:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['creative', 'business'],
+                    'logo-tag'      => ['music', 'platform'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-7',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-7',
+                    'client_url'                  => 'https://muzica.example/',
+                    'gs_logo_contact_email'       => 'hello@muzica.example',
+                    'gs_logo_address'             => '1200 Division Street, Nashville, TN 37203, USA',
+                    'gs_logo_vision'              => '<p>Connect listeners with music that still feels personal.</p>',
+                    'gs_logo_mission'             => '<p>Give independent artists a clear path to a wider audience.</p>',
+                    'gs_logo_established_on'      => '2017',
+                    'gs_logo_num_employees'       => '41',
+                    'gs_logo_formation_structure' => 'llc',
+                    'gs_logo_client_since'        => '2021',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-86.82,36.14,-86.74,36.19', 'Muzica office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=R6MlUcmOul8',
+                    'gs_logo_funding_type'        => 'seed',
+                    'gs_logo_funding_source'      => 'Indie Audio Fund',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'soundcloud', 'name' => 'SoundCloud', 'url' => 'https://soundcloud.example/muzica' ],
+                        [ 'icon' => 'instagram', 'name' => 'Instagram', 'url' => 'https://instagram.example/muzica' ],
+                        [ 'icon' => 'youtube', 'name' => 'YouTube', 'url' => 'https://youtube.example/muzica' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-2', 'gs-logo-life-5', 'gs-logo-life-1', 'gs-logo-life-3' ],
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Eight',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-three'],
+                'post_title'   => 'Solaytic',
+                'post_content' => 'Solaytic provides business intelligence and analytics solutions that transform complex data into clear, actionable insights.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-03-10 10:05:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['business'],
+                    'logo-tag'      => ['analytics', 'data'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-8',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-8',
+                    'client_url'                  => 'https://solaytic.example/',
+                    'gs_logo_contact_email'       => 'hello@solaytic.example',
+                    'gs_logo_address'             => '233 South Wacker Drive, Chicago, IL 60606, USA',
+                    'gs_logo_vision'              => '<p>Make complex business data readable for the people who decide.</p>',
+                    'gs_logo_mission'             => '<p>Turn reports into clear actions teams can take the same week.</p>',
+                    'gs_logo_established_on'      => '2013',
+                    'gs_logo_num_employees'       => '90',
+                    'gs_logo_formation_structure' => 'corporation',
+                    'gs_logo_client_since'        => '2016',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-87.68,41.86,-87.60,41.91', 'Solaytic office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=ScMzIvxBSi4',
+                    'gs_logo_funding_type'        => 'series_b',
+                    'gs_logo_funding_source'      => 'Insight Partners',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/solaytic' ],
+                        [ 'icon' => 'twitter', 'name' => 'X', 'url' => 'https://x.example/solaytic' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://solaytic.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-4', 'gs-logo-life-5', 'gs-logo-life-1', 'gs-logo-life-6' ],
+                    'gs_logo_pitch_deck_id'       => 'gs-logo-company-profile',
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Nine',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-one', 'category-two', 'category-three'],
+                'post_title'   => 'Treva',
+                'post_content' => 'Treva helps growing companies bring technology, creative strategy, and business operations together through flexible digital services.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-03-18 15:35:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['technology', 'creative', 'business'],
+                    'logo-tag'      => ['strategy', 'growth'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-9',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-9',
+                    'client_url'                  => 'https://treva.example/',
+                    'gs_logo_contact_email'       => 'hello@treva.example',
+                    'gs_logo_address'             => '100 King Street West, Toronto, ON M5X 1A9, Canada',
+                    'gs_logo_vision'              => '<p>Help growing companies keep technology, creative work, and operations in one plan.</p>',
+                    'gs_logo_mission'             => '<p>Offer flexible digital services that match the stage a company is in.</p>',
+                    'gs_logo_established_on'      => '2011',
+                    'gs_logo_num_employees'       => '150',
+                    'gs_logo_formation_structure' => 'llc',
+                    'gs_logo_client_since'        => '2015',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-79.42,43.64,-79.35,43.68', 'Treva office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=Rok8b75pDsQ',
+                    'gs_logo_funding_type'        => 'private_equity',
+                    'gs_logo_funding_source'      => 'Growth Bridge',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/treva' ],
+                        [ 'icon' => 'facebook', 'name' => 'Facebook', 'url' => 'https://facebook.example/treva' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://treva.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-5', 'gs-logo-life-6', 'gs-logo-life-3', 'gs-logo-life-1' ],
+                    'gs_logo_pitch_deck_id'       => 'gs-logo-company-profile',
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Ten',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-one', 'category-two'],
+                'post_title'   => 'Velocity 9',
+                'post_content' => 'Velocity 9 is a digital performance agency focused on fast, reliable web experiences and creative strategies that help brands grow.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-03-27 11:50:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['technology', 'creative'],
+                    'logo-tag'      => ['performance', 'agency'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-10',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-10',
+                    'client_url'                  => 'https://velocity9.example/',
+                    'gs_logo_contact_email'       => 'hello@velocity9.example',
+                    'gs_logo_address'             => '1201 Second Avenue, Seattle, WA 98101, USA',
+                    'gs_logo_vision'              => '<p>Make brand websites fast enough that the work never feels in the way.</p>',
+                    'gs_logo_mission'             => '<p>Pair performance with creative strategy so brands can grow with confidence.</p>',
+                    'gs_logo_established_on'      => '2019',
+                    'gs_logo_num_employees'       => '22',
+                    'gs_logo_formation_structure' => 'corporation',
+                    'gs_logo_client_since'        => '2021',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '-122.36,47.59,-122.30,47.63', 'Velocity 9 office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=QH2-TGUlwu4',
+                    'gs_logo_funding_type'        => 'bootstrapped',
+                    'gs_logo_funding_source'      => 'Agency revenue',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/velocity9' ],
+                        [ 'icon' => 'dribbble', 'name' => 'Dribbble', 'url' => 'https://dribbble.example/velocity9' ],
+                        [ 'icon' => 'instagram', 'name' => 'Instagram', 'url' => 'https://instagram.example/velocity9' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-4', 'gs-logo-life-5', 'gs-logo-life-3', 'gs-logo-life-1' ],
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Eleven',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-two', 'category-three'],
+                'post_title'   => 'Aven',
+                'post_content' => 'Aven partners with ambitious brands to create memorable identities, digital experiences, and practical strategies for sustainable growth.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-04-06 09:55:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['creative', 'business'],
+                    'logo-tag'      => ['branding', 'design'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-11',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-11',
+                    'client_url'                  => 'https://aven.example/',
+                    'gs_logo_contact_email'       => 'hello@aven.example',
+                    'gs_logo_address'             => '18 Rue de Rivoli, 75004 Paris, France',
+                    'gs_logo_vision'              => '<p>Give ambitious brands an identity people remember and a plan they can follow.</p>',
+                    'gs_logo_mission'             => '<p>Create brand systems and digital experiences that support lasting growth.</p>',
+                    'gs_logo_established_on'      => '2009',
+                    'gs_logo_num_employees'       => '36',
+                    'gs_logo_formation_structure' => 'llc',
+                    'gs_logo_client_since'        => '2014',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '2.30,48.84,2.38,48.88', 'Aven office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=ZbZSe6N_BXs',
+                    'gs_logo_funding_type'        => 'angel',
+                    'gs_logo_funding_source'      => 'Brand Founders Circle',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'instagram', 'name' => 'Instagram', 'url' => 'https://instagram.example/aven' ],
+                        [ 'icon' => 'behance', 'name' => 'Behance', 'url' => 'https://behance.example/aven' ],
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/aven' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-3', 'gs-logo-life-5', 'gs-logo-life-1', 'gs-logo-life-2' ],
                 ])
             );
-
+            
             $logos[] = array(
-                'post_title'    => 'GS Logo Twelve',
-                'post_content'  => 'Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Fusce fermentum. Cras non dolor. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi.',
-                'post_status'   => $post_status,
-                'post_type' => $post_type,
-                'post_date' => '2020-08-15 07:01:44',
-                'tax_input' => $this->get_tax_inputs([
-                    'logo-category' => ['category-one', 'category-three'],
+                'post_title'   => 'Circle',
+                'post_content' => 'Circle creates connected digital solutions that simplify collaboration, communication, and day-to-day operations for modern organizations.',
+                'post_status'  => $post_status,
+                'post_type'    => $post_type,
+                'post_date'    => '2026-04-15 12:20:00',
+                'tax_input'    => $this->get_tax_inputs([
+                    'logo-category' => ['technology', 'business'],
+                    'logo-tag'      => ['communication', 'productivity'],
                 ]),
-                'meta_input' => $this->get_meta_inputs([
-                    '_thumbnail_id' => 'gs-logo-slider-12',
-                    'client_url' => 'https://gsplugins.com/',
+                'meta_input'   => $this->get_meta_inputs([
+                    '_thumbnail_id'               => 'gs-logo-slider-12',
+                    'client_url'                  => 'https://circle.example/',
+                    'gs_logo_contact_email'       => 'hello@circle.example',
+                    'gs_logo_address'             => '8 Marina Boulevard, Singapore 018981',
+                    'gs_logo_vision'              => '<p>Make everyday collaboration feel connected instead of scattered.</p>',
+                    'gs_logo_mission'             => '<p>Simplify communication and operations for modern organizations.</p>',
+                    'gs_logo_established_on'      => '2018',
+                    'gs_logo_num_employees'       => '210',
+                    'gs_logo_formation_structure' => 'corporation',
+                    'gs_logo_client_since'        => '2020',
+                    'gs_logo_map_embed'           => $this->get_dummy_map_embed( '103.82,1.27,103.87,1.31', 'Circle office' ),
+                    'gs_logo_video_embed_url'     => 'https://www.youtube.com/watch?v=JGwWNGJdvx8',
+                    'gs_logo_funding_type'        => 'series_c',
+                    'gs_logo_funding_source'      => 'Orbit Capital',
+                    'gs_logo_social_links'        => [
+                        [ 'icon' => 'linkedin', 'name' => 'LinkedIn', 'url' => 'https://linkedin.example/company/circle' ],
+                        [ 'icon' => 'twitter', 'name' => 'X', 'url' => 'https://x.example/circle' ],
+                        [ 'icon' => 'website', 'name' => 'Website', 'url' => 'https://circle.example/' ],
+                    ],
+                    'gs_logo_life_gallery'        => [ 'gs-logo-life-1', 'gs-logo-life-5', 'gs-logo-life-4', 'gs-logo-life-6' ],
                 ])
             );
 
@@ -661,6 +945,13 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
                 'gs-logo-slider-10.png',
                 'gs-logo-slider-11.png',
                 'gs-logo-slider-12.png',
+                'gs-logo-life-1.jpg',
+                'gs-logo-life-2.jpg',
+                'gs-logo-life-3.jpg',
+                'gs-logo-life-4.jpg',
+                'gs-logo-life-5.jpg',
+                'gs-logo-life-6.jpg',
+                'gs-logo-company-profile.pdf',
             ];
 
             add_filter( 'http_request_args', [ $this, 'http_request_args' ] );
@@ -672,16 +963,24 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
                 $file = GSL_PLUGIN_URI . 'assets/img/dummy-data/' . $file;
 
                 $filename = basename($file);
+                $attachment_name = preg_replace( '/\.[^.]+$/', '', $filename );
 
                 $get = wp_remote_get( $file );
                 $type = wp_remote_retrieve_header( $get, 'content-type' );
+                $filetype = wp_check_filetype( $filename );
+
+                if ( ! empty( $filetype['type'] ) ) {
+                    $type = $filetype['type'];
+                }
+
                 $mirror = wp_upload_bits( $filename, null, wp_remote_retrieve_body( $get ) );
                 
                 // Prepare an array of post data for the attachment.
                 $attachment = array(
                     'guid'           => $mirror['url'],
                     'post_mime_type' => $type,
-                    'post_title'     => preg_replace( '/\.[^.]+$/', '', $filename ),
+                    'post_title'     => 'gs-logo-company-profile' === $attachment_name ? 'Company Profile' : $attachment_name,
+                    'post_name'      => $attachment_name,
                     'post_content'   => '',
                     'post_status'    => 'inherit'
                 );
@@ -748,29 +1047,159 @@ if ( ! class_exists( 'GS_Logo_Slider_Dummy_Data' ) ) {
             do_action( 'gslogo_dummy_terms_process_start' );
             
             $terms = [
-                // 3 Groups
+
+                // Logo Categories
                 [
-                    'name' => 'Category One',
-                    'slug' => 'category-one',
-                    'group' => 'logo-category'
+                    'name'  => 'Technology',
+                    'slug'  => 'technology',
+                    'group' => 'logo-category',
                 ],
                 [
-                    'name' => 'Category Two',
-                    'slug' => 'category-two',
-                    'group' => 'logo-category'
+                    'name'  => 'Creative',
+                    'slug'  => 'creative',
+                    'group' => 'logo-category',
                 ],
                 [
-                    'name' => 'Category Three',
-                    'slug' => 'category-three',
-                    'group' => 'logo-category'
-                ]
+                    'name'  => 'Business',
+                    'slug'  => 'business',
+                    'group' => 'logo-category',
+                ],
+
+                // Logo Tags
+                [
+                    'name'  => 'Digital',
+                    'slug'  => 'digital',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Modern',
+                    'slug'  => 'modern',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Sustainable',
+                    'slug'  => 'sustainable',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Innovation',
+                    'slug'  => 'innovation',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Workspace',
+                    'slug'  => 'workspace',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Collaboration',
+                    'slug'  => 'collaboration',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Media',
+                    'slug'  => 'media',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Entertainment',
+                    'slug'  => 'entertainment',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Research',
+                    'slug'  => 'research',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Studio',
+                    'slug'  => 'studio',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'AI',
+                    'slug'  => 'ai',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Automation',
+                    'slug'  => 'automation',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Music',
+                    'slug'  => 'music',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Platform',
+                    'slug'  => 'platform',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Analytics',
+                    'slug'  => 'analytics',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Data',
+                    'slug'  => 'data',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Strategy',
+                    'slug'  => 'strategy',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Growth',
+                    'slug'  => 'growth',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Performance',
+                    'slug'  => 'performance',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Agency',
+                    'slug'  => 'agency',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Branding',
+                    'slug'  => 'branding',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Design',
+                    'slug'  => 'design',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Communication',
+                    'slug'  => 'communication',
+                    'group' => 'logo-tag',
+                ],
+                [
+                    'name'  => 'Productivity',
+                    'slug'  => 'productivity',
+                    'group' => 'logo-tag',
+                ],
+
             ];
 
-            foreach( $terms as $term ) {
+            foreach ( $terms as $term ) {
 
-                $response = wp_insert_term( $term['name'], $term['group'], array('slug' => $term['slug']) );
-    
-                if ( ! is_wp_error($response) ) {
+                $response = wp_insert_term(
+                    $term['name'],
+                    $term['group'],
+                    [
+                        'slug' => $term['slug'],
+                    ]
+                );
+
+                if ( ! is_wp_error( $response ) ) {
                     add_term_meta( $response['term_id'], 'gslogo-demo_data', 1 );
                 }
 

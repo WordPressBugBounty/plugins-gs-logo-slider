@@ -159,7 +159,7 @@ if ( ! class_exists('GS_Logo_Sortable') ) {
 
 			<div class="gs-logo-disable--sort-page">
 				<div class="gs-logo-disable--sort-inner">
-					<div class="gs-logo-disable--term-message"><a href="https://www.gsplugins.com/product/gs-logo-slider/#pricing">Upgrade to PRO</a></div>
+					<div class="gs-logo-disable--term-message"><a href="https://www.gsplugins.com/product/gs-logo-slider/pricing/">Upgrade to PRO</a></div>
 				</div>
 			</div>
 
