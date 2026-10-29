@@ -311,9 +311,9 @@ function on_deactivation() {
  */
 function add_pro_link( $links ) {
     if ( ! is_pro_active() ) {
-        $links[] = '<a style="color: red; font-weight: bold;" class="gs-pro-link" href="https://www.gsplugins.com/product/gs-logo-slider" target="_blank">Go Pro!</a>';
+        $links[] = '<a style="color: red; font-weight: bold;" class="gs-pro-link" href="' . esc_url( pricing_url( 'plugin-action-link' ) ) . '" target="_blank">Go Pro!</a>';
     }
-    $links[] = '<a href="https://www.gsplugins.com/wordpress-plugins" target="_blank">GS Plugins</a>';
+    $links[] = '<a href="https://www.gsplugins.com/wordpress-plugins/" target="_blank">GS Plugins</a>';
     return $links;
 }
 
@@ -825,4 +825,26 @@ function logo_visibility_filter_rows( $rows ) {
 	}
 
 	return $filtered;
+}
+
+if ( ! function_exists( __NAMESPACE__ . '\pricing_url' ) ) {
+	/**
+	 * Pricing page URL with UTM tags. Every "Go Pro" / "Upgrade to PRO" link uses this,
+	 * so the URL lives in one place and Google Analytics shows which placement sold.
+	 *
+	 * @param string $medium Where the link appears, e.g. 'plugin-action-link', 'sort-order'.
+	 * @return string
+	 */
+	function pricing_url( $medium = 'plugin' ) {
+		$url = add_query_arg(
+			array(
+				'utm_source'   => 'plugin',
+				'utm_medium'   => sanitize_key( $medium ),
+				'utm_campaign' => 'gs-logo-slider',
+			),
+			'https://www.gsplugins.com/product/gs-logo-slider/pricing/'
+		);
+
+		return apply_filters( 'gs_logo_slider_pricing_url', $url, $medium );
+	}
 }

@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-26 10:10+0000\n"
+"POT-Creation-Date: 2026-10-29 10:13+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -14,2322 +14,2183 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../build/gs-logo-slider/includes/cpt.php:17, ../includes/cpt.php:17
+#: ../includes/cpt.php:17
 msgctxt "gslogo"
 msgid "GS Logos"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:18, ../includes/cpt.php:18
+#: ../includes/cpt.php:18
 msgctxt "gslogo"
 msgid "GS Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:19, ../includes/cpt.php:19
+#: ../includes/cpt.php:19
 msgctxt "admin menu"
 msgid "GS Logos"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:20, ../includes/cpt.php:20
+#: ../includes/cpt.php:20
 msgctxt "add new on admin bar"
 msgid "GS Logo Slider"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:21, ../includes/cpt.php:21
+#: ../includes/cpt.php:21
 msgctxt "logo"
 msgid "Add New Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:22, ../build/gs-logo-slider/includes/cpt.php:32, ../includes/cpt.php:22, ../includes/cpt.php:32
+#: ../includes/cpt.php:22, ../includes/cpt.php:32
 msgid "Add New Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:23, ../includes/cpt.php:23
+#: ../includes/cpt.php:23
 msgid "New Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:24, ../includes/cpt.php:24
+#: ../includes/cpt.php:24
 msgid "Edit Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:25, ../includes/cpt.php:25
+#: ../includes/cpt.php:25
 msgid "View Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:26, ../includes/cpt.php:26
+#: ../includes/cpt.php:26
 msgid "All Logos"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:27, ../includes/cpt.php:27
+#: ../includes/cpt.php:27
 msgid "Search Logos"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:28, ../includes/cpt.php:28
+#: ../includes/cpt.php:28
 msgid "Parent Logos:"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:29, ../includes/cpt.php:29
+#: ../includes/cpt.php:29
 msgid "No logos found."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:30, ../includes/cpt.php:30
+#: ../includes/cpt.php:30
 msgid "No logos found in Trash."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:31, ../build/gs-logo-slider/includes/sortable.php:245, ../includes/cpt.php:31, ../includes/sortable.php:245
+#: ../includes/cpt.php:31, ../includes/sortable.php:245
 msgid "Add Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:33, ../includes/cpt.php:33
+#: ../includes/cpt.php:33
 msgid "Remove This Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:34, ../includes/cpt.php:34
+#: ../includes/cpt.php:34
 msgid "Use This Logo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/cpt.php:97, ../build/gs-logo-slider/includes/cpt.php:143, ../build/gs-logo-slider/includes/cpt.php:188, ../build/gs-logo-slider/includes/cpt.php:233, ../build/gs-logo-slider/includes/cpt.php:278, ../build/gs-logo-slider/includes/cpt.php:323, ../build/gs-logo-slider/includes/cpt.php:368, ../includes/cpt.php:97, ../includes/cpt.php:143, ../includes/cpt.php:188, ../includes/cpt.php:233, ../includes/cpt.php:278, ../includes/cpt.php:323, ../includes/cpt.php:368
+#: ../includes/cpt.php:97, ../includes/cpt.php:143, ../includes/cpt.php:188, ../includes/cpt.php:233, ../includes/cpt.php:278, ../includes/cpt.php:323, ../includes/cpt.php:368
 msgid "Not Found"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:270, ../includes/functions.php:270
+#: ../includes/functions.php:270
 msgid "GS Logo Slider is not working because you need to upgrade the GS Logo Slider Pro plugin to latest version."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:271, ../includes/functions.php:271
+#: ../includes/functions.php:271
 msgid "Upgrade GS Logo Slider Pro Now"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:391, ../build/gs-logo-slider/includes/metabox.php:567, ../includes/functions.php:391, ../includes/metabox.php:567
+#: ../includes/functions.php:391, ../includes/metabox.php:567
 msgid "Sole Proprietorship"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:392, ../build/gs-logo-slider/includes/metabox.php:568, ../includes/functions.php:392, ../includes/metabox.php:568
+#: ../includes/functions.php:392, ../includes/metabox.php:568
 msgid "Partnership"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:393, ../build/gs-logo-slider/includes/metabox.php:569, ../includes/functions.php:393, ../includes/metabox.php:569
+#: ../includes/functions.php:393, ../includes/metabox.php:569
 msgid "LLC"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:394, ../build/gs-logo-slider/includes/metabox.php:570, ../includes/functions.php:394, ../includes/metabox.php:570
+#: ../includes/functions.php:394, ../includes/metabox.php:570
 msgid "Corporation"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:395, ../build/gs-logo-slider/includes/metabox.php:571, ../includes/functions.php:395, ../includes/metabox.php:571
+#: ../includes/functions.php:395, ../includes/metabox.php:571
 msgid "Non-Profit"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:396, ../build/gs-logo-slider/includes/metabox.php:572, ../includes/functions.php:396, ../includes/metabox.php:572
+#: ../includes/functions.php:396, ../includes/metabox.php:572
 msgid "Government"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:397, ../build/gs-logo-slider/includes/metabox.php:573, ../includes/functions.php:397, ../includes/metabox.php:573
+#: ../includes/functions.php:397, ../includes/metabox.php:573
 msgid "Cooperative"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:398, ../build/gs-logo-slider/includes/functions.php:420, ../build/gs-logo-slider/includes/metabox.php:574, ../build/gs-logo-slider/includes/metabox.php:596, ../includes/functions.php:398, ../includes/functions.php:420, ../includes/metabox.php:574, ../includes/metabox.php:596
+#: ../includes/functions.php:398, ../includes/functions.php:420, ../includes/metabox.php:574, ../includes/metabox.php:596
 msgid "Other"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:409, ../build/gs-logo-slider/includes/metabox.php:585, ../includes/functions.php:409, ../includes/metabox.php:585
+#: ../includes/functions.php:409, ../includes/metabox.php:585
 msgid "Angel"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:410, ../build/gs-logo-slider/includes/metabox.php:586, ../includes/functions.php:410, ../includes/metabox.php:586
+#: ../includes/functions.php:410, ../includes/metabox.php:586
 msgid "Seed"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:411, ../build/gs-logo-slider/includes/metabox.php:587, ../includes/functions.php:411, ../includes/metabox.php:587
+#: ../includes/functions.php:411, ../includes/metabox.php:587
 msgid "Series A"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:412, ../build/gs-logo-slider/includes/metabox.php:588, ../includes/functions.php:412, ../includes/metabox.php:588
+#: ../includes/functions.php:412, ../includes/metabox.php:588
 msgid "Series B"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:413, ../build/gs-logo-slider/includes/metabox.php:589, ../includes/functions.php:413, ../includes/metabox.php:589
+#: ../includes/functions.php:413, ../includes/metabox.php:589
 msgid "Series C"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:414, ../build/gs-logo-slider/includes/metabox.php:590, ../includes/functions.php:414, ../includes/metabox.php:590
+#: ../includes/functions.php:414, ../includes/metabox.php:590
 msgid "Series D+"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:415, ../build/gs-logo-slider/includes/metabox.php:591, ../includes/functions.php:415, ../includes/metabox.php:591
+#: ../includes/functions.php:415, ../includes/metabox.php:591
 msgid "Bootstrapped"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:416, ../build/gs-logo-slider/includes/metabox.php:592, ../includes/functions.php:416, ../includes/metabox.php:592
+#: ../includes/functions.php:416, ../includes/metabox.php:592
 msgid "Debt Financing"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:417, ../build/gs-logo-slider/includes/metabox.php:593, ../includes/functions.php:417, ../includes/metabox.php:593
+#: ../includes/functions.php:417, ../includes/metabox.php:593
 msgid "Grant"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:418, ../build/gs-logo-slider/includes/metabox.php:594, ../includes/functions.php:418, ../includes/metabox.php:594
+#: ../includes/functions.php:418, ../includes/metabox.php:594
 msgid "Crowdfunding"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:419, ../build/gs-logo-slider/includes/metabox.php:595, ../includes/functions.php:419, ../includes/metabox.php:595
+#: ../includes/functions.php:419, ../includes/metabox.php:595
 msgid "Private Equity"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:449, ../build/gs-logo-slider/includes/metabox.php:610, ../includes/functions.php:449, ../includes/metabox.php:610
+#: ../includes/functions.php:449, ../includes/metabox.php:610
 msgid "Facebook"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:450, ../build/gs-logo-slider/includes/metabox.php:611, ../includes/functions.php:450, ../includes/metabox.php:611
+#: ../includes/functions.php:450, ../includes/metabox.php:611
 msgid "X / Twitter"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:451, ../build/gs-logo-slider/includes/metabox.php:612, ../includes/functions.php:451, ../includes/metabox.php:612
+#: ../includes/functions.php:451, ../includes/metabox.php:612
 msgid "Instagram"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:452, ../build/gs-logo-slider/includes/metabox.php:613, ../includes/functions.php:452, ../includes/metabox.php:613
+#: ../includes/functions.php:452, ../includes/metabox.php:613
 msgid "LinkedIn"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:453, ../build/gs-logo-slider/includes/metabox.php:614, ../includes/functions.php:453, ../includes/metabox.php:614
+#: ../includes/functions.php:453, ../includes/metabox.php:614
 msgid "YouTube"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:454, ../build/gs-logo-slider/includes/metabox.php:615, ../includes/functions.php:454, ../includes/metabox.php:615
+#: ../includes/functions.php:454, ../includes/metabox.php:615
 msgid "Pinterest"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:455, ../build/gs-logo-slider/includes/metabox.php:616, ../includes/functions.php:455, ../includes/metabox.php:616
+#: ../includes/functions.php:455, ../includes/metabox.php:616
 msgid "GitHub"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:456, ../build/gs-logo-slider/includes/metabox.php:617, ../includes/functions.php:456, ../includes/metabox.php:617
+#: ../includes/functions.php:456, ../includes/metabox.php:617
 msgid "Tumblr"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:457, ../build/gs-logo-slider/includes/metabox.php:618, ../includes/functions.php:457, ../includes/metabox.php:618
+#: ../includes/functions.php:457, ../includes/metabox.php:618
 msgid "Vimeo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:458, ../build/gs-logo-slider/includes/metabox.php:619, ../includes/functions.php:458, ../includes/metabox.php:619
+#: ../includes/functions.php:458, ../includes/metabox.php:619
 msgid "WhatsApp"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:459, ../build/gs-logo-slider/includes/metabox.php:620, ../includes/functions.php:459, ../includes/metabox.php:620
+#: ../includes/functions.php:459, ../includes/metabox.php:620
 msgid "Reddit"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:460, ../build/gs-logo-slider/includes/metabox.php:621, ../includes/functions.php:460, ../includes/metabox.php:621
+#: ../includes/functions.php:460, ../includes/metabox.php:621
 msgid "Skype"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:461, ../build/gs-logo-slider/includes/metabox.php:622, ../includes/functions.php:461, ../includes/metabox.php:622
+#: ../includes/functions.php:461, ../includes/metabox.php:622
 msgid "SoundCloud"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:462, ../build/gs-logo-slider/includes/metabox.php:623, ../includes/functions.php:462, ../includes/metabox.php:623
+#: ../includes/functions.php:462, ../includes/metabox.php:623
 msgid "Dribbble"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:463, ../build/gs-logo-slider/includes/metabox.php:624, ../includes/functions.php:463, ../includes/metabox.php:624
+#: ../includes/functions.php:463, ../includes/metabox.php:624
 msgid "Behance"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:464, ../build/gs-logo-slider/includes/metabox.php:625, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:125, ../includes/functions.php:464, ../includes/metabox.php:625, ../templates/singles/gs-logo-single-style-one.php:125
+#: ../includes/functions.php:464, ../includes/metabox.php:625, ../templates/singles/gs-logo-single-style-one.php:125
 msgid "Website / Other"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:609, ../includes/functions.php:609, ../includes/welcome/view.php:145
+#: ../includes/functions.php:609, ../includes/welcome/view.php:145
 msgid "Watch on YouTube"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/functions.php:621, ../includes/functions.php:621
+#: ../includes/functions.php:621
 msgid "Watch on Vimeo"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:28, ../build/gs-logo-slider/includes/import-export.php:121, ../includes/import-export.php:28, ../includes/import-export.php:121
+#: ../includes/import-export.php:28, ../includes/import-export.php:121
 msgid "You do not have permission to perform this action"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:31, ../build/gs-logo-slider/includes/import-export.php:39, ../includes/import-export.php:31, ../includes/import-export.php:39
+#: ../includes/import-export.php:31, ../includes/import-export.php:39
 msgid "No export data provided"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:89, ../includes/import-export.php:89
+#: ../includes/import-export.php:89
 msgid "Invalid file type"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:109, ../build/gs-logo-slider/includes/import-export.php:106, ../includes/import-export.php:109, ../includes/import-export.php:106
+#: ../includes/import-export.php:109, ../includes/import-export.php:106
 msgid "File upload failed"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:124, ../includes/import-export.php:124
+#: ../includes/import-export.php:124
 msgid "No import file provided"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:131, ../includes/import-export.php:131
+#: ../includes/import-export.php:131
 msgid "Invalid file"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:138, ../includes/import-export.php:138
+#: ../includes/import-export.php:138
 msgid "Invalid file content"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/import-export.php:147, ../includes/import-export.php:147
+#: ../includes/import-export.php:147
 msgid "Data imported successfully"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:55, ../includes/metabox.php:55
+#: ../includes/metabox.php:55
 msgid "Logo Additional Info"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:64, ../includes/metabox.php:64
+#: ../includes/metabox.php:64
 msgid "Company Social Links"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:73, ../includes/metabox.php:73
+#: ../includes/metabox.php:73
 msgid "Life in Company / Image Gallery"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:82, ../includes/metabox.php:82
+#: ../includes/metabox.php:82
 msgid "Pitch Deck / Company Presentation (PDF)"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:91, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:785, ../includes/metabox.php:91, ../includes/shortcode-builder/builder.php:785
+#: ../includes/metabox.php:91, ../includes/shortcode-builder/builder.php:785
 msgid "Secondary Image"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:100, ../includes/metabox.php:100
+#: ../includes/metabox.php:100
 msgid "Logo Expire At"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:167, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1272, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:370, ../includes/metabox.php:167, ../includes/shortcode-builder/builder.php:1269, ../templates/singles/gs-logo-single-style-one.php:370
+#: ../includes/metabox.php:167, ../includes/shortcode-builder/builder.php:1269, ../templates/singles/gs-logo-single-style-one.php:370
 msgid "Client Site URL"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:168, ../includes/metabox.php:168
+#: ../includes/metabox.php:168
 msgid "https://example.com"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:172, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:379, ../includes/metabox.php:172, ../templates/singles/gs-logo-single-style-one.php:379
+#: ../includes/metabox.php:172, ../templates/singles/gs-logo-single-style-one.php:379
 msgid "Contact Email"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:173, ../includes/metabox.php:173
+#: ../includes/metabox.php:173
 msgid "contact@example.com"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:177, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:901, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:388, ../includes/metabox.php:177, ../includes/shortcode-builder/builder.php:898, ../templates/singles/gs-logo-single-style-one.php:388
+#: ../includes/metabox.php:177, ../includes/shortcode-builder/builder.php:898, ../templates/singles/gs-logo-single-style-one.php:388
 msgid "Address"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:178, ../includes/metabox.php:178
+#: ../includes/metabox.php:178
 msgid "Street, City, State, Country"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:184, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:898, ../includes/metabox.php:184, ../includes/shortcode-builder/builder.php:895
+#: ../includes/metabox.php:184, ../includes/shortcode-builder/builder.php:895
 msgid "Vision"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:191, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:899, ../includes/metabox.php:191, ../includes/shortcode-builder/builder.php:896
+#: ../includes/metabox.php:191, ../includes/shortcode-builder/builder.php:896
 msgid "Mission"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:198, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:902, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:51, ../includes/metabox.php:198, ../includes/shortcode-builder/builder.php:899, ../templates/singles/gs-logo-single-style-one.php:51
+#: ../includes/metabox.php:198, ../includes/shortcode-builder/builder.php:899, ../templates/singles/gs-logo-single-style-one.php:51
 msgid "Established On"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:199, ../includes/metabox.php:199
+#: ../includes/metabox.php:199
 msgid "e.g. 1998 or 12 March 1998"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:203, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:903, ../includes/metabox.php:203, ../includes/shortcode-builder/builder.php:900
+#: ../includes/metabox.php:203, ../includes/shortcode-builder/builder.php:900
 msgid "Number of Employees"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:204, ../includes/metabox.php:204
+#: ../includes/metabox.php:204
 msgid "e.g. 50 or 11-50"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:208, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:904, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:67, ../includes/metabox.php:208, ../includes/shortcode-builder/builder.php:901, ../templates/singles/gs-logo-single-style-one.php:67
+#: ../includes/metabox.php:208, ../includes/shortcode-builder/builder.php:901, ../templates/singles/gs-logo-single-style-one.php:67
 msgid "Formation Structure"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:210, ../build/gs-logo-slider/includes/metabox.php:235, ../includes/metabox.php:210, ../includes/metabox.php:235
+#: ../includes/metabox.php:210, ../includes/metabox.php:235
 msgid "— Select —"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:218, ../build/gs-logo-slider/includes/metabox.php:219, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:75, ../includes/metabox.php:218, ../includes/metabox.php:219, ../templates/singles/gs-logo-single-style-one.php:75
+#: ../includes/metabox.php:218, ../includes/metabox.php:219, ../templates/singles/gs-logo-single-style-one.php:75
 msgid "Client Since"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:223, ../includes/metabox.php:223
+#: ../includes/metabox.php:223
 msgid "Map Location (Embed)"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:224, ../includes/metabox.php:224
+#: ../includes/metabox.php:224
 msgid "Paste Google Maps embed iframe code here"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:228, ../includes/metabox.php:228
+#: ../includes/metabox.php:228
 msgid "Video (Embed URL)"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:229, ../includes/metabox.php:229
+#: ../includes/metabox.php:229
 msgid "https://www.youtube.com/watch?v=... or https://vimeo.com/..."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:233, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:906, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:83, ../includes/metabox.php:233, ../includes/shortcode-builder/builder.php:903, ../templates/singles/gs-logo-single-style-one.php:83
+#: ../includes/metabox.php:233, ../includes/shortcode-builder/builder.php:903, ../templates/singles/gs-logo-single-style-one.php:83
 msgid "Funding Type"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:243, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:907, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:91, ../includes/metabox.php:243, ../includes/shortcode-builder/builder.php:904, ../templates/singles/gs-logo-single-style-one.php:91
+#: ../includes/metabox.php:243, ../includes/shortcode-builder/builder.php:904, ../templates/singles/gs-logo-single-style-one.php:91
 msgid "Funding Source"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:244, ../includes/metabox.php:244
+#: ../includes/metabox.php:244
 msgid "Investors, venture capital firms, etc."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:270, ../includes/metabox.php:270
+#: ../includes/metabox.php:270
 msgid "The logo will disappear at exactly this date and time. Leave blank for no expiration."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:271, ../includes/metabox.php:271
+#: ../includes/metabox.php:271
 msgid "e.g. 2026-06-02 12:00:00"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:296, ../includes/metabox.php:296
+#: ../includes/metabox.php:296
 msgid "Drag rows to reorder. URL is required when a platform is selected."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:306, ../includes/metabox.php:306
+#: ../includes/metabox.php:306
 msgid "Add Social Link"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:329, ../build/gs-logo-slider/includes/metabox.php:416, ../includes/metabox.php:329, ../includes/metabox.php:416
+#: ../includes/metabox.php:329, ../includes/metabox.php:416
 msgid "Drag to reorder"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:338, ../includes/metabox.php:338
+#: ../includes/metabox.php:338
 msgid "— Platform —"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:344, ../includes/metabox.php:344
+#: ../includes/metabox.php:344
 msgid "Display name (optional)"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:346, ../includes/metabox.php:346
+#: ../includes/metabox.php:346
 msgid "https://..."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:348, ../build/gs-logo-slider/includes/metabox.php:420, ../includes/metabox.php:348, ../includes/metabox.php:420
+#: ../includes/metabox.php:348, ../includes/metabox.php:420
 msgid "Remove"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:368, ../includes/metabox.php:368
+#: ../includes/metabox.php:368
 msgid "Team photos, office shots, and other life-at-company images. Drag to reorder."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:380, ../includes/metabox.php:380
+#: ../includes/metabox.php:380
 msgid "Add Gallery Images"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:380, ../includes/metabox.php:380
+#: ../includes/metabox.php:380
 msgid "Add to Gallery"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:382, ../includes/metabox.php:382
+#: ../includes/metabox.php:382
 msgid "Add Images"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:386, ../includes/metabox.php:386
+#: ../includes/metabox.php:386
 msgid "Remove All"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:452, ../includes/metabox.php:452
+#: ../includes/metabox.php:452
 msgid "Choose a PDF"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:452, ../includes/metabox.php:452
+#: ../includes/metabox.php:452
 msgid "Use this PDF"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:454, ../includes/metabox.php:454
+#: ../includes/metabox.php:454
 msgid "Replace PDF"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:454, ../includes/metabox.php:454
+#: ../includes/metabox.php:454
 msgid "Upload PDF"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:458, ../includes/metabox.php:458
+#: ../includes/metabox.php:458
 msgid "Remove PDF"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:492, ../includes/metabox.php:492
+#: ../includes/metabox.php:492
 msgid "Remove Image"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:499, ../build/gs-logo-slider/includes/metabox.php:499, ../build/gs-logo-slider/includes/metabox.php:499, ../includes/metabox.php:499, ../includes/metabox.php:499, ../includes/metabox.php:499
+#: ../includes/metabox.php:499, ../includes/metabox.php:499, ../includes/metabox.php:499
 msgid "Upload Image"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:499, ../includes/metabox.php:499
+#: ../includes/metabox.php:499
 msgid "Choose an image"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/metabox.php:527, ../includes/metabox.php:527
+#: ../includes/metabox.php:527
 msgid "Upgrade to PRO"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode.php:27, ../build/gs-logo-slider/includes/shortcode.php:46, ../build/gs-logo-slider/includes/shortcode.php:64, ../build/gs-logo-slider/includes/sortable.php:386, ../build/gs-logo-slider/includes/sortable.php:417, ../build/gs-logo-slider/includes/demo-data/dummy-data.php:163, ../build/gs-logo-slider/includes/demo-data/dummy-data.php:179, ../build/gs-logo-slider/includes/demo-data/dummy-data.php:195, ../build/gs-logo-slider/includes/demo-data/dummy-data.php:205, ../build/gs-logo-slider/includes/demo-data/dummy-data.php:215, ../build/gs-logo-slider/includes/demo-data/dummy-data.php:225, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:356, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:454, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:493, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:564, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:602, ../includes/shortcode.php:27, ../includes/shortcode.php:46, ../includes/shortcode.php:64, ../includes/sortable.php:386, ../includes/sortable.php:417, ../includes/demo-data/dummy-data.php:163, ../includes/demo-data/dummy-data.php:179, ../includes/demo-data/dummy-data.php:195, ../includes/demo-data/dummy-data.php:205, ../includes/demo-data/dummy-data.php:215, ../includes/demo-data/dummy-data.php:225, ../includes/shortcode-builder/builder.php:356, ../includes/shortcode-builder/builder.php:454, ../includes/shortcode-builder/builder.php:493, ../includes/shortcode-builder/builder.php:564, ../includes/shortcode-builder/builder.php:602
+#: ../includes/shortcode.php:27, ../includes/shortcode.php:46, ../includes/shortcode.php:64, ../includes/sortable.php:386, ../includes/sortable.php:417, ../includes/demo-data/dummy-data.php:163, ../includes/demo-data/dummy-data.php:179, ../includes/demo-data/dummy-data.php:195, ../includes/demo-data/dummy-data.php:205, ../includes/demo-data/dummy-data.php:215, ../includes/demo-data/dummy-data.php:225, ../includes/shortcode-builder/builder.php:356, ../includes/shortcode-builder/builder.php:454, ../includes/shortcode-builder/builder.php:493, ../includes/shortcode-builder/builder.php:564, ../includes/shortcode-builder/builder.php:602
 msgid "Unauthorised Request"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode.php:87, ../includes/shortcode.php:87
+#: ../includes/shortcode.php:87
 msgid "No shortcode ID found"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/shortcode.php:595, ../includes/shortcode.php:595
+#: ../includes/shortcode.php:595
 msgid "Please upgrade to pro version to use this template"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:207, ../includes/sortable.php:207
+#: ../includes/sortable.php:207
 msgid "Custom Order for Logos"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:243, ../includes/sortable.php:243
+#: ../includes/sortable.php:243
 msgid "No Logo Found!"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:244, ../includes/sortable.php:244
+#: ../includes/sortable.php:244
 msgid "We didn't find any logo.</br>Please add some logos to sort them."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:254, ../includes/sortable.php:254
+#: ../includes/sortable.php:254
 msgid "Query Settings for Logos"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:292, ../includes/sortable.php:292
+#: ../includes/sortable.php:292
 msgid "Custom Order for Categories"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:317, ../includes/sortable.php:317
+#: ../includes/sortable.php:317
 msgid "No Category Found!"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:318, ../includes/sortable.php:318
+#: ../includes/sortable.php:318
 msgid "We didn't find any Category.</br>Please add some categories to sort them."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:319, ../includes/sortable.php:319
+#: ../includes/sortable.php:319
 msgid "Add Category"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:327, ../includes/sortable.php:327
+#: ../includes/sortable.php:327
 msgid "Query Settings for Categories"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:399, ../includes/sortable.php:399
+#: ../includes/sortable.php:399
 msgid "Logo order saved successfully"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:408, ../includes/sortable.php:408
+#: ../includes/sortable.php:408
 msgid "License invalid"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:413, ../includes/sortable.php:413
+#: ../includes/sortable.php:413
 msgid "Permission denied"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/sortable.php:431, ../includes/sortable.php:431
+#: ../includes/sortable.php:431
 msgid "Category order saved successfully"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/template-loader.php:56, ../includes/template-loader.php:56
+#: ../includes/template-loader.php:56
 msgid "Template file not found - GS Plugins"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/demo-data/dummy-data.php:239, ../includes/demo-data/dummy-data.php:239
+#: ../includes/demo-data/dummy-data.php:239
 msgid "Dummy Logos already imported"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/demo-data/dummy-data.php:253, ../includes/demo-data/dummy-data.php:253
+#: ../includes/demo-data/dummy-data.php:253
 msgid "Dummy Logos imported"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/demo-data/dummy-data.php:275, ../includes/demo-data/dummy-data.php:275
+#: ../includes/demo-data/dummy-data.php:275
 msgid "Dummy Logos deleted"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/demo-data/dummy-data.php:293, ../includes/demo-data/dummy-data.php:293
+#: ../includes/demo-data/dummy-data.php:293
 msgid "Dummy Shortcodes already imported"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/demo-data/dummy-data.php:307, ../includes/demo-data/dummy-data.php:307
+#: ../includes/demo-data/dummy-data.php:307
 msgid "Dummy Shortcodes imported"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/demo-data/dummy-data.php:327, ../includes/demo-data/dummy-data.php:327
+#: ../includes/demo-data/dummy-data.php:327
 msgid "Dummy Shortcodes deleted"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:48, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:276, ../includes/integrations/elementor-builder-widget.php:48, ../includes/integrations/integration-gutenberg-builder.php:276
+#: ../includes/integrations/elementor-builder-widget.php:48, ../includes/integrations/integration-gutenberg-builder.php:276
 msgid "GS Logo Slider Builder"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:155, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:294, ../includes/integrations/elementor-builder-widget.php:155, ../includes/integrations/integration-gutenberg-builder.php:294
+#: ../includes/integrations/elementor-builder-widget.php:155, ../includes/integrations/integration-gutenberg-builder.php:294
 msgid "Thickness"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:169, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:295, ../includes/integrations/elementor-builder-widget.php:169, ../includes/integrations/integration-gutenberg-builder.php:295
+#: ../includes/integrations/elementor-builder-widget.php:169, ../includes/integrations/integration-gutenberg-builder.php:295
 msgid "Type"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:182, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:296, ../includes/integrations/elementor-builder-widget.php:182, ../includes/integrations/integration-gutenberg-builder.php:296
+#: ../includes/integrations/elementor-builder-widget.php:182, ../includes/integrations/integration-gutenberg-builder.php:296
 msgid "Color"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:240, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:297, ../includes/integrations/elementor-builder-widget.php:240, ../includes/integrations/integration-gutenberg-builder.php:297
+#: ../includes/integrations/elementor-builder-widget.php:240, ../includes/integrations/integration-gutenberg-builder.php:297
 msgid "Offset X"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:254, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:298, ../includes/integrations/elementor-builder-widget.php:254, ../includes/integrations/integration-gutenberg-builder.php:298
+#: ../includes/integrations/elementor-builder-widget.php:254, ../includes/integrations/integration-gutenberg-builder.php:298
 msgid "Offset Y"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:268, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:299, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1208, ../includes/integrations/elementor-builder-widget.php:268, ../includes/integrations/integration-gutenberg-builder.php:299, ../includes/shortcode-builder/builder.php:1205
+#: ../includes/integrations/elementor-builder-widget.php:268, ../includes/integrations/integration-gutenberg-builder.php:299, ../includes/shortcode-builder/builder.php:1205
 msgid "Blur"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:282, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:300, ../includes/integrations/elementor-builder-widget.php:282, ../includes/integrations/integration-gutenberg-builder.php:300
+#: ../includes/integrations/elementor-builder-widget.php:282, ../includes/integrations/integration-gutenberg-builder.php:300
 msgid "Spread"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:299, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:283, ../includes/integrations/elementor-builder-widget.php:299, ../includes/integrations/integration-gutenberg-builder.php:283
+#: ../includes/integrations/elementor-builder-widget.php:299, ../includes/integrations/integration-gutenberg-builder.php:283
 msgid "Filter & Pagination"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:437, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:292, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:706, ../includes/integrations/elementor-builder-widget.php:437, ../includes/integrations/integration-gutenberg-builder.php:292, ../includes/shortcode-builder/builder.php:706
+#: ../includes/integrations/elementor-builder-widget.php:437, ../includes/integrations/integration-gutenberg-builder.php:292, ../includes/shortcode-builder/builder.php:706
 msgid "Width"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:449, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:293, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:707, ../includes/integrations/elementor-builder-widget.php:449, ../includes/integrations/integration-gutenberg-builder.php:293, ../includes/shortcode-builder/builder.php:707
+#: ../includes/integrations/elementor-builder-widget.php:449, ../includes/integrations/integration-gutenberg-builder.php:293, ../includes/shortcode-builder/builder.php:707
 msgid "Height"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:537, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:284, ../includes/integrations/elementor-builder-widget.php:537, ../includes/integrations/integration-gutenberg-builder.php:284
+#: ../includes/integrations/elementor-builder-widget.php:537, ../includes/integrations/integration-gutenberg-builder.php:284
 msgid "Slider & Autoplay"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:744, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:285, ../includes/integrations/elementor-builder-widget.php:744, ../includes/integrations/integration-gutenberg-builder.php:285
+#: ../includes/integrations/elementor-builder-widget.php:744, ../includes/integrations/integration-gutenberg-builder.php:285
 msgid "Title & Content"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:796, ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:819, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:291, ../includes/integrations/elementor-builder-widget.php:796, ../includes/integrations/elementor-builder-widget.php:819, ../includes/integrations/integration-gutenberg-builder.php:291
+#: ../includes/integrations/elementor-builder-widget.php:796, ../includes/integrations/elementor-builder-widget.php:819, ../includes/integrations/integration-gutenberg-builder.php:291
 msgid "Limit By"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:915, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:287, ../includes/integrations/elementor-builder-widget.php:915, ../includes/integrations/integration-gutenberg-builder.php:287
+#: ../includes/integrations/elementor-builder-widget.php:915, ../includes/integrations/integration-gutenberg-builder.php:287
 msgid "Table Headings"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1005, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:286, ../includes/integrations/elementor-builder-widget.php:1005, ../includes/integrations/integration-gutenberg-builder.php:286
+#: ../includes/integrations/elementor-builder-widget.php:1005, ../includes/integrations/integration-gutenberg-builder.php:286
 msgid "Layout"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1018, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:304, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1500, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1517, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1536, ../includes/integrations/elementor-builder-widget.php:1018, ../includes/integrations/integration-gutenberg-builder.php:304, ../includes/shortcode-builder/builder.php:1497, ../includes/shortcode-builder/builder.php:1514, ../includes/shortcode-builder/builder.php:1533
+#: ../includes/integrations/elementor-builder-widget.php:1018, ../includes/integrations/integration-gutenberg-builder.php:304, ../includes/shortcode-builder/builder.php:1497, ../includes/shortcode-builder/builder.php:1514, ../includes/shortcode-builder/builder.php:1533
 msgid "Left"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1022, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1521, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1532, ../includes/integrations/elementor-builder-widget.php:1022, ../includes/shortcode-builder/builder.php:1518, ../includes/shortcode-builder/builder.php:1529
+#: ../includes/integrations/elementor-builder-widget.php:1022, ../includes/shortcode-builder/builder.php:1518, ../includes/shortcode-builder/builder.php:1529
 msgid "Center"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1026, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:302, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1504, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1525, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1540, ../includes/integrations/elementor-builder-widget.php:1026, ../includes/integrations/integration-gutenberg-builder.php:302, ../includes/shortcode-builder/builder.php:1501, ../includes/shortcode-builder/builder.php:1522, ../includes/shortcode-builder/builder.php:1537
+#: ../includes/integrations/elementor-builder-widget.php:1026, ../includes/integrations/integration-gutenberg-builder.php:302, ../includes/shortcode-builder/builder.php:1501, ../includes/shortcode-builder/builder.php:1522, ../includes/shortcode-builder/builder.php:1537
 msgid "Right"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1181, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:281, ../includes/integrations/elementor-builder-widget.php:1181, ../includes/integrations/integration-gutenberg-builder.php:281
+#: ../includes/integrations/elementor-builder-widget.php:1181, ../includes/integrations/integration-gutenberg-builder.php:281
 msgid "Include"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1206, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:282, ../includes/integrations/elementor-builder-widget.php:1206, ../includes/integrations/integration-gutenberg-builder.php:282
+#: ../includes/integrations/elementor-builder-widget.php:1206, ../includes/integrations/integration-gutenberg-builder.php:282
 msgid "Exclude"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1614, ../build/gs-logo-slider/includes/integrations/integration-elementor.php:112, ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:278, ../includes/integrations/elementor-builder-widget.php:1614, ../includes/integrations/integration-elementor.php:112, ../includes/integrations/integration-gutenberg-builder.php:278
+#: ../includes/integrations/elementor-builder-widget.php:1614, ../includes/integrations/integration-elementor.php:112, ../includes/integrations/integration-gutenberg-builder.php:278
 msgid "Available in the premium version."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1627, ../includes/integrations/elementor-builder-widget.php:1627
+#: ../includes/integrations/elementor-builder-widget.php:1627
 msgid "On"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/elementor-builder-widget.php:1628, ../includes/integrations/elementor-builder-widget.php:1628
+#: ../includes/integrations/elementor-builder-widget.php:1628
 msgid "Off"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-beaver.php:32, ../includes/integrations/integration-beaver.php:32
+#: ../includes/integrations/integration-beaver.php:32
 msgid "Tab 1"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-beaver.php:35, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:868, ../includes/integrations/integration-beaver.php:35, ../includes/shortcode-builder/builder.php:867
+#: ../includes/integrations/integration-beaver.php:35, ../includes/shortcode-builder/builder.php:867
 msgid "Shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-beaver.php:39, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:72, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:40, ../includes/integrations/integration-beaver.php:39, ../includes/integrations/integration-gutenberg.php:232, ../includes/integrations/integration-wpb-vc.php:40
+#: ../includes/integrations/integration-beaver.php:39, ../includes/integrations/integration-gutenberg.php:232, ../includes/integrations/integration-wpb-vc.php:40
 msgid "Select Shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-divi.php:167, ../includes/integrations/integration-divi.php:167
+#: ../includes/integrations/integration-divi.php:167
 msgid "Loading logo slider…"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-divi.php:168, ../build/gs-logo-slider/includes/integrations/divi/LogoSliderModule.php:131, ../includes/integrations/integration-divi.php:168, ../includes/integrations/divi/LogoSliderModule.php:131
+#: ../includes/integrations/integration-divi.php:168, ../includes/integrations/divi/LogoSliderModule.php:131
 msgid "Please select a GS Logo shortcode."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-divi.php:169, ../build/gs-logo-slider/includes/integrations/divi/LogoSliderController.php:125, ../includes/integrations/integration-divi.php:169, ../includes/integrations/divi/LogoSliderController.php:125
+#: ../includes/integrations/integration-divi.php:169, ../includes/integrations/divi/LogoSliderController.php:125
 msgid "No shortcodes found. Create one in GS Logo first."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:127, ../includes/integrations/integration-elementor.php:127
+#: ../includes/integrations/integration-elementor.php:127
 msgid "Premium Feature"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:286, ../build/gs-logo-slider/includes/integrations/integration-tagdiv.php:61, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:32, ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:10, ../includes/integrations/integration-elementor.php:286, ../includes/integrations/integration-tagdiv.php:61, ../includes/integrations/integration-wpb-vc.php:32, ../includes/welcome/view.php:91, ../includes/integrations/beaver/beaver-widget-logo.php:10
+#: ../includes/integrations/integration-elementor.php:286, ../includes/integrations/integration-tagdiv.php:61, ../includes/integrations/integration-wpb-vc.php:32, ../includes/welcome/view.php:91, ../includes/integrations/beaver/beaver-widget-logo.php:10
 msgid "GS Logo Slider"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:302, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:894, ../includes/integrations/integration-elementor.php:302, ../includes/shortcode-builder/builder.php:891
+#: ../includes/integrations/integration-elementor.php:302, ../includes/shortcode-builder/builder.php:891
 msgid "Content"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:310, ../build/gs-logo-slider/includes/integrations/integration-tagdiv.php:74, ../includes/integrations/integration-elementor.php:310, ../includes/integrations/integration-tagdiv.php:74
+#: ../includes/integrations/integration-elementor.php:310, ../includes/integrations/integration-tagdiv.php:74
 msgid "Logo Shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:326, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:73, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:114, ../includes/integrations/integration-elementor.php:326, ../includes/integrations/integration-gutenberg.php:234, ../includes/integrations/integration-wpb-vc.php:114
+#: ../includes/integrations/integration-elementor.php:326, ../includes/integrations/integration-gutenberg.php:234, ../includes/integrations/integration-wpb-vc.php:114
 msgid "Edit this shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:328, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:74, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:116, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:872, ../includes/integrations/integration-elementor.php:328, ../includes/integrations/integration-gutenberg.php:235, ../includes/integrations/integration-wpb-vc.php:116, ../includes/shortcode-builder/builder.php:871
+#: ../includes/integrations/integration-elementor.php:328, ../includes/integrations/integration-gutenberg.php:235, ../includes/integrations/integration-wpb-vc.php:116, ../includes/shortcode-builder/builder.php:871
 msgid "Edit"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:332, ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:75, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:120, ../includes/integrations/integration-elementor.php:332, ../includes/integrations/integration-gutenberg.php:236, ../includes/integrations/integration-wpb-vc.php:120
+#: ../includes/integrations/integration-elementor.php:332, ../includes/integrations/integration-gutenberg.php:236, ../includes/integrations/integration-wpb-vc.php:120
 msgid "Create new shortcode"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-elementor.php:334, ../build/gs-logo-slider/includes/integrations/integration-wpb-vc.php:122, ../includes/integrations/integration-elementor.php:334, ../includes/integrations/integration-wpb-vc.php:122
+#: ../includes/integrations/integration-elementor.php:334, ../includes/integrations/integration-wpb-vc.php:122
 msgid "Craete"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:277, ../includes/integrations/integration-gutenberg-builder.php:277
+#: ../includes/integrations/integration-gutenberg-builder.php:277
 msgid "Build a logo slider, grid, list, or table with all layout and style options."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:279, ../includes/integrations/integration-gutenberg-builder.php:279
+#: ../includes/integrations/integration-gutenberg-builder.php:279
 msgid "This is a premium feature. Please upgrade the plan."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:280, ../includes/integrations/integration-gutenberg-builder.php:280
+#: ../includes/integrations/integration-gutenberg-builder.php:280
 msgid "Please activate your GS Logo Slider Pro license to use this feature."
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:288, ../includes/integrations/integration-gutenberg-builder.php:288
+#: ../includes/integrations/integration-gutenberg-builder.php:288
 msgid "Hexagon Gradient"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:289, ../includes/integrations/integration-gutenberg-builder.php:289
+#: ../includes/integrations/integration-gutenberg-builder.php:289
 msgid "Border Shadow"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:290, ../includes/integrations/integration-gutenberg-builder.php:290
+#: ../includes/integrations/integration-gutenberg-builder.php:290
 msgid "Tooltip Colors"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:301, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1492, ../includes/integrations/integration-gutenberg-builder.php:301, ../includes/shortcode-builder/builder.php:1489
+#: ../includes/integrations/integration-gutenberg-builder.php:301, ../includes/shortcode-builder/builder.php:1489
 msgid "Top"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg-builder.php:303, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1387, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1496, ../includes/integrations/integration-gutenberg-builder.php:303, ../includes/shortcode-builder/builder.php:1384, ../includes/shortcode-builder/builder.php:1493
+#: ../includes/integrations/integration-gutenberg-builder.php:303, ../includes/shortcode-builder/builder.php:1384, ../includes/shortcode-builder/builder.php:1493
 msgid "Bottom"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:70, ../includes/integrations/integration-gutenberg.php:230
+#: ../includes/integrations/integration-gutenberg.php:230
 msgid "GS Logo Shortcodes"
 msgstr ""
 
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:71, ../includes/integrations/integration-gutenberg.php:231
+#: ../includes/integrations/integration-gutenberg.php:231
 msgid "Insert a saved GS Logo shortcode to display a logo slider, grid, or gallery."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/integrations/integration-gutenberg.php:76, ../includes/integrations/integration-gutenberg.php:237
-msgid "Create"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:72, ../includes/shortcode-builder/builder.php:72
-msgid "Shortcode Preview"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:331, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:363, ../includes/shortcode-builder/builder.php:331, ../includes/shortcode-builder/builder.php:363
-msgid "Shortcode ID missing"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:346, ../includes/shortcode-builder/builder.php:346
-msgid "No shortcode found"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:371, ../includes/shortcode-builder/builder.php:371
-msgid "No shortcode found to update"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:394, ../includes/shortcode-builder/builder.php:394
-msgid "Database Error: %1$s"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:405, ../includes/shortcode-builder/builder.php:405
-msgid "Shortcode updated"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:457, ../includes/integrations/integration-gutenberg.php:252, ../includes/shortcode-builder/builder.php:457
-msgid "Undefined"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:460, ../includes/shortcode-builder/builder.php:460
-msgid "Please configure the settings properly"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:485, ../includes/shortcode-builder/builder.php:485
-msgid "Shortcode created successfully"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:497, ../includes/shortcode-builder/builder.php:497
-msgid "Clone Id not provided"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:501, ../includes/shortcode-builder/builder.php:501
-msgid "Clone shortcode not found"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:505, ../includes/shortcode-builder/builder.php:505
-msgid "- Cloned"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:534, ../includes/shortcode-builder/builder.php:534
-msgid "Shortcode cloned successfully"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:569, ../includes/shortcode-builder/builder.php:569
-msgid "No shortcode ids provided"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:587, ../includes/shortcode-builder/builder.php:587
-msgid "Shortcode has been deleted"
-msgid_plural "Shortcodes have been deleted"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:607, ../includes/shortcode-builder/builder.php:607
-msgid "No temp key provided"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:608, ../includes/shortcode-builder/builder.php:608
-msgid "No temp settings provided"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:614, ../includes/shortcode-builder/builder.php:614
-msgid "Temp data saved"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:622, ../includes/shortcode-builder/builder.php:622
-msgid "Style & Theming"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:623, ../includes/shortcode-builder/builder.php:623
-msgid "Select Theme"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:624, ../includes/shortcode-builder/builder.php:624
-msgid "Select preferred Style & Theme"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:626, ../includes/shortcode-builder/builder.php:626
-msgid "Enable Filter"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:627, ../includes/shortcode-builder/builder.php:627
-msgid "Enable filter for this theme, it may not available for certain theme"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:629, ../includes/shortcode-builder/builder.php:629
-msgid "Filter Type"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:630, ../includes/shortcode-builder/builder.php:630
-msgid "Select filter type"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:632, ../includes/shortcode-builder/builder.php:632
-msgid "Enable Pagination"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:633, ../includes/shortcode-builder/builder.php:633
-msgid "Enable paginations like number pagination, load more button, On scroll load etc."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:635, ../includes/shortcode-builder/builder.php:635
-msgid "Pagination Type"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:636, ../includes/shortcode-builder/builder.php:636
-msgid "Select pagination type."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:638, ../includes/shortcode-builder/builder.php:638
-msgid "Initial Items"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:639, ../includes/shortcode-builder/builder.php:639
-msgid "Set initial number of items that shows on page load (before users interaction)"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:641, ../includes/shortcode-builder/builder.php:641
-msgid "Per Click"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:642, ../includes/shortcode-builder/builder.php:642
-msgid "Load logos per button click"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:644, ../includes/shortcode-builder/builder.php:644
-msgid "Per Page"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:645, ../includes/shortcode-builder/builder.php:645
-msgid "Display logos per page"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:647, ../includes/shortcode-builder/builder.php:647
-msgid "Per Load"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:648, ../includes/shortcode-builder/builder.php:648
-msgid "Display logos per load"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:650, ../includes/shortcode-builder/builder.php:650
-msgid "Button Text"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:651, ../includes/shortcode-builder/builder.php:651
-msgid "Load more button text"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:653, ../includes/shortcode-builder/builder.php:653
-msgid "Border Thickness"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:654, ../includes/shortcode-builder/builder.php:654
-msgid "Select border thickness (in px)."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:656, ../includes/shortcode-builder/builder.php:656
-msgid "Gradient Start Color"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:657, ../includes/shortcode-builder/builder.php:657
-msgid "Select gradient start color (Make gradient start & end same if you want one color border)."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:659, ../includes/shortcode-builder/builder.php:659
-msgid "Gradient End Color"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:660, ../includes/shortcode-builder/builder.php:660
-msgid "Select gradient end color (Make gradient start & end same if you want one color border)."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:662, ../includes/shortcode-builder/builder.php:662
-msgid "Border"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:663, ../includes/shortcode-builder/builder.php:663
-msgid "Set border properties."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:665, ../includes/shortcode-builder/builder.php:665
-msgid "Border Radius"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:666, ../includes/shortcode-builder/builder.php:666
-msgid "Select border radius (in px)."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:668, ../includes/shortcode-builder/builder.php:668
-msgid "Hover Shadow Color"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:669, ../includes/shortcode-builder/builder.php:669
-msgid "Select hover shadow color"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:671, ../includes/shortcode-builder/builder.php:671
-msgid "Shadow Control"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:672, ../includes/shortcode-builder/builder.php:672
-msgid "Set hover shadow properties"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:674, ../includes/shortcode-builder/builder.php:674
-msgid "Enable Single Pages"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:675, ../includes/shortcode-builder/builder.php:675
-msgid "Enable Single Pages for logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:677, ../includes/shortcode-builder/builder.php:677
-msgid "Single Page Style"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:678, ../includes/shortcode-builder/builder.php:678
-msgid "Select the style of the single logo page"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:680, ../includes/shortcode-builder/builder.php:680
-msgid "Disable Lazy Load"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:681, ../includes/shortcode-builder/builder.php:681
-msgid "Disable Lazy Load for logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:683, ../includes/shortcode-builder/builder.php:683
-msgid "Lazy Load Class"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:684, ../includes/shortcode-builder/builder.php:684
-msgid "Add class to disable lazy loading, multiple classes should be separated by space"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:686, ../includes/shortcode-builder/builder.php:686
-msgid "Anchor Tag rel"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:687, ../includes/shortcode-builder/builder.php:687
-msgid "Select Anchor Tag rel attribute's value, to improve security and SEO, by default the value is dofollow."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:689, ../includes/shortcode-builder/builder.php:689
-msgid "Image Size"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:690, ../includes/shortcode-builder/builder.php:690
-msgid "Select Size"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:691, ../includes/shortcode-builder/builder.php:691
-msgid "Select the attachment size from the registered sources"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:693, ../includes/shortcode-builder/builder.php:693
-msgid "Link Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:694, ../includes/shortcode-builder/builder.php:694
-msgid "Enable/Disable Linking of logos to their respective url's"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:696, ../includes/shortcode-builder/builder.php:696
-msgid "Link Type"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:697, ../includes/shortcode-builder/builder.php:697
-msgid "Select the type of link to be used for the logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:699, ../includes/shortcode-builder/builder.php:699
-msgid "Popup Style"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:700, ../includes/shortcode-builder/builder.php:700
-msgid "Select the style of the popup"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:702, ../includes/shortcode-builder/builder.php:702
-msgid "Panel Style"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:703, ../includes/shortcode-builder/builder.php:703
-msgid "Select the style of the panel"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:705, ../includes/shortcode-builder/builder.php:705
-msgid "Custom Image Size"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:708, ../includes/shortcode-builder/builder.php:708
-msgid "Set width and height of the logo image."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:710, ../includes/shortcode-builder/builder.php:710
-msgid "Sliding Speed"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:711, ../includes/shortcode-builder/builder.php:711
-msgid "Set the speed in millisecond. Default 500 ms. To disable autoplay just set the speed 0"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:713, ../includes/shortcode-builder/builder.php:713
-msgid "Autoplay"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:714, ../includes/shortcode-builder/builder.php:714
-msgid "Enable/Disable Auto play to change the slides automatically after certain time. Default On"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:716, ../includes/shortcode-builder/builder.php:716
-msgid "Autoplay Delay"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:717, ../includes/shortcode-builder/builder.php:717
-msgid "You can adjust the time (in ms) between each slide. Default 4000 ms"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:719, ../includes/shortcode-builder/builder.php:719
-msgid "Infinite Loop"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:720, ../includes/shortcode-builder/builder.php:720
-msgid "If ON, clicking on \"Next\" while on the last slide will start over from first slide and vice-versa"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:722, ../includes/shortcode-builder/builder.php:722
-msgid "Pause on hover"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:723, ../includes/shortcode-builder/builder.php:723
-msgid "Autoplay will pause when mouse hovers over Logo. Default On"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:725, ../includes/shortcode-builder/builder.php:725
-msgid "Reverse Direction"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:726, ../includes/shortcode-builder/builder.php:726
-msgid "Reverse the direction of movement. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:728, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:744, ../includes/shortcode-builder/builder.php:728, ../includes/shortcode-builder/builder.php:744
-msgid "Pause on Hover"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:729, ../includes/shortcode-builder/builder.php:729
-msgid "Ticker will pause when mouse hovers over slider. Note: this functionality does NOT work if using CSS transitions!. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:731, ../includes/shortcode-builder/builder.php:731
-msgid "Slider Navs"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:732, ../includes/shortcode-builder/builder.php:732
-msgid "Next / Previous control for Logo slider. Default On Controls are not available when Ticker Mode is enabled"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:734, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:735, ../includes/shortcode-builder/builder.php:734, ../includes/shortcode-builder/builder.php:735
-msgid "Navs Position"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:736, ../includes/shortcode-builder/builder.php:736
-msgid "Position of Next / Previous control for Logo slider. Default Bottom"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:738, ../includes/shortcode-builder/builder.php:738
-msgid "Slider Dots"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:739, ../includes/shortcode-builder/builder.php:739
-msgid "Dots control for logo slider below the widget. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:741, ../includes/shortcode-builder/builder.php:741
-msgid "Dynamic Dots"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:742, ../includes/shortcode-builder/builder.php:742
-msgid "Good to enable if you use for many slides. So it will keep only few dots visible at the same time. Default On"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:745, ../includes/shortcode-builder/builder.php:745
-msgid "Pause on mouse hover over the logo slider. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:747, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:892, ../includes/shortcode-builder/builder.php:747, ../includes/shortcode-builder/builder.php:889
-msgid "Logo Title"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:748, ../includes/shortcode-builder/builder.php:748
-msgid "Display Logo Title."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:750, ../includes/shortcode-builder/builder.php:750
-msgid "Title Tag"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:751, ../includes/shortcode-builder/builder.php:751
-msgid "Select logo title tag. Default H3."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:753, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1716, ../includes/shortcode-builder/builder.php:753, ../includes/shortcode-builder/builder.php:1713
-msgid "Logo Category"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:754, ../includes/shortcode-builder/builder.php:754
-msgid "Display Logo including / excluding Category. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:756, ../includes/shortcode-builder/builder.php:756
-msgid "Logo Content"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:757, ../includes/shortcode-builder/builder.php:757
-msgid "Display Logo content in any number of words/characters. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:759, ../includes/shortcode-builder/builder.php:759
-msgid "Content Limit"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:760, ../includes/shortcode-builder/builder.php:760
-msgid "Set content limit. Default 80 characters"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:762, ../includes/shortcode-builder/builder.php:762
-msgid "Logo Excerpt"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:763, ../includes/shortcode-builder/builder.php:763
-msgid "Display Logo excerpt in any number of words/characters. Default Off"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:765, ../includes/shortcode-builder/builder.php:765
-msgid "Excerpt Limit"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:766, ../includes/shortcode-builder/builder.php:766
-msgid "Set excerpt limit. Default 20 words"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:768, ../includes/shortcode-builder/builder.php:768
-msgid "Read More Text"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:770, ../includes/shortcode-builder/builder.php:770
-msgid "Tooltip"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:771, ../includes/shortcode-builder/builder.php:771
-msgid "Enable / disable Tooltip option."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:773, ../includes/shortcode-builder/builder.php:773
-msgid "Tooltip Position"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:774, ../includes/shortcode-builder/builder.php:774
-msgid "Select tooltip position. Default top"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:776, ../includes/shortcode-builder/builder.php:776
-msgid "Tooltip Background"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:777, ../includes/shortcode-builder/builder.php:777
-msgid "Set tooltip background color. Default #ff5f6d, #ffc371"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:779, ../includes/shortcode-builder/builder.php:779
-msgid "Tooltip Text Color"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:780, ../includes/shortcode-builder/builder.php:780
-msgid "Set tooltip text color. Default #fff"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:782, ../includes/shortcode-builder/builder.php:782
-msgid "All Filter"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:783, ../includes/shortcode-builder/builder.php:783
-msgid "Show/hide All button for filter."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:786, ../includes/shortcode-builder/builder.php:786
-msgid "Applicable for Slider 1 flip Image Style"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:788, ../includes/shortcode-builder/builder.php:788
-msgid "Image Filter"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:789, ../includes/shortcode-builder/builder.php:789
-msgid "Select default image filter"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:791, ../includes/shortcode-builder/builder.php:791
-msgid "Image Filter on Hover"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:792, ../includes/shortcode-builder/builder.php:792
-msgid "Select image filter for hover"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:794, ../includes/shortcode-builder/builder.php:794
-msgid "Alignment"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:795, ../includes/shortcode-builder/builder.php:795
-msgid "Horizonal Alignment of Grid Items"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:797, ../includes/shortcode-builder/builder.php:797
-msgid "Logo Space (px)"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:798, ../includes/shortcode-builder/builder.php:798
-msgid "Increase / decrease Margin between each Logo. Default 10, max 50."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:800, ../includes/shortcode-builder/builder.php:800
-msgid "Desktop Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:801, ../includes/shortcode-builder/builder.php:801
-msgid "The minimum number of logos to be shown. Default 5, max 10. (Theme : Slider1,Fullwith slider,Center Mode, Ticker)"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:803, ../includes/shortcode-builder/builder.php:803
-msgid "Tablet Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:804, ../includes/shortcode-builder/builder.php:804
-msgid "The minimum number of logos to be shown. Default 3, max 10. (Theme : Slider1,Fullwith slider,Center Mode,2 Rows Slider, Ticker)"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:806, ../includes/shortcode-builder/builder.php:806
-msgid "Mobile Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:807, ../includes/shortcode-builder/builder.php:807
-msgid "The minimum number of logos to be shown. Default 2, max 10. (Theme : Slider1,Fullwith slider,Center Mode,2 Rows Slider, Ticker)"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:809, ../includes/shortcode-builder/builder.php:809
-msgid "Move Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:810, ../includes/shortcode-builder/builder.php:810
-msgid "The number of logos to move on transition. Default 1, max 10."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:812, ../includes/shortcode-builder/builder.php:812
-msgid "All Filter Name"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:813, ../includes/shortcode-builder/builder.php:813
-msgid "All"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:814, ../includes/shortcode-builder/builder.php:814
-msgid "Replace preferred text instead of \"All\" for Filter Theme."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:816, ../includes/shortcode-builder/builder.php:816
-msgid "Filter Name Align"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:817, ../includes/shortcode-builder/builder.php:817
-msgid "Filters Align"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:818, ../includes/shortcode-builder/builder.php:818
-msgid "Filter Categories alignment for Filter Theme."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:820, ../includes/shortcode-builder/builder.php:820
-msgid "Clickable Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:821, ../includes/shortcode-builder/builder.php:821
-msgid "Specify target to open the Links, Default New Tab"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:823, ../includes/shortcode-builder/builder.php:823
-msgid "Image Heading"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:824, ../includes/shortcode-builder/builder.php:824
-msgid "Image"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:826, ../includes/shortcode-builder/builder.php:826
-msgid "Name Heading"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:827, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:869, ../includes/shortcode-builder/builder.php:827, ../includes/shortcode-builder/builder.php:868
-msgid "Name"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:829, ../includes/shortcode-builder/builder.php:829
-msgid "Description Heading"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:830, ../includes/shortcode-builder/builder.php:830
-msgid "Description"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:832, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:833, ../includes/shortcode-builder/builder.php:832, ../includes/shortcode-builder/builder.php:833
-msgid "Logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:834, ../includes/shortcode-builder/builder.php:834
-msgid "Set max logo numbers you want to show, set -1 for all logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:836, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:837, ../includes/shortcode-builder/builder.php:836, ../includes/shortcode-builder/builder.php:837
-msgid "Order"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:839, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:840, ../includes/shortcode-builder/builder.php:839, ../includes/shortcode-builder/builder.php:840
-msgid "Order By"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:842, ../includes/shortcode-builder/builder.php:842
-msgid "Filter Order"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:843, ../includes/shortcode-builder/builder.php:843
-msgid "Filter Order By"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:845, ../includes/shortcode-builder/builder.php:845
-msgid "Install Demo Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:846, ../includes/shortcode-builder/builder.php:846
-msgid "Quick start with GS Plugins by installing the demo data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:848, ../includes/shortcode-builder/builder.php:848
-msgid "Preference"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:849, ../includes/shortcode-builder/builder.php:849
-msgid "Save Preference"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:851, ../includes/shortcode-builder/builder.php:851
-msgid "Export Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:852, ../includes/shortcode-builder/builder.php:852
-msgid "Export GS Logo Slider data to use in other sites"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:854, ../includes/shortcode-builder/builder.php:854
-msgid "Import Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:855, ../includes/shortcode-builder/builder.php:855
-msgid "Import GS Logo Slider data from other sites"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:857, ../includes/shortcode-builder/builder.php:857
-msgid "Export Logo Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:858, ../includes/shortcode-builder/builder.php:858
-msgid "Export Shortcodes Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:859, ../includes/shortcode-builder/builder.php:859
-msgid "Export Settings Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:861, ../includes/shortcode-builder/builder.php:861
-msgid "Custom CSS"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:863, ../build/gs-logo-slider/includes/shortcode-builder/page.php:6, ../includes/shortcode-builder/builder.php:863, ../includes/shortcode-builder/page.php:6
-msgid "Shortcodes"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:864, ../includes/shortcode-builder/builder.php:864
-msgid "Global Settings for GS Logo Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:865, ../includes/shortcode-builder/builder.php:865
-msgid "All shortcodes for GS Logo Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:866
-msgid "Create Shortcode"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:867, ../includes/shortcode-builder/builder.php:866
-msgid "Create New Shortcode"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:870, ../includes/shortcode-builder/builder.php:869
-msgid "Action"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:871, ../includes/shortcode-builder/builder.php:870
-msgid "Actions"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:873, ../includes/shortcode-builder/builder.php:872
-msgid "Clone"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:874, ../includes/shortcode-builder/builder.php:873
-msgid "Delete"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:875, ../includes/shortcode-builder/builder.php:874
-msgid "Delete All"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:876
-msgid "Create a new shortcode & save it to use globally in anywhere"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:877
-msgid "Edit Shortcode"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:878, ../includes/shortcode-builder/builder.php:875
-msgid "General"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:879, ../includes/shortcode-builder/builder.php:876
-msgid "Style"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:880, ../includes/shortcode-builder/builder.php:877
-msgid "Query"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:881, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:882, ../includes/shortcode-builder/builder.php:878, ../includes/shortcode-builder/builder.php:879
-msgid "Visibility"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:883, ../includes/shortcode-builder/builder.php:880
-msgid "Initial View Visibility"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:884, ../includes/shortcode-builder/builder.php:881
-msgid "Popup Visibility"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:885, ../includes/shortcode-builder/builder.php:882
-msgid "Panel Visibility"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:886, ../includes/shortcode-builder/builder.php:883
-msgid "Field"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:887, ../includes/shortcode-builder/builder.php:884
-msgid "Desktop"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:888, ../includes/shortcode-builder/builder.php:885
-msgid "Tablet"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:889, ../includes/shortcode-builder/builder.php:886
-msgid "Large Mobile"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:890, ../includes/shortcode-builder/builder.php:887
-msgid "Mobile"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:891, ../includes/shortcode-builder/builder.php:888
-msgid "Logo Image"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:893, ../includes/shortcode-builder/builder.php:890
-msgid "Categories"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:895, ../includes/shortcode-builder/builder.php:892
-msgid "Excerpt"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:896, ../includes/shortcode-builder/builder.php:893
-msgid "Website"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:897, ../includes/shortcode-builder/builder.php:894
-msgid "About"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:900, ../includes/shortcode-builder/builder.php:897
-msgid "Email"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:905, ../includes/shortcode-builder/builder.php:902
-msgid "Member Since"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:908, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:425, ../includes/shortcode-builder/builder.php:905, ../templates/singles/gs-logo-single-style-one.php:425
-msgid "Social Links"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:909, ../includes/shortcode-builder/builder.php:906
-msgid "Photo Gallery"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:910, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:318, ../includes/shortcode-builder/builder.php:907, ../templates/singles/gs-logo-single-style-one.php:318
-msgid "Company Video"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:911, ../includes/shortcode-builder/builder.php:908
-msgid "Location Map"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:912, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:337, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:343, ../includes/shortcode-builder/builder.php:909, ../templates/singles/gs-logo-single-style-one.php:337, ../templates/singles/gs-logo-single-style-one.php:343
-msgid "Pitch Deck"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:913, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:919, ../build/gs-logo-slider/includes/shortcode-builder/page.php:18, ../includes/shortcode-builder/builder.php:910, ../includes/shortcode-builder/builder.php:916, ../includes/shortcode-builder/page.php:18
-msgid "Taxonomies"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:914, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:915, ../includes/shortcode-builder/builder.php:911, ../includes/shortcode-builder/builder.php:912
-msgid "Shortcode Name"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:916, ../includes/shortcode-builder/builder.php:913
-msgid "Save Shortcode"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:917, ../includes/shortcode-builder/builder.php:914
-msgid "Preview"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:920, ../includes/shortcode-builder/builder.php:917
-msgid "Global settings for Taxonomies"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:922, ../includes/shortcode-builder/builder.php:919
-msgid "Category"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:923, ../includes/shortcode-builder/builder.php:920
-msgid "Tag"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:924, ../includes/shortcode-builder/builder.php:921
-msgid "Language"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:925, ../includes/shortcode-builder/builder.php:922
-msgid "Location"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:926, ../includes/shortcode-builder/builder.php:923
-msgid "Gender"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:927, ../includes/shortcode-builder/builder.php:924
-msgid "Specialty"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:928, ../includes/shortcode-builder/builder.php:925
-msgid "Extra One"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:929, ../includes/shortcode-builder/builder.php:926
-msgid "Extra Two"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:930, ../includes/shortcode-builder/builder.php:927
-msgid "Extra Three"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:931, ../includes/shortcode-builder/builder.php:928
-msgid "Extra Four"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:932, ../includes/shortcode-builder/builder.php:929
-msgid "Extra Five"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:935, ../includes/shortcode-builder/builder.php:932
-msgid "Enable Taxonomy"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:936, ../includes/shortcode-builder/builder.php:933
-msgid "Enable Taxonomy for logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:937, ../includes/shortcode-builder/builder.php:934
-msgid "Taxonomy Label"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:938, ../includes/shortcode-builder/builder.php:935
-msgid "Set Taxonomy Label"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:939, ../includes/shortcode-builder/builder.php:936
-msgid "Taxonomy Plural Label"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:940, ../includes/shortcode-builder/builder.php:937
-msgid "Set Taxonomy Plural Label"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:941, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:942, ../includes/shortcode-builder/builder.php:938, ../includes/shortcode-builder/builder.php:939
-msgid "Enable Taxonomy Archive"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:943, ../includes/shortcode-builder/builder.php:940
-msgid "Taxonomy Archive Slug"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:944, ../includes/shortcode-builder/builder.php:941
-msgid "Set Taxonomy Archive Slug"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:947, ../includes/shortcode-builder/builder.php:944
-msgid "Select specific terms to display specific logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:948, ../includes/shortcode-builder/builder.php:945
-msgid "Select specific terms to exclude specific logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:950, ../includes/shortcode-builder/builder.php:947
-msgid "Save Settings"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:960, ../includes/shortcode-builder/builder.php:957
-msgid "Slider 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:964, ../includes/shortcode-builder/builder.php:961
-msgid "Grid - 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:968, ../includes/shortcode-builder/builder.php:965
-msgid "List - 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:972, ../includes/shortcode-builder/builder.php:969
-msgid "Table - 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:979, ../includes/shortcode-builder/builder.php:976
-msgid "Slider 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:983, ../includes/shortcode-builder/builder.php:980
-msgid "Ticker 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:987, ../includes/shortcode-builder/builder.php:984
-msgid "Grid - 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:991, ../includes/shortcode-builder/builder.php:988
-msgid "Grid - 3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:995, ../includes/shortcode-builder/builder.php:992
-msgid "List - 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:999, ../includes/shortcode-builder/builder.php:996
-msgid "List - 3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1003, ../includes/shortcode-builder/builder.php:1000
-msgid "List - 4"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1007, ../includes/shortcode-builder/builder.php:1004
-msgid "Table - 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1011, ../includes/shortcode-builder/builder.php:1008
-msgid "Table - 3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1015, ../includes/shortcode-builder/builder.php:1012
-msgid "Vertical Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1019, ../includes/shortcode-builder/builder.php:1016
-msgid "Filter - 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1023, ../includes/shortcode-builder/builder.php:1020
-msgid "Filter - 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1027, ../includes/shortcode-builder/builder.php:1024
-msgid "Filter - 3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1031, ../includes/shortcode-builder/builder.php:1028
-msgid "Filter - 4"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1035, ../includes/shortcode-builder/builder.php:1032
-msgid "Live Filter - 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1039, ../includes/shortcode-builder/builder.php:1036
-msgid "Live Filter - 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1043, ../includes/shortcode-builder/builder.php:1040
-msgid "Live Filter - 3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1047, ../includes/shortcode-builder/builder.php:1044
-msgid "Filter - Selected Cats"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1051, ../includes/shortcode-builder/builder.php:1048
-msgid "Full Width Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1055, ../includes/shortcode-builder/builder.php:1052
-msgid "Center Mode"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1059, ../includes/shortcode-builder/builder.php:1056
-msgid "Variable Width"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1063, ../includes/shortcode-builder/builder.php:1060
-msgid "Vertical Center"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1067, ../includes/shortcode-builder/builder.php:1064
-msgid "Vertical Ticker Up"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1071, ../includes/shortcode-builder/builder.php:1068
-msgid "Vertical Ticker Down"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1075, ../includes/shortcode-builder/builder.php:1072
-msgid "2 Rows Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1079, ../includes/shortcode-builder/builder.php:1076
-msgid "Rounded Border"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1083, ../includes/shortcode-builder/builder.php:1080
-msgid "Horizontal Scroll"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1087, ../includes/shortcode-builder/builder.php:1084
-msgid "3D Circular Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1091, ../includes/shortcode-builder/builder.php:1088
-msgid "Hexagon"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1111, ../includes/shortcode-builder/builder.php:1108
-msgid "Normal Pagination"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1118, ../includes/shortcode-builder/builder.php:1115
-msgid "AJAX Pagination"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1122, ../includes/shortcode-builder/builder.php:1119
-msgid "Load More Button"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1126, ../includes/shortcode-builder/builder.php:1123
-msgid "Load More On Scroll"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1157, ../includes/shortcode-builder/builder.php:1154
-msgid "Set Custom Size"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1201, ../includes/shortcode-builder/builder.php:1198
-msgid "None"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1212, ../includes/shortcode-builder/builder.php:1209
-msgid "Brightness"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1216, ../includes/shortcode-builder/builder.php:1213
-msgid "Contrast"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1220, ../includes/shortcode-builder/builder.php:1217
-msgid "Grayscale"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1224, ../includes/shortcode-builder/builder.php:1221
-msgid "Hue Rotate"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1228, ../includes/shortcode-builder/builder.php:1225
-msgid "Invert"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1232, ../includes/shortcode-builder/builder.php:1229
-msgid "Opacity"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1236, ../includes/shortcode-builder/builder.php:1233
-msgid "Saturate"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1240, ../includes/shortcode-builder/builder.php:1237
-msgid "Sepia"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1260, ../includes/shortcode-builder/builder.php:1257
-msgid "Single Page"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1264, ../includes/shortcode-builder/builder.php:1261
-msgid "Popup"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1268, ../includes/shortcode-builder/builder.php:1265
-msgid "Panel"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1293, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1328, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1657, ../includes/shortcode-builder/builder.php:1290, ../includes/shortcode-builder/builder.php:1325, ../includes/shortcode-builder/builder.php:1654
-msgid "Style 01"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1297, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1332, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1661, ../includes/shortcode-builder/builder.php:1294, ../includes/shortcode-builder/builder.php:1329, ../includes/shortcode-builder/builder.php:1658
-msgid "Style 02"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1301, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1336, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1665, ../includes/shortcode-builder/builder.php:1298, ../includes/shortcode-builder/builder.php:1333, ../includes/shortcode-builder/builder.php:1662
-msgid "Style 03"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1305, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1340, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1669, ../includes/shortcode-builder/builder.php:1302, ../includes/shortcode-builder/builder.php:1337, ../includes/shortcode-builder/builder.php:1666
-msgid "Style 04"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1309, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1344, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1673, ../includes/shortcode-builder/builder.php:1306, ../includes/shortcode-builder/builder.php:1341, ../includes/shortcode-builder/builder.php:1670
-msgid "Style 05"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1365, ../includes/shortcode-builder/builder.php:1362
-msgid "New Tab"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1369, ../includes/shortcode-builder/builder.php:1366
-msgid "Same Window"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1376, ../includes/shortcode-builder/builder.php:1373
-msgid "Hard Crop"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1380, ../includes/shortcode-builder/builder.php:1377
-msgid "Soft Crop"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1391, ../includes/shortcode-builder/builder.php:1388
-msgid "Left Right"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1395, ../includes/shortcode-builder/builder.php:1392
-msgid "Left Right Outside"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1402, ../includes/shortcode-builder/builder.php:1399
-msgid "H1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1406, ../includes/shortcode-builder/builder.php:1403
-msgid "H2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1410, ../includes/shortcode-builder/builder.php:1407
-msgid "H3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1414, ../includes/shortcode-builder/builder.php:1411
-msgid "H4"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1418, ../includes/shortcode-builder/builder.php:1415
-msgid "H5"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1422, ../includes/shortcode-builder/builder.php:1419
-msgid "H6"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1426, ../includes/shortcode-builder/builder.php:1423
-msgid "Span"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1430, ../includes/shortcode-builder/builder.php:1427
-msgid "Div"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1434, ../includes/shortcode-builder/builder.php:1431
-msgid "P"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1444, ../includes/shortcode-builder/builder.php:1441
-msgid "Normal Filter"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1448, ../includes/shortcode-builder/builder.php:1445
-msgid "Ajax Filter"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1457, ../includes/shortcode-builder/builder.php:1454
-msgid "Solid"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1461, ../includes/shortcode-builder/builder.php:1458
-msgid "Dotted"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1465, ../includes/shortcode-builder/builder.php:1462
-msgid "Dashed"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1469, ../includes/shortcode-builder/builder.php:1466
-msgid "Double"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1473, ../includes/shortcode-builder/builder.php:1470
-msgid "Groove"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1477, ../includes/shortcode-builder/builder.php:1474
-msgid "Ridge"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1481, ../includes/shortcode-builder/builder.php:1478
-msgid "Inset"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1485, ../includes/shortcode-builder/builder.php:1482
-msgid "Outset"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1561, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1572, ../includes/shortcode-builder/builder.php:1558, ../includes/shortcode-builder/builder.php:1569
-msgid "Characters"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1565, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1576, ../includes/shortcode-builder/builder.php:1562, ../includes/shortcode-builder/builder.php:1573
-msgid "Words"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1583, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1617, ../includes/shortcode-builder/builder.php:1580, ../includes/shortcode-builder/builder.php:1614
-msgid "Custom Order"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1587, ../includes/shortcode-builder/builder.php:1584
-msgid "Logo ID"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1591, ../includes/shortcode-builder/builder.php:1588
-msgid "Logo Name"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1595, ../includes/shortcode-builder/builder.php:1592
-msgid "Date"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1599, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1633, ../includes/shortcode-builder/builder.php:1596, ../includes/shortcode-builder/builder.php:1630
-msgid "Random"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1606, ../includes/shortcode-builder/builder.php:1603
-msgid "DESC"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1610, ../includes/shortcode-builder/builder.php:1607
-msgid "ASC"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1621, ../includes/shortcode-builder/builder.php:1618
-msgid "Term ID"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1625, ../includes/shortcode-builder/builder.php:1622
-msgid "Term Name"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1629, ../includes/shortcode-builder/builder.php:1626
-msgid "Count"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1679, ../includes/shortcode-builder/builder.php:1676
-msgid "nofollow"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1683, ../includes/shortcode-builder/builder.php:1680
-msgid "noopener"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1687, ../includes/shortcode-builder/builder.php:1684
-msgid "noreferrer"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1691, ../includes/shortcode-builder/builder.php:1688
-msgid "nofollow noopener"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1695, ../includes/shortcode-builder/builder.php:1692
-msgid "nofollow noreferrer"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1699, ../includes/shortcode-builder/builder.php:1696
-msgid "noopener noreferrer"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1703, ../includes/shortcode-builder/builder.php:1700
-msgid "nofollow noopener noreferrer"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1717, ../includes/shortcode-builder/builder.php:1714
-msgid "Logo Categories"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1723, ../includes/shortcode-builder/builder.php:1720
-msgid "Logo Tag"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1724, ../includes/shortcode-builder/builder.php:1721
-msgid "Logo Tags"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1730, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1731, ../includes/shortcode-builder/builder.php:1727, ../includes/shortcode-builder/builder.php:1728
-msgid "Extra 1"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1737, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1738, ../includes/shortcode-builder/builder.php:1734, ../includes/shortcode-builder/builder.php:1735
-msgid "Extra 2"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1744, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1745, ../includes/shortcode-builder/builder.php:1741, ../includes/shortcode-builder/builder.php:1742
-msgid "Extra 3"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1751, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1752, ../includes/shortcode-builder/builder.php:1748, ../includes/shortcode-builder/builder.php:1749
-msgid "Extra 4"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1758, ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1759, ../includes/shortcode-builder/builder.php:1755, ../includes/shortcode-builder/builder.php:1756
-msgid "Extra 5"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1819, ../includes/shortcode-builder/builder.php:1816
-msgid "Load More"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1851, ../includes/shortcode-builder/builder.php:1848
-msgid "Read More"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1874, ../includes/shortcode-builder/builder.php:1871
-msgid "Preference saved"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1882, ../includes/shortcode-builder/builder.php:1879
-msgid "No preference provided"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1955, ../includes/shortcode-builder/builder.php:1952
-msgid "Taxonomy settings saved"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/builder.php:1963, ../includes/shortcode-builder/builder.php:1960
-msgid "No settings provided"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/page.php:10, ../includes/shortcode-builder/page.php:10
-msgid "Create New"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/page.php:14, ../includes/shortcode-builder/page.php:14
-msgid "Preferences"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/page.php:22, ../includes/shortcode-builder/page.php:22
-msgid "Demo Data"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/page.php:26, ../includes/shortcode-builder/page.php:26
-msgid "Import Export"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/preview.php:29, ../includes/shortcode-builder/preview.php:29
-msgid "Something went wrong!"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/shortcode-builder/preview.php:30, ../includes/shortcode-builder/preview.php:30
-msgid "Data not found for preview, probably it's a bug, contact with plugin author"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/partials/gs-logo-empty.php:17, ../templates/partials/gs-logo-empty.php:17
-msgid "No logo found, please add some logos"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:59, ../templates/singles/gs-logo-single-style-one.php:59
-msgid "Employees"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:179, ../templates/singles/gs-logo-single-style-one.php:179
-msgid "Visit Website"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:185, ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:487, ../templates/singles/gs-logo-single-style-one.php:185, ../templates/singles/gs-logo-single-style-one.php:487
-msgid "Contact Company"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:195, ../templates/singles/gs-logo-single-style-one.php:195
-msgid "Company facts"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:217, ../templates/singles/gs-logo-single-style-one.php:217
-msgid "About Company"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:230, ../templates/singles/gs-logo-single-style-one.php:230
-msgid "Our Vision"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:239, ../templates/singles/gs-logo-single-style-one.php:239
-msgid "Our Mission"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:250, ../templates/singles/gs-logo-single-style-one.php:250
-msgid "Life in Company"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:251, ../templates/singles/gs-logo-single-style-one.php:251
-msgid "Team photos, office shots, and other life-at-company images."
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:288, ../templates/singles/gs-logo-single-style-one.php:288
-msgid "Location & Video"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:292, ../templates/singles/gs-logo-single-style-one.php:292
-msgid "Map Location"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:322, ../templates/singles/gs-logo-single-style-one.php:322
-msgid "%s company video"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:338, ../templates/singles/gs-logo-single-style-one.php:338
-msgid "Company presentation and business overview document."
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:344, ../templates/singles/gs-logo-single-style-one.php:344
-msgid "Company Presentation PDF"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:351, ../templates/singles/gs-logo-single-style-one.php:351
-msgid "View / Download"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:364, ../templates/singles/gs-logo-single-style-one.php:364
-msgid "Contact Info"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:399, ../templates/singles/gs-logo-single-style-one.php:399
-msgid "Categories & Tags"
-msgstr ""
-
-#. translators: %s: taxonomy singular label
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:412, ../templates/singles/gs-logo-single-style-one.php:412
-msgid "No %s specified"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:450, ../templates/singles/gs-logo-single-style-one.php:450
-msgid "Image gallery"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:451, ../templates/singles/gs-logo-single-style-one.php:451
-msgid "Close"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:455, ../templates/singles/gs-logo-single-style-one.php:455
-msgid "Previous image"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:464, ../templates/singles/gs-logo-single-style-one.php:464
-msgid "Next image"
-msgstr ""
-
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:475, ../templates/singles/gs-logo-single-style-one.php:475
-msgid "Let's build something amazing together"
-msgstr ""
-
-#. translators: %s: company name
-#: ../build/gs-logo-slider/templates/singles/gs-logo-single-style-one.php:480, ../templates/singles/gs-logo-single-style-one.php:480
-msgid "Interested in working with %s? Let's talk."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:11, ../includes/integrations/beaver/beaver-widget-logo.php:11
-msgid "Display brand and logos by GS Logo Slider"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:12, ../includes/integrations/beaver/beaver-widget-logo.php:12
-msgid "GS Plugins"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/integrations/beaver/beaver-widget-logo.php:13, ../includes/integrations/beaver/beaver-widget-logo.php:13
-msgid "Basic"
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/integrations/divi/LogoSliderController.php:84, ../includes/integrations/divi/LogoSliderController.php:84
-msgid "You must be logged in to preview GS Logo shortcodes."
-msgstr ""
-
-#: ../build/gs-logo-slider/includes/integrations/divi/LogoSliderController.php:102, ../includes/integrations/divi/LogoSliderController.php:102
-msgid "Sorry, you are not allowed to preview GS Logo shortcodes."
-msgstr ""
-
-#. translators: %s: error message
-#: ../build/gs-logo-slider/includes/integrations/divi/LogoSliderController.php:139, ../includes/integrations/divi/LogoSliderController.php:139
-msgid "Failed to render shortcode: %s"
 msgstr ""
 
 #: ../includes/integrations/integration-gutenberg.php:233
 msgid "No shortcodes found yet. Create one, then come back and select it."
 msgstr ""
 
+#: ../includes/integrations/integration-gutenberg.php:237
+msgid "Create"
+msgstr ""
+
+#: ../includes/integrations/integration-gutenberg.php:252, ../includes/shortcode-builder/builder.php:457
+msgid "Undefined"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:72
+msgid "Shortcode Preview"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:331, ../includes/shortcode-builder/builder.php:363
+msgid "Shortcode ID missing"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:346
+msgid "No shortcode found"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:371
+msgid "No shortcode found to update"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:394
+msgid "Database Error: %1$s"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:405
+msgid "Shortcode updated"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:460
+msgid "Please configure the settings properly"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:485
+msgid "Shortcode created successfully"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:497
+msgid "Clone Id not provided"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:501
+msgid "Clone shortcode not found"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:505
+msgid "- Cloned"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:534
+msgid "Shortcode cloned successfully"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:569
+msgid "No shortcode ids provided"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:587
+msgid "Shortcode has been deleted"
+msgid_plural "Shortcodes have been deleted"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../includes/shortcode-builder/builder.php:607
+msgid "No temp key provided"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:608
+msgid "No temp settings provided"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:614
+msgid "Temp data saved"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:622
+msgid "Style & Theming"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:623
+msgid "Select Theme"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:624
+msgid "Select preferred Style & Theme"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:626
+msgid "Enable Filter"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:627
+msgid "Enable filter for this theme, it may not available for certain theme"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:629
+msgid "Filter Type"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:630
+msgid "Select filter type"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:632
+msgid "Enable Pagination"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:633
+msgid "Enable paginations like number pagination, load more button, On scroll load etc."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:635
+msgid "Pagination Type"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:636
+msgid "Select pagination type."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:638
+msgid "Initial Items"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:639
+msgid "Set initial number of items that shows on page load (before users interaction)"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:641
+msgid "Per Click"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:642
+msgid "Load logos per button click"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:644
+msgid "Per Page"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:645
+msgid "Display logos per page"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:647
+msgid "Per Load"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:648
+msgid "Display logos per load"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:650
+msgid "Button Text"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:651
+msgid "Load more button text"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:653
+msgid "Border Thickness"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:654
+msgid "Select border thickness (in px)."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:656
+msgid "Gradient Start Color"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:657
+msgid "Select gradient start color (Make gradient start & end same if you want one color border)."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:659
+msgid "Gradient End Color"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:660
+msgid "Select gradient end color (Make gradient start & end same if you want one color border)."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:662
+msgid "Border"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:663
+msgid "Set border properties."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:665
+msgid "Border Radius"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:666
+msgid "Select border radius (in px)."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:668
+msgid "Hover Shadow Color"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:669
+msgid "Select hover shadow color"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:671
+msgid "Shadow Control"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:672
+msgid "Set hover shadow properties"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:674
+msgid "Enable Single Pages"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:675
+msgid "Enable Single Pages for logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:677
+msgid "Single Page Style"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:678
+msgid "Select the style of the single logo page"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:680
+msgid "Disable Lazy Load"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:681
+msgid "Disable Lazy Load for logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:683
+msgid "Lazy Load Class"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:684
+msgid "Add class to disable lazy loading, multiple classes should be separated by space"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:686
+msgid "Anchor Tag rel"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:687
+msgid "Select Anchor Tag rel attribute's value, to improve security and SEO, by default the value is dofollow."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:689
+msgid "Image Size"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:690
+msgid "Select Size"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:691
+msgid "Select the attachment size from the registered sources"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:693
+msgid "Link Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:694
+msgid "Enable/Disable Linking of logos to their respective url's"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:696
+msgid "Link Type"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:697
+msgid "Select the type of link to be used for the logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:699
+msgid "Popup Style"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:700
+msgid "Select the style of the popup"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:702
+msgid "Panel Style"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:703
+msgid "Select the style of the panel"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:705
+msgid "Custom Image Size"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:708
+msgid "Set width and height of the logo image."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:710
+msgid "Sliding Speed"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:711
+msgid "Set the speed in millisecond. Default 500 ms. To disable autoplay just set the speed 0"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:713
+msgid "Autoplay"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:714
+msgid "Enable/Disable Auto play to change the slides automatically after certain time. Default On"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:716
+msgid "Autoplay Delay"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:717
+msgid "You can adjust the time (in ms) between each slide. Default 4000 ms"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:719
+msgid "Infinite Loop"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:720
+msgid "If ON, clicking on \"Next\" while on the last slide will start over from first slide and vice-versa"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:722
+msgid "Pause on hover"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:723
+msgid "Autoplay will pause when mouse hovers over Logo. Default On"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:725
+msgid "Reverse Direction"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:726
+msgid "Reverse the direction of movement. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:728, ../includes/shortcode-builder/builder.php:744
+msgid "Pause on Hover"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:729
+msgid "Ticker will pause when mouse hovers over slider. Note: this functionality does NOT work if using CSS transitions!. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:731
+msgid "Slider Navs"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:732
+msgid "Next / Previous control for Logo slider. Default On Controls are not available when Ticker Mode is enabled"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:734, ../includes/shortcode-builder/builder.php:735
+msgid "Navs Position"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:736
+msgid "Position of Next / Previous control for Logo slider. Default Bottom"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:738
+msgid "Slider Dots"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:739
+msgid "Dots control for logo slider below the widget. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:741
+msgid "Dynamic Dots"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:742
+msgid "Good to enable if you use for many slides. So it will keep only few dots visible at the same time. Default On"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:745
+msgid "Pause on mouse hover over the logo slider. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:747, ../includes/shortcode-builder/builder.php:889
+msgid "Logo Title"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:748
+msgid "Display Logo Title."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:750
+msgid "Title Tag"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:751
+msgid "Select logo title tag. Default H3."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:753, ../includes/shortcode-builder/builder.php:1713
+msgid "Logo Category"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:754
+msgid "Display Logo including / excluding Category. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:756
+msgid "Logo Content"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:757
+msgid "Display Logo content in any number of words/characters. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:759
+msgid "Content Limit"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:760
+msgid "Set content limit. Default 80 characters"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:762
+msgid "Logo Excerpt"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:763
+msgid "Display Logo excerpt in any number of words/characters. Default Off"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:765
+msgid "Excerpt Limit"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:766
+msgid "Set excerpt limit. Default 20 words"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:768
+msgid "Read More Text"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:770
+msgid "Tooltip"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:771
+msgid "Enable / disable Tooltip option."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:773
+msgid "Tooltip Position"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:774
+msgid "Select tooltip position. Default top"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:776
+msgid "Tooltip Background"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:777
+msgid "Set tooltip background color. Default #ff5f6d, #ffc371"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:779
+msgid "Tooltip Text Color"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:780
+msgid "Set tooltip text color. Default #fff"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:782
+msgid "All Filter"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:783
+msgid "Show/hide All button for filter."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:786
+msgid "Applicable for Slider 1 flip Image Style"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:788
+msgid "Image Filter"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:789
+msgid "Select default image filter"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:791
+msgid "Image Filter on Hover"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:792
+msgid "Select image filter for hover"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:794
+msgid "Alignment"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:795
+msgid "Horizonal Alignment of Grid Items"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:797
+msgid "Logo Space (px)"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:798
+msgid "Increase / decrease Margin between each Logo. Default 10, max 50."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:800
+msgid "Desktop Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:801
+msgid "The minimum number of logos to be shown. Default 5, max 10. (Theme : Slider1,Fullwith slider,Center Mode, Ticker)"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:803
+msgid "Tablet Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:804
+msgid "The minimum number of logos to be shown. Default 3, max 10. (Theme : Slider1,Fullwith slider,Center Mode,2 Rows Slider, Ticker)"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:806
+msgid "Mobile Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:807
+msgid "The minimum number of logos to be shown. Default 2, max 10. (Theme : Slider1,Fullwith slider,Center Mode,2 Rows Slider, Ticker)"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:809
+msgid "Move Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:810
+msgid "The number of logos to move on transition. Default 1, max 10."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:812
+msgid "All Filter Name"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:813
+msgid "All"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:814
+msgid "Replace preferred text instead of \"All\" for Filter Theme."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:816
+msgid "Filter Name Align"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:817
+msgid "Filters Align"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:818
+msgid "Filter Categories alignment for Filter Theme."
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:820
+msgid "Clickable Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:821
+msgid "Specify target to open the Links, Default New Tab"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:823
+msgid "Image Heading"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:824
+msgid "Image"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:826
+msgid "Name Heading"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:827, ../includes/shortcode-builder/builder.php:868
+msgid "Name"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:829
+msgid "Description Heading"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:830
+msgid "Description"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:832, ../includes/shortcode-builder/builder.php:833
+msgid "Logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:834
+msgid "Set max logo numbers you want to show, set -1 for all logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:836, ../includes/shortcode-builder/builder.php:837
+msgid "Order"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:839, ../includes/shortcode-builder/builder.php:840
+msgid "Order By"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:842
+msgid "Filter Order"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:843
+msgid "Filter Order By"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:845
+msgid "Install Demo Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:846
+msgid "Quick start with GS Plugins by installing the demo data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:848
+msgid "Preference"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:849
+msgid "Save Preference"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:851
+msgid "Export Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:852
+msgid "Export GS Logo Slider data to use in other sites"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:854
+msgid "Import Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:855
+msgid "Import GS Logo Slider data from other sites"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:857
+msgid "Export Logo Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:858
+msgid "Export Shortcodes Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:859
+msgid "Export Settings Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:861
+msgid "Custom CSS"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:863, ../includes/shortcode-builder/page.php:6
+msgid "Shortcodes"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:864
+msgid "Global Settings for GS Logo Slider"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:865
+msgid "All shortcodes for GS Logo Slider"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:866
+msgid "Create New Shortcode"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:869
+msgid "Action"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:870
+msgid "Actions"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:872
+msgid "Clone"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:873
+msgid "Delete"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:874
+msgid "Delete All"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:875
+msgid "General"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:876
+msgid "Style"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:877
+msgid "Query"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:878, ../includes/shortcode-builder/builder.php:879
+msgid "Visibility"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:880
+msgid "Initial View Visibility"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:881
+msgid "Popup Visibility"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:882
+msgid "Panel Visibility"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:883
+msgid "Field"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:884
+msgid "Desktop"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:885
+msgid "Tablet"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:886
+msgid "Large Mobile"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:887
+msgid "Mobile"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:888
+msgid "Logo Image"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:890
+msgid "Categories"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:892
+msgid "Excerpt"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:893
+msgid "Website"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:894
+msgid "About"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:897
+msgid "Email"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:902
+msgid "Member Since"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:905, ../templates/singles/gs-logo-single-style-one.php:425
+msgid "Social Links"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:906
+msgid "Photo Gallery"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:907, ../templates/singles/gs-logo-single-style-one.php:318
+msgid "Company Video"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:908
+msgid "Location Map"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:909, ../templates/singles/gs-logo-single-style-one.php:337, ../templates/singles/gs-logo-single-style-one.php:343
+msgid "Pitch Deck"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:910, ../includes/shortcode-builder/builder.php:916, ../includes/shortcode-builder/page.php:18
+msgid "Taxonomies"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:911, ../includes/shortcode-builder/builder.php:912
+msgid "Shortcode Name"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:913
+msgid "Save Shortcode"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:914
+msgid "Preview"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:917
+msgid "Global settings for Taxonomies"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:919
+msgid "Category"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:920
+msgid "Tag"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:921
+msgid "Language"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:922
+msgid "Location"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:923
+msgid "Gender"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:924
+msgid "Specialty"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:925
+msgid "Extra One"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:926
+msgid "Extra Two"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:927
+msgid "Extra Three"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:928
+msgid "Extra Four"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:929
+msgid "Extra Five"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:932
+msgid "Enable Taxonomy"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:933
+msgid "Enable Taxonomy for logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:934
+msgid "Taxonomy Label"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:935
+msgid "Set Taxonomy Label"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:936
+msgid "Taxonomy Plural Label"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:937
+msgid "Set Taxonomy Plural Label"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:938, ../includes/shortcode-builder/builder.php:939
+msgid "Enable Taxonomy Archive"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:940
+msgid "Taxonomy Archive Slug"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:941
+msgid "Set Taxonomy Archive Slug"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:944
+msgid "Select specific terms to display specific logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:945
+msgid "Select specific terms to exclude specific logos"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:947
+msgid "Save Settings"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:957
+msgid "Slider 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:961
+msgid "Grid - 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:965
+msgid "List - 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:969
+msgid "Table - 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:976
+msgid "Slider 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:980
+msgid "Ticker 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:984
+msgid "Grid - 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:988
+msgid "Grid - 3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:992
+msgid "List - 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:996
+msgid "List - 3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1000
+msgid "List - 4"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1004
+msgid "Table - 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1008
+msgid "Table - 3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1012
+msgid "Vertical Slider"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1016
+msgid "Filter - 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1020
+msgid "Filter - 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1024
+msgid "Filter - 3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1028
+msgid "Filter - 4"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1032
+msgid "Live Filter - 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1036
+msgid "Live Filter - 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1040
+msgid "Live Filter - 3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1044
+msgid "Filter - Selected Cats"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1048
+msgid "Full Width Slider"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1052
+msgid "Center Mode"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1056
+msgid "Variable Width"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1060
+msgid "Vertical Center"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1064
+msgid "Vertical Ticker Up"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1068
+msgid "Vertical Ticker Down"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1072
+msgid "2 Rows Slider"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1076
+msgid "Rounded Border"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1080
+msgid "Horizontal Scroll"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1084
+msgid "3D Circular Slider"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1088
+msgid "Hexagon"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1108
+msgid "Normal Pagination"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1115
+msgid "AJAX Pagination"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1119
+msgid "Load More Button"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1123
+msgid "Load More On Scroll"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1154
+msgid "Set Custom Size"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1198
+msgid "None"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1209
+msgid "Brightness"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1213
+msgid "Contrast"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1217
+msgid "Grayscale"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1221
+msgid "Hue Rotate"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1225
+msgid "Invert"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1229
+msgid "Opacity"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1233
+msgid "Saturate"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1237
+msgid "Sepia"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1257
+msgid "Single Page"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1261
+msgid "Popup"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1265
+msgid "Panel"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1290, ../includes/shortcode-builder/builder.php:1325, ../includes/shortcode-builder/builder.php:1654
+msgid "Style 01"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1294, ../includes/shortcode-builder/builder.php:1329, ../includes/shortcode-builder/builder.php:1658
+msgid "Style 02"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1298, ../includes/shortcode-builder/builder.php:1333, ../includes/shortcode-builder/builder.php:1662
+msgid "Style 03"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1302, ../includes/shortcode-builder/builder.php:1337, ../includes/shortcode-builder/builder.php:1666
+msgid "Style 04"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1306, ../includes/shortcode-builder/builder.php:1341, ../includes/shortcode-builder/builder.php:1670
+msgid "Style 05"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1362
+msgid "New Tab"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1366
+msgid "Same Window"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1373
+msgid "Hard Crop"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1377
+msgid "Soft Crop"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1388
+msgid "Left Right"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1392
+msgid "Left Right Outside"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1399
+msgid "H1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1403
+msgid "H2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1407
+msgid "H3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1411
+msgid "H4"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1415
+msgid "H5"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1419
+msgid "H6"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1423
+msgid "Span"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1427
+msgid "Div"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1431
+msgid "P"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1441
+msgid "Normal Filter"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1445
+msgid "Ajax Filter"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1454
+msgid "Solid"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1458
+msgid "Dotted"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1462
+msgid "Dashed"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1466
+msgid "Double"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1470
+msgid "Groove"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1474
+msgid "Ridge"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1478
+msgid "Inset"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1482
+msgid "Outset"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1558, ../includes/shortcode-builder/builder.php:1569
+msgid "Characters"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1562, ../includes/shortcode-builder/builder.php:1573
+msgid "Words"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1580, ../includes/shortcode-builder/builder.php:1614
+msgid "Custom Order"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1584
+msgid "Logo ID"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1588
+msgid "Logo Name"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1592
+msgid "Date"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1596, ../includes/shortcode-builder/builder.php:1630
+msgid "Random"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1603
+msgid "DESC"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1607
+msgid "ASC"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1618
+msgid "Term ID"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1622
+msgid "Term Name"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1626
+msgid "Count"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1676
+msgid "nofollow"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1680
+msgid "noopener"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1684
+msgid "noreferrer"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1688
+msgid "nofollow noopener"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1692
+msgid "nofollow noreferrer"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1696
+msgid "noopener noreferrer"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1700
+msgid "nofollow noopener noreferrer"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1714
+msgid "Logo Categories"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1720
+msgid "Logo Tag"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1721
+msgid "Logo Tags"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1727, ../includes/shortcode-builder/builder.php:1728
+msgid "Extra 1"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1734, ../includes/shortcode-builder/builder.php:1735
+msgid "Extra 2"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1741, ../includes/shortcode-builder/builder.php:1742
+msgid "Extra 3"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1748, ../includes/shortcode-builder/builder.php:1749
+msgid "Extra 4"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1755, ../includes/shortcode-builder/builder.php:1756
+msgid "Extra 5"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1816
+msgid "Load More"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1848
+msgid "Read More"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1871
+msgid "Preference saved"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1879
+msgid "No preference provided"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1952
+msgid "Taxonomy settings saved"
+msgstr ""
+
+#: ../includes/shortcode-builder/builder.php:1960
+msgid "No settings provided"
+msgstr ""
+
+#: ../includes/shortcode-builder/page.php:10
+msgid "Create New"
+msgstr ""
+
+#: ../includes/shortcode-builder/page.php:14
+msgid "Preferences"
+msgstr ""
+
+#: ../includes/shortcode-builder/page.php:22
+msgid "Demo Data"
+msgstr ""
+
+#: ../includes/shortcode-builder/page.php:26
+msgid "Import Export"
+msgstr ""
+
 #: ../includes/shortcode-builder/page.php:33, ../includes/welcome/welcome.php:29, ../includes/welcome/welcome.php:30
 msgid "Go Pro"
+msgstr ""
+
+#: ../includes/shortcode-builder/preview.php:29
+msgid "Something went wrong!"
+msgstr ""
+
+#: ../includes/shortcode-builder/preview.php:30
+msgid "Data not found for preview, probably it's a bug, contact with plugin author"
 msgstr ""
 
 #: ../includes/welcome/view.php:17
@@ -2630,4 +2491,131 @@ msgstr ""
 
 #: ../includes/welcome/welcome.php:23
 msgid "Welcome"
+msgstr ""
+
+#: ../includes/integrations/beaver/beaver-widget-logo.php:11
+msgid "Display brand and logos by GS Logo Slider"
+msgstr ""
+
+#: ../includes/integrations/beaver/beaver-widget-logo.php:12
+msgid "GS Plugins"
+msgstr ""
+
+#: ../includes/integrations/beaver/beaver-widget-logo.php:13
+msgid "Basic"
+msgstr ""
+
+#: ../includes/integrations/divi/LogoSliderController.php:84
+msgid "You must be logged in to preview GS Logo shortcodes."
+msgstr ""
+
+#: ../includes/integrations/divi/LogoSliderController.php:102
+msgid "Sorry, you are not allowed to preview GS Logo shortcodes."
+msgstr ""
+
+#. translators: %s: error message
+#: ../includes/integrations/divi/LogoSliderController.php:139
+msgid "Failed to render shortcode: %s"
+msgstr ""
+
+#: ../templates/partials/gs-logo-empty.php:17
+msgid "No logo found, please add some logos"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:59
+msgid "Employees"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:179
+msgid "Visit Website"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:185, ../templates/singles/gs-logo-single-style-one.php:487
+msgid "Contact Company"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:195
+msgid "Company facts"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:217
+msgid "About Company"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:230
+msgid "Our Vision"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:239
+msgid "Our Mission"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:250
+msgid "Life in Company"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:251
+msgid "Team photos, office shots, and other life-at-company images."
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:288
+msgid "Location & Video"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:292
+msgid "Map Location"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:322
+msgid "%s company video"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:338
+msgid "Company presentation and business overview document."
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:344
+msgid "Company Presentation PDF"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:351
+msgid "View / Download"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:364
+msgid "Contact Info"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:399
+msgid "Categories & Tags"
+msgstr ""
+
+#. translators: %s: taxonomy singular label
+#: ../templates/singles/gs-logo-single-style-one.php:412
+msgid "No %s specified"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:450
+msgid "Image gallery"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:451
+msgid "Close"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:455
+msgid "Previous image"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:464
+msgid "Next image"
+msgstr ""
+
+#: ../templates/singles/gs-logo-single-style-one.php:475
+msgid "Let's build something amazing together"
+msgstr ""
+
+#. translators: %s: company name
+#: ../templates/singles/gs-logo-single-style-one.php:480
+msgid "Interested in working with %s? Let's talk."
 msgstr ""
